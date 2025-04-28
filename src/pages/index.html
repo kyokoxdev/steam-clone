@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steam Clone</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>water</h1>
+        </div>
+        <nav class="main-nav">
+            <ul>
+            <li><a href="index.html" class="active">STORE</a></li>
+            <li><a href="library.html">LIBRARY</a></li>
+            <li><a href="community.html">COMMUNITY</a></li>
+            <li class="user-dropdown">
+                <a href="profile.html">USERNAME ▼</a>
+                <div class="dropdown-content">
+                <a href="profile.html">Profile</a>
+                <a href="account.html">Account Details</a>
+                <a href="wishlist.html">Wishlist</a>
+                <a href="logout.html">Logout</a>
+                </div>
+            </li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" id="search" placeholder="Search for games...">
+        </div>
+    </header>
+    <main>
+        <section id="featured">
+            <h2>Featured Games</h2>
+            <div class="game-grid">
+                <div class="game" data-name="Game 1">
+                    <img src="../assets/images/game1.jpg" alt="Game 1">
+                    <h3>Game 1</h3>
+                    <p>$19.99</p>
+                    <button class="buy-btn">Buy Now</button>
+                </div>
+                <div class="game" data-name="Game 2">
+                    <img src="../assets/images/game2.jpg" alt="Game 2">
+                    <h3>Game 2</h3>
+                    <p>$29.99</p>
+                    <button class="buy-btn">Buy Now</button>
+                </div>
+                <div class="game" data-name="Game 3">
+                    <img src="../assets/images/game3.jpg" alt="Game 3">
+                    <h3>Game 3</h3>
+                    <p>$39.99</p>
+                    <button class="buy-btn">Buy Now</button>
+                </div>
+            </div>
+        </section>
+        <section id="categories">
+            <h2>Categories</h2>
+            <ul>
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Adventure</a></li>
+                <li><a href="#">RPG</a></li>
+                <li><a href="#">Strategy</a></li>
+                <li><a href="#">Indie</a></li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Steam Clone. All rights reserved.</p>
+    </footer>
+    <script src="../assets/js/scripts.js"></script>
+</body>
+</html>

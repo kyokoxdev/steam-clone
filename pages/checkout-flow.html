@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - GameHub</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html">
+                    <h1>Game<span>Hub</span></h1>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html">Store</a></li>
+                    <li><a href="library.html">Library</a></li>
+                    <li><a href="community.html">Community</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search store...">
+                    <button type="button" class="search-btn">
+                        <span class="sr-only">Search</span>
+                    </button>
+                </div>
+                <a href="cart.html" class="cart-icon active">
+                    <span class="sr-only">Cart</span>
+                    <span class="cart-count">3</span>
+                </a>
+                <a href="account-settings.html" class="user-dropdown">
+                    <img src="../assets/images/avatar-default.jpg" alt="User avatar" class="avatar-small">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Checkout Process Main Content -->
+    <main class="checkout-page">
+        <div class="container">
+            <div class="page-header">
+                <h1>Checkout</h1>
+            </div>
+
+            <!-- Checkout Progress Bar -->
+            <div class="checkout-progress">
+                <div class="progress-step active" data-step="payment">
+                    <div class="step-number">1</div>
+                    <div class="step-label">Payment Method</div>
+                </div>
+                <div class="progress-step" data-step="confirmation">
+                    <div class="step-number">2</div>
+                    <div class="step-label">Confirmation</div>
+                </div>
+                <div class="progress-step" data-step="receipt">
+                    <div class="step-number">3</div>
+                    <div class="step-label">Receipt</div>
+                </div>
+            </div>
+
+            <div class="checkout-layout">
+                <div class="checkout-main">
+                    <!-- Step 1: Payment Method (visible initially) -->
+                    <section class="checkout-step active" id="payment-step">
+                        <h2>Select Payment Method</h2>
+                        
+                        <div class="payment-methods-selection">
+                            <form id="payment-form">
+                                <!-- Credit Card Payment -->
+                                <div class="payment-option">
+                                    <input type="radio" name="payment-method" id="credit-card" checked>
+                                    <label for="credit-card" class="payment-label">
+                                        <div class="payment-icon credit-card"></div>
+                                        <div class="payment-text">
+                                            <span>Credit / Debit Card</span>
+                                            <div class="card-types">
+                                                <span class="card-icon visa"></span>
+                                                <span class="card-icon mastercard"></span>
+                                                <span class="card-icon amex"></span>
+                                                <span class="card-icon discover"></span>
+                                            </div>
+                                        </div>
+                                    </label>
+                                    
+                                    <div class="payment-details active" id="credit-card-details">
+                                        <div class="form-group">
+                                            <label for="card-number">Card Number</label>
+                                            <input type="text" id="card-number" placeholder="1234 5678 9012 3456" maxlength="19" class="card-input">
+                                        </div>
+                                        
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                <label for="expiry-date">Expiry Date</label>
+                                                <input type="text" id="expiry-date" placeholder="MM/YY" maxlength="5">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="security-code">Security Code</label>
+                                                <input type="text" id="security-code" placeholder="CVC" maxlength="4">
+                                                <div class="tooltip-icon" title="The 3 or 4 digit security code on the back of your card."></div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="name-on-card">Name on Card</label>
+                                            <input type="text" id="name-on-card" placeholder="John Smith">
+                                        </div>
+                                        
+                                        <div class="save-payment-info">
+                                            <input type="checkbox" id="save-card">
+                                            <label for="save-card">Save this card for future purchases</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- PayPal Payment -->
+                                <div class="payment-option">
+                                    <input type="radio" name="payment-method" id="paypal">
+                                    <label for="paypal" class="payment-label">
+                                        <div class="payment-icon paypal"></div>
+                                        <div class="payment-text">
+                                            <span>PayPal</span>
+                                            <small>Check out securely with your PayPal account</small>
+                                        </div>
+                                    </label>
+                                    
+                                    <div class="payment-details" id="paypal-details">
+                                        <p class="payment-info">You will be redirected to PayPal to complete your payment securely.</p>
+                                        <div class="paypal-button">
+                                            <button type="button" class="btn btn-paypal">Proceed with PayPal</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Digital Wallet Payment -->
+                                <div class="payment-option">
+                                    <input type="radio" name="payment-method" id="digital-wallet">
+                                    <label for="digital-wallet" class="payment-label">
+                                        <div class="payment-icon wallet"></div>
+                                        <div class="payment-text">
+                                            <span>GameHub Wallet</span>
+                                            <small>Current Balance: $125.40</small>
+                                        </div>
+                                    </label>
+                                    
+                                    <div class="payment-details" id="wallet-details">
+                                        <div class="wallet-balance">
+                                            <div class="balance-info">
+                                                <span class="balance-label">Available Balance:</span>
+                                                <span class="balance-amount">$125.40</span>
+                                            </div>
+                                            <div class="order-total">
+                                                <span class="total-label">Order Total:</span>
+                                                <span class="total-amount">$82.47</span>
+                                            </div>
+                                            <div class="balance-after">
+                                                <span class="after-label">Balance After Purchase:</span>
+                                                <span class="after-amount">$42.93</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Gift Card Payment -->
+                                <div class="payment-option">
+                                    <input type="radio" name="payment-method" id="gift-card">
+                                    <label for="gift-card" class="payment-label">
+                                        <div class="payment-icon gift-card"></div>
+                                        <div class="payment-text">
+                                            <span>Gift Card or Coupon</span>
+                                            <small>Redeem a gift card or coupon code</small>
+                                        </div>
+                                    </label>
+                                    
+                                    <div class="payment-details" id="gift-card-details">
+                                        <div class="form-group">
+                                            <label for="gift-card-code">Gift Card or Coupon Code</label>
+                                            <div class="input-with-button">
+                                                <input type="text" id="gift-card-code" placeholder="Enter code">
+                                                <button type="button" class="btn btn-secondary">Apply</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        
+                        <div class="billing-address">
+                            <h3>Billing Address</h3>
+                            
+                            <div class="form-group">
+                                <label for="country">Country/Region</label>
+                                <select id="country">
+                                    <option value="us">United States</option>
+                                    <option value="ca">Canada</option>
+                                    <option value="uk">United Kingdom</option>
+                                    <option value="au">Australia</option>
+                                    <option value="de">Germany</option>
+                                    <option value="fr">France</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="first-name">First Name</label>
+                                    <input type="text" id="first-name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="last-name">Last Name</label>
+                                    <input type="text" id="last-name">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="address1">Address Line 1</label>
+                                <input type="text" id="address1" placeholder="Street address, P.O. box">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="address2">Address Line 2 (Optional)</label>
+                                <input type="text" id="address2" placeholder="Apartment, suite, unit, building, floor, etc.">
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="city">City</label>
+                                    <input type="text" id="city">
+                                </div>
+                                <div class="form-group">
+                                    <label for="state">State/Province</label>
+                                    <select id="state">
+                                        <option value="">Select State</option>
+                                        <option value="AL">Alabama</option>
+                                        <option value="AK">Alaska</option>
+                                        <!-- Other states would be listed here -->
+                                        <option value="WY">Wyoming</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="zip">ZIP/Postal Code</label>
+                                    <input type="text" id="zip">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Phone Number (Optional)</label>
+                                <input type="tel" id="phone" placeholder="For delivery questions only">
+                            </div>
+                            
+                            <div class="save-address">
+                                <input type="checkbox" id="save-address" checked>
+                                <label for="save-address">Save this address for future purchases</label>
+                            </div>
+                        </div>
+                        
+                        <div class="checkout-buttons">
+                            <a href="cart.html" class="btn btn-secondary">Back to Cart</a>
+                            <button class="btn btn-primary next-step" data-next="confirmation">Continue to Confirmation</button>
+                        </div>
+                    </section>
+                    
+                    <!-- Step 2: Confirmation (hidden initially) -->
+                    <section class="checkout-step" id="confirmation-step">
+                        <h2>Confirm Your Order</h2>
+                        
+                        <div class="confirmation-items">
+                            <h3>Items in Your Order</h3>
+                            <div class="confirmation-item-list">
+                                <!-- Confirmation Item 1 -->
+                                <div class="confirmation-item">
+                                    <div class="item-image">
+                                        <img src="../assets/images/cyberpunk-cover.jpg" alt="Cyberpunk 2077">
+                                    </div>
+                                    <div class="item-details">
+                                        <h4>Cyberpunk 2077</h4>
+                                        <div class="item-meta">
+                                            <span class="platform">PC Download</span>
+                                        </div>
+                                    </div>
+                                    <div class="item-price">$41.99</div>
+                                </div>
+                                
+                                <!-- Confirmation Item 2 -->
+                                <div class="confirmation-item">
+                                    <div class="item-image">
+                                        <img src="../assets/images/stardew-valley-cover.jpg" alt="Stardew Valley">
+                                    </div>
+                                    <div class="item-details">
+                                        <h4>Stardew Valley</h4>
+                                        <div class="item-meta">
+                                            <span class="platform">PC Download</span>
+                                        </div>
+                                    </div>
+                                    <div class="item-price">$14.99</div>
+                                </div>
+                                
+                                <!-- Confirmation Item 3 -->
+                                <div class="confirmation-item">
+                                    <div class="item-image">
+                                        <img src="../assets/images/elden-ring-dlc.jpg" alt="Elden Ring - Season Pass">
+                                    </div>
+                                    <div class="item-details">
+                                        <h4>Elden Ring - Season Pass</h4>
+                                        <div class="item-meta">
+                                            <span class="platform">PC Download</span>
+                                            <span class="type">DLC</span>
+                                        </div>
+                                    </div>
+                                    <div class="item-price">$25.49</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="confirmation-details">
+                            <div class="confirmation-section">
+                                <h3>Payment Method</h3>
+                                <div class="confirm-detail-box">
+                                    <div class="payment-method-display">
+                                        <div class="payment-icon credit-card"></div>
+                                        <div class="payment-info">
+                                            <span class="card-type">Visa</span>
+                                            <span class="card-number">ending in 1234</span>
+                                            <span class="card-name">John Smith</span>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-text edit-btn" data-edit="payment">Edit</button>
+                                </div>
+                            </div>
+                            
+                            <div class="confirmation-section">
+                                <h3>Billing Address</h3>
+                                <div class="confirm-detail-box">
+                                    <div class="address-display">
+                                        <p class="name">John Smith</p>
+                                        <p class="address-line">123 Main Street</p>
+                                        <p class="address-line">Apt 4B</p>
+                                        <p class="city-state-zip">San Francisco, CA 94103</p>
+                                        <p class="country">United States</p>
+                                    </div>
+                                    <button class="btn btn-text edit-btn" data-edit="payment">Edit</button>
+                                </div>
+                            </div>
+                            
+                            <div class="confirmation-section">
+                                <h3>Order Summary</h3>
+                                <div class="confirm-detail-box">
+                                    <div class="order-summary-display">
+                                        <div class="summary-line">
+                                            <span class="label">Subtotal</span>
+                                            <span class="value">$104.97</span>
+                                        </div>
+                                        <div class="summary-line">
+                                            <span class="label">Discounts</span>
+                                            <span class="value">-$22.50</span>
+                                        </div>
+                                        <div class="summary-line">
+                                            <span class="label">Tax</span>
+                                            <span class="value">$0.00</span>
+                                        </div>
+                                        <div class="summary-line total">
+                                            <span class="label">Total</span>
+                                            <span class="value">$82.47</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="terms-agreement">
+                            <div class="agreement-check">
+                                <input type="checkbox" id="agree-terms" required>
+                                <label for="agree-terms">I agree to the <a href="#" class="terms-link">Terms of Sale</a> and acknowledge the <a href="#" class="privacy-link">Privacy Policy</a></label>
+                            </div>
+                        </div>
+                        
+                        <div class="checkout-buttons">
+                            <button class="btn btn-secondary prev-step" data-prev="payment">Back to Payment</button>
+                            <button class="btn btn-primary btn-purchase next-step" data-next="receipt">Complete Purchase</button>
+                        </div>
+                    </section>
+                    
+                    <!-- Step 3: Receipt (hidden initially) -->
+                    <section class="checkout-step" id="receipt-step">
+                        <div class="receipt-header">
+                            <div class="success-icon"></div>
+                            <h2>Thank You for Your Purchase!</h2>
+                            <p class="receipt-message">Your order has been successfully processed. A confirmation email has been sent to <strong>john.smith@example.com</strong>.</p>
+                        </div>
+                        
+                        <div class="receipt-details">
+                            <div class="receipt-section">
+                                <h3>Order Information</h3>
+                                <div class="receipt-info-box">
+                                    <div class="receipt-info-line">
+                                        <span class="info-label">Order Number:</span>
+                                        <span class="info-value">GH-2025428-7891</span>
+                                    </div>
+                                    <div class="receipt-info-line">
+                                        <span class="info-label">Order Date:</span>
+                                        <span class="info-value">April 28, 2025</span>
+                                    </div>
+                                    <div class="receipt-info-line">
+                                        <span class="info-label">Payment Method:</span>
+                                        <span class="info-value">Visa ending in 1234</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="receipt-section">
+                                <h3>Items Purchased</h3>
+                                <div class="receipt-items">
+                                    <!-- Receipt Item 1 -->
+                                    <div class="receipt-item">
+                                        <div class="item-image">
+                                            <img src="../assets/images/cyberpunk-cover.jpg" alt="Cyberpunk 2077">
+                                        </div>
+                                        <div class="item-details">
+                                            <h4>Cyberpunk 2077</h4>
+                                            <div class="item-meta">
+                                                <span class="platform">PC Download</span>
+                                                <div class="download-info">
+                                                    <span class="status">Ready to download</span>
+                                                </div>
+                                            </div>
+                                            <div class="item-key">
+                                                <span class="key-label">Product Key:</span>
+                                                <span class="key-value">XXXX-XXXX-XXXX-XXXX</span>
+                                                <button class="btn-icon copy-key" title="Copy key to clipboard">
+                                                    <span class="sr-only">Copy key</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="item-price">$41.99</div>
+                                    </div>
+                                    
+                                    <!-- Receipt Item 2 -->
+                                    <div class="receipt-item">
+                                        <div class="item-image">
+                                            <img src="../assets/images/stardew-valley-cover.jpg" alt="Stardew Valley">
+                                        </div>
+                                        <div class="item-details">
+                                            <h4>Stardew Valley</h4>
+                                            <div class="item-meta">
+                                                <span class="platform">PC Download</span>
+                                                <div class="download-info">
+                                                    <span class="status">Ready to download</span>
+                                                </div>
+                                            </div>
+                                            <div class="item-key">
+                                                <span class="key-label">Product Key:</span>
+                                                <span class="key-value">XXXX-XXXX-XXXX-XXXX</span>
+                                                <button class="btn-icon copy-key" title="Copy key to clipboard">
+                                                    <span class="sr-only">Copy key</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="item-price">$14.99</div>
+                                    </div>
+                                    
+                                    <!-- Receipt Item 3 -->
+                                    <div class="receipt-item">
+                                        <div class="item-image">
+                                            <img src="../assets/images/elden-ring-dlc.jpg" alt="Elden Ring - Season Pass">
+                                        </div>
+                                        <div class="item-details">
+                                            <h4>Elden Ring - Season Pass</h4>
+                                            <div class="item-meta">
+                                                <span class="platform">PC Download</span>
+                                                <span class="type">DLC</span>
+                                                <div class="download-info">
+                                                    <span class="status">Ready to download</span>
+                                                </div>
+                                            </div>
+                                            <div class="item-key">
+                                                <span class="key-label">Product Key:</span>
+                                                <span class="key-value">XXXX-XXXX-XXXX-XXXX</span>
+                                                <button class="btn-icon copy-key" title="Copy key to clipboard">
+                                                    <span class="sr-only">Copy key</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="item-price">$25.49</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="receipt-section">
+                                <h3>Order Total</h3>
+                                <div class="receipt-total-box">
+                                    <div class="total-line">
+                                        <span class="label">Subtotal</span>
+                                        <span class="value">$104.97</span>
+                                    </div>
+                                    <div class="total-line">
+                                        <span class="label">Discounts</span>
+                                        <span class="value">-$22.50</span>
+                                    </div>
+                                    <div class="total-line">
+                                        <span class="label">Tax</span>
+                                        <span class="value">$0.00</span>
+                                    </div>
+                                    <div class="total-line final">
+                                        <span class="label">Total</span>
+                                        <span class="value">$82.47</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="receipt-actions">
+                            <a href="library.html" class="btn btn-primary">Go to Library</a>
+                            <button class="btn btn-secondary btn-download-all">Download All</button>
+                            <button class="btn btn-tertiary btn-print-receipt">Print Receipt</button>
+                        </div>
+                        
+                        <div class="receipt-help">
+                            <h3>Need Help?</h3>
+                            <p>If you have any questions about your purchase or need assistance, please visit our <a href="support.html">Support Center</a> or <a href="contact.html">Contact Us</a>.</p>
+                        </div>
+                    </section>
+                </div>
+                
+                <!-- Order Summary Sidebar (visible on all steps) -->
+                <aside class="checkout-sidebar">
+                    <div class="order-summary-card">
+                        <h2 class="summary-title">Order Summary</h2>
+                        <div class="cart-item-count">3 items in cart</div>
+                        
+                        <div class="summary-items">
+                            <div class="summary-item">
+                                <div class="item-name">Cyberpunk 2077</div>
+                                <div class="item-price">$41.99</div>
+                            </div>
+                            <div class="summary-item">
+                                <div class="item-name">Stardew Valley</div>
+                                <div class="item-price">$14.99</div>
+                            </div>
+                            <div class="summary-item">
+                                <div class="item-name">Elden Ring - Season Pass</div>
+                                <div class="item-price">$25.49</div>
+                            </div>
+                        </div>
+                        
+                        <div class="summary-totals">
+                            <div class="summary-row">
+                                <span class="label">Subtotal</span>
+                                <span class="value">$104.97</span>
+                            </div>
+                            <div class="summary-row">
+                                <span class="label">Discounts</span>
+                                <span class="value discount">-$22.50</span>
+                            </div>
+                            <div class="summary-row">
+                                <span class="label">Estimated Tax</span>
+                                <span class="value">$0.00</span>
+                            </div>
+                            <div class="summary-row total">
+                                <span class="label">Total</span>
+                                <span class="value">$82.47</span>
+                            </div>
+                        </div>
+                        
+                        <div class="savings-message">
+                            You save $22.50 on this order!
+                        </div>
+                    </div>
+                    
+                    <div class="order-help">
+                        <div class="help-section">
+                            <h3>Need Help?</h3>
+                            <p>Our support team is available 24/7 to assist you with your purchase.</p>
+                            <a href="support.html" class="help-link">Contact Support</a>
+                        </div>
+                        <div class="help-section">
+                            <h3>Secure Checkout</h3>
+                            <p>Your payment information is encrypted and secure.</p>
+                            <div class="security-badges">
+                                <span class="security-badge ssl"></span>
+                                <span class="security-badge secure-payment"></span>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h4>About GameHub</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="press.html">Press</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Help</h4>
+                    <ul>
+                        <li><a href="support.html">Support</a></li>
+                        <li><a href="refunds.html">Refunds</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>News</h4>
+                    <ul>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="updates.html">Game Updates</a></li>
+                        <li><a href="events.html">Events</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="legal.html">Legal Information</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="social-links">
+                    <a href="#" class="social-icon">Facebook</a>
+                    <a href="#" class="social-icon">Twitter</a>
+                    <a href="#" class="social-icon">Instagram</a>
+                    <a href="#" class="social-icon">Discord</a>
+                </div>
+                <p class="copyright">&copy; 2025 GameHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/responsive-test.js"></script>
+</body>
+</html>

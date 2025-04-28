@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wishlist - GameHub</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html">
+                    <h1>Game<span>Hub</span></h1>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html">Store</a></li>
+                    <li><a href="library.html">Library</a></li>
+                    <li><a href="community.html">Community</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search games...">
+                    <button type="button" class="search-btn">
+                        <span class="sr-only">Search</span>
+                    </button>
+                </div>
+                <a href="cart.html" class="cart-icon">
+                    <span class="sr-only">Cart</span>
+                    <span class="cart-count">0</span>
+                </a>
+                <a href="account-settings.html" class="user-dropdown">
+                    <img src="../assets/images/avatar-placeholder.jpg" alt="User avatar" class="avatar-small">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Wishlist Page -->
+    <main class="wishlist-page">
+        <div class="container">
+            <div class="page-header">
+                <h1>Wishlist</h1>
+                <div class="wishlist-count">12 items</div>
+            </div>
+
+            <div class="wishlist-controls">
+                <div class="wishlist-filters">
+                    <select class="filter-select" id="sort-by">
+                        <option value="name">Sort by Name</option>
+                        <option value="price" selected>Sort by Price</option>
+                        <option value="date-added">Sort by Date Added</option>
+                        <option value="release-date">Sort by Release Date</option>
+                        <option value="review-score">Sort by Review Score</option>
+                    </select>
+                    <select class="filter-select" id="filter-by">
+                        <option value="all" selected>All Types</option>
+                        <option value="game">Games</option>
+                        <option value="dlc">DLC</option>
+                        <option value="software">Software</option>
+                    </select>
+                </div>
+                <div class="view-options">
+                    <button class="view-btn active" data-view="grid">
+                        <span class="sr-only">Grid View</span>
+                        <i class="grid-icon"></i>
+                    </button>
+                    <button class="view-btn" data-view="list">
+                        <span class="sr-only">List View</span>
+                        <i class="list-icon"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="wishlist-grid">
+                <!-- Wishlist Item 1 -->
+                <div class="wishlist-item">
+                    <div class="wishlist-rank">1</div>
+                    <div class="wishlist-image">
+                        <img src="../assets/images/game-cover-1.jpg" alt="Elden Ring">
+                        <div class="discount-badge">-20%</div>
+                    </div>
+                    <div class="wishlist-content">
+                        <h3 class="wishlist-title">Elden Ring</h3>
+                        <div class="wishlist-meta">
+                            <div class="meta-tags">
+                                <span class="tag">RPG</span>
+                                <span class="tag">Open World</span>
+                                <span class="tag">Souls-like</span>
+                            </div>
+                            <div class="meta-platform">
+                                <span class="platform">Windows</span>
+                            </div>
+                            <div class="meta-release">
+                                Released: Feb 25, 2022
+                            </div>
+                            <div class="meta-reviews">
+                                <div class="review-score positive">Very Positive</div>
+                            </div>
+                        </div>
+                        <div class="wishlist-price">
+                            <div class="price-container">
+                                <span class="original-price">$59.99</span>
+                                <span class="sale-price">$47.99</span>
+                            </div>
+                            <div class="wishlist-actions">
+                                <button class="btn btn-primary">Add to Cart</button>
+                                <button class="btn btn-secondary remove-btn">Remove</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wishlist Item 2 -->
+                <div class="wishlist-item">
+                    <div class="wishlist-rank">2</div>
+                    <div class="wishlist-image">
+                        <img src="../assets/images/game-cover-2.jpg" alt="Cyberpunk 2077">
+                    </div>
+                    <div class="wishlist-content">
+                        <h3 class="wishlist-title">Cyberpunk 2077</h3>
+                        <div class="wishlist-meta">
+                            <div class="meta-tags">
+                                <span class="tag">RPG</span>
+                                <span class="tag">Open World</span>
+                                <span class="tag">Sci-Fi</span>
+                            </div>
+                            <div class="meta-platform">
+                                <span class="platform">Windows</span>
+                            </div>
+                            <div class="meta-release">
+                                Released: Dec 10, 2020
+                            </div>
+                            <div class="meta-reviews">
+                                <div class="review-score mixed">Mixed</div>
+                            </div>
+                        </div>
+                        <div class="wishlist-price">
+                            <div class="price-container">
+                                <span class="price">$59.99</span>
+                            </div>
+                            <div class="wishlist-actions">
+                                <button class="btn btn-primary">Add to Cart</button>
+                                <button class="btn btn-secondary remove-btn">Remove</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wishlist Item 3 -->
+                <div class="wishlist-item">
+                    <div class="wishlist-rank">3</div>
+                    <div class="wishlist-image">
+                        <img src="../assets/images/game-cover-3.jpg" alt="Horizon Forbidden West">
+                    </div>
+                    <div class="wishlist-content">
+                        <h3 class="wishlist-title">Horizon Forbidden West</h3>
+                        <div class="wishlist-meta">
+                            <div class="meta-tags">
+                                <span class="tag">Action</span>
+                                <span class="tag">Adventure</span>
+                                <span class="tag">Open World</span>
+                            </div>
+                            <div class="meta-platform">
+                                <span class="platform">Windows</span>
+                            </div>
+                            <div class="meta-release">
+                                Released: Feb 18, 2022
+                            </div>
+                            <div class="meta-reviews">
+                                <div class="review-score positive">Very Positive</div>
+                            </div>
+                        </div>
+                        <div class="wishlist-price">
+                            <div class="price-container">
+                                <span class="price">$49.99</span>
+                            </div>
+                            <div class="wishlist-actions">
+                                <button class="btn btn-primary">Add to Cart</button>
+                                <button class="btn btn-secondary remove-btn">Remove</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wishlist Item 4 -->
+                <div class="wishlist-item">
+                    <div class="wishlist-rank">4</div>
+                    <div class="wishlist-image">
+                        <img src="../assets/images/game-cover-4.jpg" alt="Red Dead Redemption 2">
+                        <div class="discount-badge">-50%</div>
+                    </div>
+                    <div class="wishlist-content">
+                        <h3 class="wishlist-title">Red Dead Redemption 2</h3>
+                        <div class="wishlist-meta">
+                            <div class="meta-tags">
+                                <span class="tag">Action</span>
+                                <span class="tag">Adventure</span>
+                                <span class="tag">Western</span>
+                            </div>
+                            <div class="meta-platform">
+                                <span class="platform">Windows</span>
+                            </div>
+                            <div class="meta-release">
+                                Released: Dec 5, 2019
+                            </div>
+                            <div class="meta-reviews">
+                                <div class="review-score positive">Overwhelmingly Positive</div>
+                            </div>
+                        </div>
+                        <div class="wishlist-price">
+                            <div class="price-container">
+                                <span class="original-price">$59.99</span>
+                                <span class="sale-price">$29.99</span>
+                            </div>
+                            <div class="wishlist-actions">
+                                <button class="btn btn-primary">Add to Cart</button>
+                                <button class="btn btn-secondary remove-btn">Remove</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wishlist Item 5 -->
+                <div class="wishlist-item">
+                    <div class="wishlist-rank">5</div>
+                    <div class="wishlist-image">
+                        <img src="../assets/images/game-cover-5.jpg" alt="The Witcher 3: Wild Hunt">
+                        <div class="discount-badge">-70%</div>
+                    </div>
+                    <div class="wishlist-content">
+                        <h3 class="wishlist-title">The Witcher 3: Wild Hunt</h3>
+                        <div class="wishlist-meta">
+                            <div class="meta-tags">
+                                <span class="tag">RPG</span>
+                                <span class="tag">Open World</span>
+                                <span class="tag">Fantasy</span>
+                            </div>
+                            <div class="meta-platform">
+                                <span class="platform">Windows</span>
+                                <span class="platform">Mac</span>
+                            </div>
+                            <div class="meta-release">
+                                Released: May 18, 2015
+                            </div>
+                            <div class="meta-reviews">
+                                <div class="review-score positive">Overwhelmingly Positive</div>
+                            </div>
+                        </div>
+                        <div class="wishlist-price">
+                            <div class="price-container">
+                                <span class="original-price">$39.99</span>
+                                <span class="sale-price">$11.99</span>
+                            </div>
+                            <div class="wishlist-actions">
+                                <button class="btn btn-primary">Add to Cart</button>
+                                <button class="btn btn-secondary remove-btn">Remove</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wishlist Item 6 -->
+                <div class="wishlist-item">
+                    <div class="wishlist-rank">6</div>
+                    <div class="wishlist-image">
+                        <img src="../assets/images/game-cover-6.jpg" alt="Stardew Valley">
+                    </div>
+                    <div class="wishlist-content">
+                        <h3 class="wishlist-title">Stardew Valley</h3>
+                        <div class="wishlist-meta">
+                            <div class="meta-tags">
+                                <span class="tag">Simulation</span>
+                                <span class="tag">RPG</span>
+                                <span class="tag">Indie</span>
+                            </div>
+                            <div class="meta-platform">
+                                <span class="platform">Windows</span>
+                                <span class="platform">Mac</span>
+                                <span class="platform">Linux</span>
+                            </div>
+                            <div class="meta-release">
+                                Released: Feb 26, 2016
+                            </div>
+                            <div class="meta-reviews">
+                                <div class="review-score positive">Overwhelmingly Positive</div>
+                            </div>
+                        </div>
+                        <div class="wishlist-price">
+                            <div class="price-container">
+                                <span class="price">$14.99</span>
+                            </div>
+                            <div class="wishlist-actions">
+                                <button class="btn btn-primary">Add to Cart</button>
+                                <button class="btn btn-secondary remove-btn">Remove</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pagination">
+                <a href="#" class="pagination-btn prev" disabled>Previous</a>
+                <div class="pagination-pages">
+                    <a href="#" class="pagination-page active">1</a>
+                    <a href="#" class="pagination-page">2</a>
+                    <span class="pagination-ellipsis">...</span>
+                    <a href="#" class="pagination-page">4</a>
+                </div>
+                <a href="#" class="pagination-btn next">Next</a>
+            </div>
+
+            <div class="wishlist-recommendations">
+                <h2>Recommendations Based on Your Wishlist</h2>
+                <div class="game-grid">
+                    <!-- Recommended Game 1 -->
+                    <div class="game-card">
+                        <div class="game-card-image">
+                            <img src="../assets/images/game-cover-7.jpg" alt="Game title">
+                        </div>
+                        <div class="game-card-content">
+                            <h3 class="game-title">God of War</h3>
+                            <div class="game-tags">
+                                <span class="tag">Action</span>
+                                <span class="tag">Adventure</span>
+                            </div>
+                            <div class="game-price">
+                                <span class="price">$49.99</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Recommended Game 2 -->
+                    <div class="game-card">
+                        <div class="game-card-image">
+                            <img src="../assets/images/game-cover-8.jpg" alt="Game title">
+                        </div>
+                        <div class="game-card-content">
+                            <h3 class="game-title">Baldur's Gate 3</h3>
+                            <div class="game-tags">
+                                <span class="tag">RPG</span>
+                                <span class="tag">Fantasy</span>
+                            </div>
+                            <div class="game-price">
+                                <span class="price">$59.99</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Recommended Game 3 -->
+                    <div class="game-card">
+                        <div class="game-card-image">
+                            <img src="../assets/images/game-cover-9.jpg" alt="Game title">
+                        </div>
+                        <div class="game-card-content">
+                            <h3 class="game-title">Control</h3>
+                            <div class="game-tags">
+                                <span class="tag">Action</span>
+                                <span class="tag">Supernatural</span>
+                            </div>
+                            <div class="game-price">
+                                <span class="price">$29.99</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Recommended Game 4 -->
+                    <div class="game-card">
+                        <div class="game-card-image">
+                            <img src="../assets/images/game-cover-10.jpg" alt="Game title">
+                        </div>
+                        <div class="game-card-content">
+                            <h3 class="game-title">Hollow Knight</h3>
+                            <div class="game-tags">
+                                <span class="tag">Metroidvania</span>
+                                <span class="tag">Indie</span>
+                            </div>
+                            <div class="game-price">
+                                <span class="price">$14.99</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h4>About GameHub</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="press.html">Press</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Help</h4>
+                    <ul>
+                        <li><a href="support.html">Support</a></li>
+                        <li><a href="refunds.html">Refunds</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>News</h4>
+                    <ul>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="updates.html">Game Updates</a></li>
+                        <li><a href="events.html">Events</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="legal.html">Legal Information</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="social-links">
+                    <a href="#" class="social-icon">Facebook</a>
+                    <a href="#" class="social-icon">Twitter</a>
+                    <a href="#" class="social-icon">Instagram</a>
+                    <a href="#" class="social-icon">Discord</a>
+                </div>
+                <p class="copyright">&copy; 2025 GameHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

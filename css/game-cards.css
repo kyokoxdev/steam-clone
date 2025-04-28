@@ -1,0 +1,260 @@
+/* 
+ * GameHub - Game Card Hover Effects
+ * Enhanced hover animations for game cards
+ */
+
+/* Card Hover Animation */
+.game-card {
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.game-card:hover,
+.game-card.hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
+    z-index: 2;
+}
+
+.game-card:hover .game-card-image img,
+.game-card.hover .game-card-image img {
+    transform: scale(1.05);
+}
+
+.game-card-image img {
+    transition: transform 0.5s ease;
+}
+
+.game-card:hover .game-title,
+.game-card.hover .game-title {
+    color: var(--color-accent);
+}
+
+/* Add to Cart Button Animation */
+.add-to-cart-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: var(--color-accent);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.2s ease;
+}
+
+.game-card:hover .add-to-cart-btn,
+.game-card.hover .add-to-cart-btn {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.add-to-cart-btn:hover {
+    background-color: var(--color-accent-dark);
+    transform: scale(1.1);
+}
+
+.add-to-cart-btn.added {
+    animation: addedToCart 1s ease;
+}
+
+@keyframes addedToCart {
+    0% {
+        transform: scale(1);
+        background-color: var(--color-accent);
+    }
+    50% {
+        transform: scale(1.2);
+        background-color: var(--color-success);
+    }
+    100% {
+        transform: scale(1);
+        background-color: var(--color-accent);
+    }
+}
+
+/* Hero Carousel Animations */
+.hero-slide {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-slide.active {
+    opacity: 1;
+    visibility: visible;
+    position: relative;
+}
+
+.slide-in-right {
+    animation: slideInRight 0.5s ease forwards;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Hero Navigation Buttons */
+.hero-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 5;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.hero-nav:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.hero-nav-prev {
+    left: 20px;
+}
+
+.hero-nav-prev::before {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-left: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    transform: rotate(45deg);
+}
+
+.hero-nav-next {
+    right: 20px;
+}
+
+.hero-nav-next::before {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid #fff;
+    border-top: 2px solid #fff;
+    transform: rotate(45deg);
+}
+
+/* Hero Controls Enhancement */
+.hero-controls {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 15px;
+    z-index: 2;
+    position: relative;
+}
+
+.hero-control {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.hero-control:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    transform: scale(1.1);
+}
+
+.hero-control.active {
+    background-color: var(--color-accent);
+    transform: scale(1.2);
+}
+
+/* Show More Button Style */
+.show-more-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.show-more-btn {
+    padding: 8px 25px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.show-more-btn:hover {
+    background-color: var(--color-accent);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.show-more-btn:active {
+    transform: translateY(0);
+}
+
+/* Game Tags Enhancement */
+.game-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 5px;
+}
+
+.tag {
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.game-card:hover .tag {
+    background-color: rgba(var(--color-accent-rgb), 0.2);
+}
+
+/* Discount Badge Enhancement */
+.discount-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--color-sale);
+    color: white;
+    padding: 4px 8px;
+    font-weight: bold;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    z-index: 2;
+}
+
+.game-card:hover .discount-badge {
+    transform: scale(1.1);
+    transition: transform 0.2s ease;
+}

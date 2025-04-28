@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Library - GameHub</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html">
+                    <h1>Game<span>Hub</span></h1>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html">Store</a></li>
+                    <li><a href="library.html" class="active">Library</a></li>
+                    <li><a href="community.html">Community</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search games...">
+                    <button type="button" class="search-btn">
+                        <span class="sr-only">Search</span>
+                    </button>
+                </div>
+                <a href="cart.html" class="cart-icon">
+                    <span class="sr-only">Cart</span>
+                    <span class="cart-count">0</span>
+                </a>
+                <a href="account-settings.html" class="user-dropdown">
+                    <img src="../assets/images/avatar-placeholder.jpg" alt="User avatar" class="avatar-small">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Library Page -->
+    <main class="library-page">
+        <div class="container">
+            <!-- Library Header -->
+            <div class="page-header">
+                <h1>Game Library</h1>
+                <div class="library-stats">
+                    <div class="stat">
+                        <span class="stat-value">124</span>
+                        <span class="stat-label">Games</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">1,284</span>
+                        <span class="stat-label">Hours Played</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">76</span>
+                        <span class="stat-label">Achievements</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Library Controls -->
+            <div class="library-controls">
+                <div class="filter-section">
+                    <div class="search-games">
+                        <input type="text" placeholder="Find a game in your library..." class="library-search">
+                    </div>
+                    <div class="filter-actions">
+                        <div class="filter-group">
+                            <label for="category-filter">Category:</label>
+                            <select id="category-filter" class="filter-select">
+                                <option value="all">All Games</option>
+                                <option value="favorites">Favorites</option>
+                                <option value="installed">Installed</option>
+                                <option value="uninstalled">Not Installed</option>
+                                <option value="recent">Recently Played</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="sort-by">Sort By:</label>
+                            <select id="sort-by" class="filter-select">
+                                <option value="name">Name</option>
+                                <option value="recent" selected>Recent</option>
+                                <option value="playtime">Playtime</option>
+                                <option value="size">Size</option>
+                            </select>
+                        </div>
+                        <div class="view-options">
+                            <button class="view-btn active" data-view="grid">
+                                <span class="sr-only">Grid View</span>
+                                <i class="grid-icon"></i>
+                            </button>
+                            <button class="view-btn" data-view="list">
+                                <span class="sr-only">List View</span>
+                                <i class="list-icon"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Library Grid Layout -->
+            <div class="library-layout">
+                <!-- Library Sidebar -->
+                <aside class="library-sidebar">
+                    <div class="sidebar-section">
+                        <h3>Collections</h3>
+                        <ul class="collection-list">
+                            <li><a href="#" class="active">All Games <span class="count">124</span></a></li>
+                            <li><a href="#">Favorites <span class="count">18</span></a></li>
+                            <li><a href="#">Recently Played <span class="count">7</span></a></li>
+                            <li><a href="#">Not Played <span class="count">32</span></a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sidebar-section">
+                        <h3>Categories</h3>
+                        <ul class="category-list">
+                            <li><a href="#">Action <span class="count">45</span></a></li>
+                            <li><a href="#">Adventure <span class="count">38</span></a></li>
+                            <li><a href="#">Indie <span class="count">29</span></a></li>
+                            <li><a href="#">RPG <span class="count">27</span></a></li>
+                            <li><a href="#">Strategy <span class="count">19</span></a></li>
+                            <li><a href="#">Simulation <span class="count">12</span></a></li>
+                            <li><a href="#">Sports <span class="count">8</span></a></li>
+                            <li><a href="#">Racing <span class="count">7</span></a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sidebar-section">
+                        <h3>Custom Collections</h3>
+                        <ul class="custom-list">
+                            <li><a href="#">Completed <span class="count">36</span></a></li>
+                            <li><a href="#">Summer Break <span class="count">12</span></a></li>
+                            <li><a href="#">To Try <span class="count">8</span></a></li>
+                            <li><a href="#">Must Finish <span class="count">5</span></a></li>
+                        </ul>
+                        <div class="add-collection">
+                            <button class="btn btn-secondary btn-sm">Create Collection</button>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Library Content -->
+                <div class="library-content">
+                    <div class="library-grid">
+                        <!-- Library Game Item 1 -->
+                        <div class="library-game-item">
+                            <div class="game-cover">
+                                <img src="../assets/images/game-cover-1.jpg" alt="Cyberpunk 2077">
+                                <div class="game-actions">
+                                    <button class="play-btn">Play</button>
+                                    <div class="action-dropdown">
+                                        <button class="dropdown-toggle">•••</button>
+                                        <div class="dropdown-menu">
+                                            <a href="#" class="dropdown-item">Game Details</a>
+                                            <a href="#" class="dropdown-item">Add to Collection</a>
+                                            <a href="#" class="dropdown-item">Add to Favorites</a>
+                                            <a href="#" class="dropdown-item">Hide</a>
+                                            <a href="#" class="dropdown-item">Uninstall</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="game-info">
+                                <h3 class="game-title">Cyberpunk 2077</h3>
+                                <div class="game-meta">
+                                    <div class="game-hours">38 hours played</div>
+                                    <div class="game-last-played">Last played: Yesterday</div>
+                                </div>
+                                <div class="game-status installed">Installed</div>
+                            </div>
+                        </div>
+
+                        <!-- Library Game Item 2 -->
+                        <div class="library-game-item">
+                            <div class="game-cover">
+                                <img src="../assets/images/game-cover-2.jpg" alt="The Witcher 3">
+                                <div class="game-actions">
+                                    <button class="install-btn">Install</button>
+                                    <div class="action-dropdown">
+                                        <button class="dropdown-toggle">•••</button>
+                                        <div class="dropdown-menu">
+                                            <a href="#" class="dropdown-item">Game Details</a>
+                                            <a href="#" class="dropdown-item">Add to Collection</a>
+                                            <a href="#" class="dropdown-item">Add to Favorites</a>
+                                            <a href="#" class="dropdown-item">Hide</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="game-info">
+                                <h3 class="game-title">The Witcher 3: Wild Hunt</h3>
+                                <div class="game-meta">
+                                    <div class="game-hours">127 hours played</div>
+                                    <div class="game-last-played">Last played: 2 weeks ago</div>
+                                </div>
+                                <div class="game-status not-installed">Not Installed</div>
+                            </div>
+                        </div>
+
+                        <!-- Library Game Item 3 -->
+                        <div class="library-game-item">
+                            <div class="game-cover">
+                                <img src="../assets/images/game-cover-3.jpg" alt="Stardew Valley">
+                                <div class="game-actions">
+                                    <button class="play-btn">Play</button>
+                                    <div class="action-dropdown">
+                                        <button class="dropdown-toggle">•••</button>
+                                        <div class="dropdown-menu">
+                                            <a href="#" class="dropdown-item">Game Details</a>
+                                            <a href="#" class="dropdown-item">Add to Collection</a>
+                                            <a href="#" class="dropdown-item">Add to Favorites</a>
+                                            <a href="#" class="dropdown-item">Hide</a>
+                                            <a href="#" class="dropdown-item">Uninstall</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="game-info">
+                                <h3 class="game-title">Stardew Valley</h3>
+                                <div class="game-meta">
+                                    <div class="game-hours">126 hours played</div>
+                                    <div class="game-last-played">Last played: 2 days ago</div>
+                                </div>
+                                <div class="game-status installed">Installed</div>
+                            </div>
+                        </div>
+
+                        <!-- Library Game Item 4 -->
+                        <div class="library-game-item">
+                            <div class="game-cover">
+                                <img src="../assets/images/game-cover-4.jpg" alt="Elden Ring">
+                                <div class="game-actions">
+                                    <button class="play-btn">Play</button>
+                                    <div class="action-dropdown">
+                                        <button class="dropdown-toggle">•••</button>
+                                        <div class="dropdown-menu">
+                                            <a href="#" class="dropdown-item">Game Details</a>
+                                            <a href="#" class="dropdown-item">Add to Collection</a>
+                                            <a href="#" class="dropdown-item">Add to Favorites</a>
+                                            <a href="#" class="dropdown-item">Hide</a>
+                                            <a href="#" class="dropdown-item">Uninstall</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="game-info">
+                                <h3 class="game-title">Elden Ring</h3>
+                                <div class="game-meta">
+                                    <div class="game-hours">85 hours played</div>
+                                    <div class="game-last-played">Last played: Today</div>
+                                </div>
+                                <div class="game-status installed">Installed</div>
+                            </div>
+                        </div>
+
+                        <!-- Library Game Item 5 -->
+                        <div class="library-game-item">
+                            <div class="game-cover">
+                                <img src="../assets/images/game-cover-5.jpg" alt="Red Dead Redemption 2">
+                                <div class="game-actions">
+                                    <button class="play-btn">Play</button>
+                                    <div class="action-dropdown">
+                                        <button class="dropdown-toggle">•••</button>
+                                        <div class="dropdown-menu">
+                                            <a href="#" class="dropdown-item">Game Details</a>
+                                            <a href="#" class="dropdown-item">Add to Collection</a>
+                                            <a href="#" class="dropdown-item">Add to Favorites</a>
+                                            <a href="#" class="dropdown-item">Hide</a>
+                                            <a href="#" class="dropdown-item">Uninstall</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="game-info">
+                                <h3 class="game-title">Red Dead Redemption 2</h3>
+                                <div class="game-meta">
+                                    <div class="game-hours">112 hours played</div>
+                                    <div class="game-last-played">Last played: 3 days ago</div>
+                                </div>
+                                <div class="game-status installed">Installed</div>
+                            </div>
+                        </div>
+
+                        <!-- Library Game Item 6 -->
+                        <div class="library-game-item">
+                            <div class="game-cover">
+                                <img src="../assets/images/game-cover-6.jpg" alt="Horizon Forbidden West">
+                                <div class="game-actions">
+                                    <button class="install-btn">Install</button>
+                                    <div class="action-dropdown">
+                                        <button class="dropdown-toggle">•••</button>
+                                        <div class="dropdown-menu">
+                                            <a href="#" class="dropdown-item">Game Details</a>
+                                            <a href="#" class="dropdown-item">Add to Collection</a>
+                                            <a href="#" class="dropdown-item">Add to Favorites</a>
+                                            <a href="#" class="dropdown-item">Hide</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="game-info">
+                                <h3 class="game-title">Horizon Forbidden West</h3>
+                                <div class="game-meta">
+                                    <div class="game-hours">52 hours played</div>
+                                    <div class="game-last-played">Last played: 1 month ago</div>
+                                </div>
+                                <div class="game-status not-installed">Not Installed</div>
+                            </div>
+                        </div>
+
+                        <!-- Library Game Item 7 -->
+                        <div class="library-game-item">
+                            <div class="game-cover">
+                                <img src="../assets/images/game-cover-7.jpg" alt="God of War">
+                                <div class="game-actions">
+                                    <button class="play-btn">Play</button>
+                                    <div class="action-dropdown">
+                                        <button class="dropdown-toggle">•••</button>
+                                        <div class="dropdown-menu">
+                                            <a href="#" class="dropdown-item">Game Details</a>
+                                            <a href="#" class="dropdown-item">Add to Collection</a>
+                                            <a href="#" class="dropdown-item">Add to Favorites</a>
+                                            <a href="#" class="dropdown-item">Hide</a>
+                                            <a href="#" class="dropdown-item">Uninstall</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="game-info">
+                                <h3 class="game-title">God of War</h3>
+                                <div class="game-meta">
+                                    <div class="game-hours">47 hours played</div>
+                                    <div class="game-last-played">Last played: 1 week ago</div>
+                                </div>
+                                <div class="game-status installed">Installed</div>
+                            </div>
+                        </div>
+
+                        <!-- Library Game Item 8 -->
+                        <div class="library-game-item">
+                            <div class="game-cover">
+                                <img src="../assets/images/game-cover-8.jpg" alt="Hollow Knight">
+                                <div class="game-actions">
+                                    <button class="install-btn">Install</button>
+                                    <div class="action-dropdown">
+                                        <button class="dropdown-toggle">•••</button>
+                                        <div class="dropdown-menu">
+                                            <a href="#" class="dropdown-item">Game Details</a>
+                                            <a href="#" class="dropdown-item">Add to Collection</a>
+                                            <a href="#" class="dropdown-item">Add to Favorites</a>
+                                            <a href="#" class="dropdown-item">Hide</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="game-info">
+                                <h3 class="game-title">Hollow Knight</h3>
+                                <div class="game-meta">
+                                    <div class="game-hours">37 hours played</div>
+                                    <div class="game-last-played">Last played: 2 months ago</div>
+                                </div>
+                                <div class="game-status not-installed">Not Installed</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pagination">
+                        <a href="#" class="pagination-btn prev" disabled>Previous</a>
+                        <div class="pagination-pages">
+                            <a href="#" class="pagination-page active">1</a>
+                            <a href="#" class="pagination-page">2</a>
+                            <a href="#" class="pagination-page">3</a>
+                            <span class="pagination-ellipsis">...</span>
+                            <a href="#" class="pagination-page">16</a>
+                        </div>
+                        <a href="#" class="pagination-btn next">Next</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h4>About GameHub</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="press.html">Press</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Help</h4>
+                    <ul>
+                        <li><a href="support.html">Support</a></li>
+                        <li><a href="refunds.html">Refunds</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>News</h4>
+                    <ul>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="updates.html">Game Updates</a></li>
+                        <li><a href="events.html">Events</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="legal.html">Legal Information</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="social-links">
+                    <a href="#" class="social-icon">Facebook</a>
+                    <a href="#" class="social-icon">Twitter</a>
+                    <a href="#" class="social-icon">Instagram</a>
+                    <a href="#" class="social-icon">Discord</a>
+                </div>
+                <p class="copyright">&copy; 2025 GameHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

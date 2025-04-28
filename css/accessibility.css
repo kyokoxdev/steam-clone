@@ -1,0 +1,320 @@
+/**
+ * Accessibility Styles
+ * Styles for accessibility features including focus indicators, skip links, and high contrast mode
+ */
+
+/* Skip Links */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #171a21;
+    color: #fff;
+    padding: 8px 16px;
+    z-index: 1000;
+    text-decoration: none;
+    border-radius: 0 0 4px 0;
+    border: 2px solid #66c0f4;
+    transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+    top: 0;
+    outline: none;
+}
+
+/* Focus Indicators */
+.keyboard-user *:focus {
+    outline: 3px solid #66c0f4 !important;
+    outline-offset: 2px !important;
+}
+
+/* High Contrast Mode */
+.high-contrast {
+    /* Text colors */
+    --text-color: #ffffff;
+    --text-muted: #f0f0f0;
+    
+    /* Background colors */
+    --bg-primary: #000000;
+    --bg-secondary: #111111;
+    
+    /* Accent colors */
+    --accent-primary: #ffff00;
+    --accent-secondary: #00ffff;
+    
+    /* Border colors */
+    --border-color: #ffffff;
+    
+    /* Button colors */
+    --btn-primary-bg: #ffffff;
+    --btn-primary-text: #000000;
+    --btn-secondary-bg: #000000;
+    --btn-secondary-text: #ffffff;
+}
+
+.high-contrast body {
+    background-color: var(--bg-primary);
+    color: var(--text-color);
+}
+
+.high-contrast header,
+.high-contrast footer,
+.high-contrast nav {
+    background-color: var(--bg-secondary);
+    border-color: var(--border-color);
+}
+
+.high-contrast a {
+    color: var(--accent-primary);
+    text-decoration: underline;
+}
+
+.high-contrast button,
+.high-contrast .btn {
+    border: 2px solid var(--border-color);
+}
+
+.high-contrast .btn-primary {
+    background-color: var(--btn-primary-bg);
+    color: var(--btn-primary-text);
+}
+
+.high-contrast .btn-secondary {
+    background-color: var(--btn-secondary-bg);
+    color: var(--btn-secondary-text);
+    border-color: var(--border-color);
+}
+
+.high-contrast input,
+.high-contrast select,
+.high-contrast textarea {
+    background-color: #000;
+    color: #fff;
+    border: 2px solid var(--border-color);
+}
+
+.high-contrast .card,
+.high-contrast .modal-content {
+    background-color: var(--bg-secondary);
+    border: 2px solid var(--border-color);
+}
+
+.high-contrast .game-card {
+    border: 2px solid var(--border-color);
+}
+
+.high-contrast .game-card .game-title {
+    color: var(--accent-primary);
+}
+
+.high-contrast .game-card .game-price {
+    color: var(--accent-secondary);
+}
+
+/* Accessibility Control Panel */
+.accessibility-controls {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.accessibility-toggle {
+    background: #1b2838;
+    color: #fff;
+    border: 2px solid #66c0f4;
+    border-radius: 4px;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.accessibility-toggle:hover,
+.accessibility-toggle:focus {
+    background: #66c0f4;
+    color: #171a21;
+}
+
+.accessibility-toggle[aria-pressed="true"] {
+    background: #66c0f4;
+    color: #171a21;
+}
+
+.accessibility-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    font-weight: bold;
+}
+
+/* Screen Reader Only */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Forms with better accessibility */
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #375a7f;
+    border-radius: 4px;
+    background-color: #1b2838;
+    color: #c7d5e0;
+}
+
+.form-group [aria-invalid="true"] {
+    border-color: #e74c3c;
+}
+
+.form-error-message {
+    color: #e74c3c;
+    font-size: 0.875rem;
+    margin-top: 4px;
+}
+
+/* Better focus management for tabbed interfaces */
+[role="tablist"] {
+    border-bottom: 1px solid #375a7f;
+}
+
+[role="tab"] {
+    display: inline-block;
+    padding: 10px 15px;
+    border: none;
+    background: transparent;
+    color: #c7d5e0;
+    cursor: pointer;
+    position: relative;
+    margin-bottom: -1px;
+}
+
+[role="tab"][aria-selected="true"] {
+    background: #375a7f;
+    color: #fff;
+    border-radius: 4px 4px 0 0;
+}
+
+[role="tab"]:hover {
+    background: rgba(55, 90, 127, 0.5);
+    border-radius: 4px 4px 0 0;
+}
+
+[role="tabpanel"] {
+    padding: 15px;
+    border: 1px solid #375a7f;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+}
+
+/* Better dialog accessibility */
+.modal-dialog[role="dialog"] {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1050;
+}
+
+.modal-content {
+    background: #1b2838;
+    border-radius: 4px;
+    max-width: 500px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #375a7f;
+}
+
+.modal-body {
+    padding: 15px;
+}
+
+.modal-footer {
+    padding: 15px;
+    border-top: 1px solid #375a7f;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+/* Improved dropdown accessibility */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-trigger[aria-expanded="true"] + .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #1b2838;
+    min-width: 200px;
+    border: 1px solid #375a7f;
+    border-radius: 4px;
+    padding: 5px 0;
+    z-index: 1000;
+}
+
+.dropdown-menu a,
+.dropdown-menu button {
+    display: block;
+    padding: 8px 15px;
+    color: #c7d5e0;
+    text-decoration: none;
+    border: none;
+    background: transparent;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu a:focus,
+.dropdown-menu button:hover,
+.dropdown-menu button:focus {
+    background: #375a7f;
+}

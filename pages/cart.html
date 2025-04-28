@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - GameHub</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html">
+                    <h1>Game<span>Hub</span></h1>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html">Store</a></li>
+                    <li><a href="library.html">Library</a></li>
+                    <li><a href="community.html">Community</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search store...">
+                    <button type="button" class="search-btn">
+                        <span class="sr-only">Search</span>
+                    </button>
+                </div>
+                <a href="cart.html" class="cart-icon active">
+                    <span class="sr-only">Cart</span>
+                    <span class="cart-count">3</span>
+                </a>
+                <a href="account-settings.html" class="user-dropdown">
+                    <img src="../assets/images/avatar-placeholder.jpg" alt="User avatar" class="avatar-small">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Shopping Cart Main Content -->
+    <main class="cart-page">
+        <div class="container">
+            <div class="page-header">
+                <h1>Your Shopping Cart</h1>
+            </div>
+
+            <div class="cart-layout">
+                <!-- Cart Items Section -->
+                <section class="cart-items">
+                    <h2 class="section-title">Items in Cart (3)</h2>
+
+                    <!-- Cart Item 1 -->
+                    <div class="cart-item">
+                        <div class="cart-item-image">
+                            <img src="../assets/images/game-cover-1.jpg" alt="Cyberpunk 2077">
+                        </div>
+                        <div class="cart-item-details">
+                            <div class="cart-item-info">
+                                <h3 class="cart-item-title">Cyberpunk 2077</h3>
+                                <div class="cart-item-meta">
+                                    <span class="item-platform">PC Download</span>
+                                    <span class="item-type">Base Game</span>
+                                </div>
+                            </div>
+                            <div class="cart-item-price">
+                                <div class="item-discount">
+                                    <span class="original-price">$59.99</span>
+                                    <span class="discount-badge">-30%</span>
+                                </div>
+                                <div class="final-price">$41.99</div>
+                            </div>
+                            <div class="cart-item-actions">
+                                <button class="btn-icon remove-btn" title="Remove item">
+                                    <span class="sr-only">Remove item</span>
+                                </button>
+                                <button class="btn-tertiary">Move to Wishlist</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cart Item 2 -->
+                    <div class="cart-item">
+                        <div class="cart-item-image">
+                            <img src="../assets/images/game-cover-3.jpg" alt="Stardew Valley">
+                        </div>
+                        <div class="cart-item-details">
+                            <div class="cart-item-info">
+                                <h3 class="cart-item-title">Stardew Valley</h3>
+                                <div class="cart-item-meta">
+                                    <span class="item-platform">PC Download</span>
+                                    <span class="item-type">Base Game</span>
+                                </div>
+                            </div>
+                            <div class="cart-item-price">
+                                <div class="final-price">$14.99</div>
+                            </div>
+                            <div class="cart-item-actions">
+                                <button class="btn-icon remove-btn" title="Remove item">
+                                    <span class="sr-only">Remove item</span>
+                                </button>
+                                <button class="btn-tertiary">Move to Wishlist</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cart Item 3 -->
+                    <div class="cart-item">
+                        <div class="cart-item-image">
+                            <img src="../assets/images/game-cover-4.jpg" alt="Elden Ring">
+                        </div>
+                        <div class="cart-item-details">
+                            <div class="cart-item-info">
+                                <h3 class="cart-item-title">Elden Ring - Season Pass</h3>
+                                <div class="cart-item-meta">
+                                    <span class="item-platform">PC Download</span>
+                                    <span class="item-type">DLC</span>
+                                </div>
+                            </div>
+                            <div class="cart-item-price">
+                                <div class="item-discount">
+                                    <span class="original-price">$29.99</span>
+                                    <span class="discount-badge">-15%</span>
+                                </div>
+                                <div class="final-price">$25.49</div>
+                            </div>
+                            <div class="cart-item-actions">
+                                <button class="btn-icon remove-btn" title="Remove item">
+                                    <span class="sr-only">Remove item</span>
+                                </button>
+                                <button class="btn-tertiary">Move to Wishlist</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Empty Cart Message (hidden when cart has items) -->
+                    <div class="empty-cart hidden">
+                        <div class="empty-cart-icon"></div>
+                        <h3>Your shopping cart is empty</h3>
+                        <p>Browse our store to find games you'll love.</p>
+                        <a href="../index.html" class="btn btn-primary">Continue Shopping</a>
+                    </div>
+
+                    <!-- Continue Shopping Link -->
+                    <div class="continue-shopping">
+                        <a href="../index.html" class="btn btn-tertiary">
+                            <span class="back-icon"></span>
+                            Continue Shopping
+                        </a>
+                    </div>
+                </section>
+
+                <!-- Order Summary Section -->
+                <aside class="order-summary">
+                    <div class="summary-card">
+                        <h2 class="summary-title">Order Summary</h2>
+                        
+                        <!-- Price Breakdown -->
+                        <div class="price-breakdown">
+                            <div class="price-row">
+                                <span class="price-label">Subtotal</span>
+                                <span class="price-value">$104.97</span>
+                            </div>
+                            <div class="price-row">
+                                <span class="price-label">Discounts</span>
+                                <span class="price-value discount">-$22.50</span>
+                            </div>
+                            <div class="price-row">
+                                <span class="price-label">Estimated Tax</span>
+                                <span class="price-value">$0.00</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Total Section -->
+                        <div class="total-section">
+                            <div class="price-row total">
+                                <span class="price-label">Total</span>
+                                <span class="price-value">$82.47</span>
+                            </div>
+                            <div class="savings-message">
+                                You save $22.50 on this order!
+                            </div>
+                        </div>
+                        
+                        <!-- Coupon Section -->
+                        <div class="coupon-section">
+                            <div class="coupon-header">
+                                <h3>Add a Coupon</h3>
+                                <button class="toggle-btn" aria-expanded="false" aria-controls="coupon-form">
+                                    <span class="plus-icon"></span>
+                                </button>
+                            </div>
+                            <div class="coupon-form" id="coupon-form">
+                                <div class="input-group">
+                                    <input type="text" placeholder="Enter coupon code">
+                                    <button class="btn btn-secondary">Apply</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Checkout Button -->
+                        <div class="checkout-actions">
+                            <button class="btn btn-primary btn-large checkout-btn">
+                                Proceed to Checkout
+                            </button>
+                            <div class="payment-methods">
+                                <span class="payment-label">We accept:</span>
+                                <div class="payment-icons">
+                                    <span class="payment-icon visa"></span>
+                                    <span class="payment-icon mastercard"></span>
+                                    <span class="payment-icon amex"></span>
+                                    <span class="payment-icon paypal"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Purchase Protection -->
+                    <div class="purchase-protection">
+                        <div class="protection-icon"></div>
+                        <div class="protection-text">
+                            <h3>Purchase Protection</h3>
+                            <p>Shop with confidence. 30-day refund policy for most games that you've played less than 2 hours.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Recommended Add-ons -->
+                    <div class="recommended-addons">
+                        <h3 class="addons-title">Recommended Add-ons</h3>
+                        
+                        <!-- Add-on Item 1 -->
+                        <div class="addon-item">
+                            <div class="addon-image">
+                                <img src="../assets/images/gift-card.jpg" alt="GameHub Gift Card">
+                            </div>
+                            <div class="addon-info">
+                                <h4 class="addon-name">GameHub Gift Card</h4>
+                                <div class="addon-price">$25.00</div>
+                            </div>
+                            <button class="btn btn-secondary btn-sm">Add</button>
+                        </div>
+                        
+                        <!-- Add-on Item 2 -->
+                        <div class="addon-item">
+                            <div class="addon-image">
+                                <img src="../assets/images/premium-subscription.jpg" alt="GameHub Premium 1 Month">
+                            </div>
+                            <div class="addon-info">
+                                <h4 class="addon-name">GameHub Premium 1 Month</h4>
+                                <div class="addon-price">$9.99</div>
+                            </div>
+                            <button class="btn btn-secondary btn-sm">Add</button>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- Recently Viewed Section -->
+    <section class="recently-viewed">
+        <div class="container">
+            <h2 class="section-title">Recently Viewed</h2>
+            <div class="game-grid small-grid">
+                <!-- Recently Viewed Game 1 -->
+                <div class="game-card">
+                    <div class="game-card-image">
+                        <img src="../assets/images/game-cover-5.jpg" alt="Red Dead Redemption 2">
+                    </div>
+                    <div class="game-card-info">
+                        <h3 class="game-title">Red Dead Redemption 2</h3>
+                        <div class="game-price">
+                            <span class="current-price">$39.99</span>
+                        </div>
+                    </div>
+                    <div class="card-buttons">
+                        <button class="btn btn-primary btn-sm">Add to Cart</button>
+                        <button class="btn-icon wishlist-btn" title="Add to Wishlist">
+                            <span class="sr-only">Add to Wishlist</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Recently Viewed Game 2 -->
+                <div class="game-card">
+                    <div class="game-card-image">
+                        <img src="../assets/images/game-cover-2.jpg" alt="The Witcher 3: Wild Hunt">
+                    </div>
+                    <div class="game-card-info">
+                        <h3 class="game-title">The Witcher 3: Wild Hunt</h3>
+                        <div class="game-price">
+                            <span class="discount-tag">-70%</span>
+                            <span class="original-price">$39.99</span>
+                            <span class="current-price">$11.99</span>
+                        </div>
+                    </div>
+                    <div class="card-buttons">
+                        <button class="btn btn-primary btn-sm">Add to Cart</button>
+                        <button class="btn-icon wishlist-btn" title="Add to Wishlist">
+                            <span class="sr-only">Add to Wishlist</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Recently Viewed Game 3 -->
+                <div class="game-card">
+                    <div class="game-card-image">
+                        <img src="../assets/images/game-cover-6.jpg" alt="Horizon Zero Dawn">
+                    </div>
+                    <div class="game-card-info">
+                        <h3 class="game-title">Horizon Zero Dawn</h3>
+                        <div class="game-price">
+                            <span class="discount-tag">-50%</span>
+                            <span class="original-price">$49.99</span>
+                            <span class="current-price">$24.99</span>
+                        </div>
+                    </div>
+                    <div class="card-buttons">
+                        <button class="btn btn-primary btn-sm">Add to Cart</button>
+                        <button class="btn-icon wishlist-btn" title="Add to Wishlist">
+                            <span class="sr-only">Add to Wishlist</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Recently Viewed Game 4 -->
+                <div class="game-card">
+                    <div class="game-card-image">
+                        <img src="../assets/images/game-cover-7.jpg" alt="God of War">
+                    </div>
+                    <div class="game-card-info">
+                        <h3 class="game-title">God of War</h3>
+                        <div class="game-price">
+                            <span class="current-price">$49.99</span>
+                        </div>
+                    </div>
+                    <div class="card-buttons">
+                        <button class="btn btn-primary btn-sm">Add to Cart</button>
+                        <button class="btn-icon wishlist-btn" title="Add to Wishlist">
+                            <span class="sr-only">Add to Wishlist</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h4>About GameHub</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="press.html">Press</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Help</h4>
+                    <ul>
+                        <li><a href="support.html">Support</a></li>
+                        <li><a href="refunds.html">Refunds</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>News</h4>
+                    <ul>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="updates.html">Game Updates</a></li>
+                        <li><a href="events.html">Events</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="legal.html">Legal Information</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="social-links">
+                    <a href="#" class="social-icon">Facebook</a>
+                    <a href="#" class="social-icon">Twitter</a>
+                    <a href="#" class="social-icon">Instagram</a>
+                    <a href="#" class="social-icon">Discord</a>
+                </div>
+                <p class="copyright">&copy; 2025 GameHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

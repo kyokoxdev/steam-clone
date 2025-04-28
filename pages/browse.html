@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Games - GameHub</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html">
+                    <h1>Game<span>Hub</span></h1>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html" class="active">Store</a></li>
+                    <li><a href="library.html">Library</a></li>
+                    <li><a href="community.html">Community</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search games...">
+                    <button type="button" class="search-btn">
+                        <span class="sr-only">Search</span>
+                    </button>
+                </div>
+                <a href="cart.html" class="cart-icon">
+                    <span class="sr-only">Cart</span>
+                    <span class="cart-count">0</span>
+                </a>
+                <a href="login.html" class="login-btn">Login</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="browse-page">
+        <div class="container">
+            <div class="browse-layout">
+                <!-- Sidebar Filters -->
+                <aside class="browse-sidebar">
+                    <div class="filter-section">
+                        <h3>Narrow by Price</h3>
+                        <div class="price-filter">
+                            <div class="price-range">
+                                <input type="range" min="0" max="100" value="100" class="price-slider">
+                                <div class="price-values">
+                                    <span>$0</span>
+                                    <span>$100</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h3>Categories</h3>
+                        <div class="category-filter">
+                            <label class="filter-checkbox">
+                                <input type="checkbox" name="category" value="action">
+                                <span class="checkbox-label">Action</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" name="category" value="adventure">
+                                <span class="checkbox-label">Adventure</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" name="category" value="rpg">
+                                <span class="checkbox-label">RPG</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" name="category" value="strategy">
+                                <span class="checkbox-label">Strategy</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" name="category" value="simulation">
+                                <span class="checkbox-label">Simulation</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" name="category" value="sports">
+                                <span class="checkbox-label">Sports</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" name="category" value="indie">
+                                <span class="checkbox-label">Indie</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h3>Tags</h3>
+                        <div class="tag-filter">
+                            <div class="tag-cloud">
+                                <span class="filter-tag">Open World</span>
+                                <span class="filter-tag">Multiplayer</span>
+                                <span class="filter-tag">Singleplayer</span>
+                                <span class="filter-tag">Fantasy</span>
+                                <span class="filter-tag">Sci-Fi</span>
+                                <span class="filter-tag">First-Person</span>
+                                <span class="filter-tag">Third-Person</span>
+                                <span class="filter-tag">Story Rich</span>
+                                <span class="filter-tag">Puzzle</span>
+                                <span class="filter-tag">Shooter</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h3>Features</h3>
+                        <div class="feature-filter">
+                            <label class="filter-checkbox">
+                                <input type="checkbox" name="feature" value="multiplayer">
+                                <span class="checkbox-label">Multiplayer</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" name="feature" value="controller-support">
+                                <span class="checkbox-label">Controller Support</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" name="feature" value="cloud-saves">
+                                <span class="checkbox-label">Cloud Saves</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" name="feature" value="achievements">
+                                <span class="checkbox-label">Achievements</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h3>Release Date</h3>
+                        <div class="release-filter">
+                            <label class="filter-radio">
+                                <input type="radio" name="release" value="any" checked>
+                                <span class="radio-label">Any</span>
+                            </label>
+                            <label class="filter-radio">
+                                <input type="radio" name="release" value="last-week">
+                                <span class="radio-label">Last Week</span>
+                            </label>
+                            <label class="filter-radio">
+                                <input type="radio" name="release" value="last-month">
+                                <span class="radio-label">Last Month</span>
+                            </label>
+                            <label class="filter-radio">
+                                <input type="radio" name="release" value="last-year">
+                                <span class="radio-label">Last Year</span>
+                            </label>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Game Grid Main Content -->
+                <div class="browse-content">
+                    <div class="browse-header">
+                        <h2 class="section-title">Browse Games</h2>
+                        <div class="browse-controls">
+                            <div class="sort-dropdown">
+                                <label for="sort-select">Sort by:</label>
+                                <select id="sort-select" class="sort-select">
+                                    <option value="relevance">Relevance</option>
+                                    <option value="release-date">Release Date</option>
+                                    <option value="name">Name</option>
+                                    <option value="price-asc">Price: Low to High</option>
+                                    <option value="price-desc">Price: High to Low</option>
+                                    <option value="reviews">User Reviews</option>
+                                </select>
+                            </div>
+                            <div class="view-controls">
+                                <button class="view-btn active" data-view="grid">Grid</button>
+                                <button class="view-btn" data-view="list">List</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Games Grid -->
+                    <div class="game-grid">
+                        <!-- Game Card 1 -->
+                        <div class="game-card">
+                            <div class="game-card-image">
+                                <img src="../assets/images/placeholder-game1.jpg" alt="Game title">
+                            </div>
+                            <div class="game-card-content">
+                                <h3 class="game-title">Elden Ring</h3>
+                                <div class="game-tags">
+                                    <span class="tag">RPG</span>
+                                    <span class="tag">Open World</span>
+                                </div>
+                                <div class="game-price">
+                                    <span class="price">$59.99</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Game Card 2 -->
+                        <div class="game-card">
+                            <div class="game-card-image">
+                                <img src="../assets/images/placeholder-game2.jpg" alt="Game title">
+                            </div>
+                            <div class="game-card-content">
+                                <h3 class="game-title">God of War</h3>
+                                <div class="game-tags">
+                                    <span class="tag">Action</span>
+                                    <span class="tag">Adventure</span>
+                                </div>
+                                <div class="game-price">
+                                    <span class="price">$49.99</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Game Card 3 -->
+                        <div class="game-card">
+                            <div class="game-card-image">
+                                <img src="../assets/images/placeholder-game3.jpg" alt="Game title">
+                            </div>
+                            <div class="game-card-content">
+                                <h3 class="game-title">Horizon Forbidden West</h3>
+                                <div class="game-tags">
+                                    <span class="tag">Action</span>
+                                    <span class="tag">RPG</span>
+                                </div>
+                                <div class="game-price">
+                                    <span class="price">$54.99</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Game Card 4 -->
+                        <div class="game-card">
+                            <div class="game-card-image">
+                                <img src="../assets/images/placeholder-game4.jpg" alt="Game title">
+                            </div>
+                            <div class="game-card-content">
+                                <h3 class="game-title">Stardew Valley</h3>
+                                <div class="game-tags">
+                                    <span class="tag">Simulation</span>
+                                    <span class="tag">RPG</span>
+                                </div>
+                                <div class="game-price">
+                                    <span class="price">$14.99</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Game Card 5 -->
+                        <div class="game-card sale">
+                            <div class="game-card-image">
+                                <img src="../assets/images/placeholder-game5.jpg" alt="Game title">
+                                <div class="discount-badge">-50%</div>
+                            </div>
+                            <div class="game-card-content">
+                                <h3 class="game-title">Red Dead Redemption 2</h3>
+                                <div class="game-tags">
+                                    <span class="tag">Action</span>
+                                    <span class="tag">Open World</span>
+                                </div>
+                                <div class="game-price">
+                                    <span class="original-price">$59.99</span>
+                                    <span class="sale-price">$29.99</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Game Card 6 -->
+                        <div class="game-card sale">
+                            <div class="game-card-image">
+                                <img src="../assets/images/placeholder-game6.jpg" alt="Game title">
+                                <div class="discount-badge">-75%</div>
+                            </div>
+                            <div class="game-card-content">
+                                <h3 class="game-title">The Witcher 3</h3>
+                                <div class="game-tags">
+                                    <span class="tag">RPG</span>
+                                    <span class="tag">Open World</span>
+                                </div>
+                                <div class="game-price">
+                                    <span class="original-price">$39.99</span>
+                                    <span class="sale-price">$9.99</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Game Card 7 -->
+                        <div class="game-card new">
+                            <div class="game-card-image">
+                                <img src="../assets/images/placeholder-game7.jpg" alt="Game title">
+                                <div class="new-badge">New</div>
+                            </div>
+                            <div class="game-card-content">
+                                <h3 class="game-title">Baldur's Gate 3</h3>
+                                <div class="game-tags">
+                                    <span class="tag">RPG</span>
+                                    <span class="tag">Fantasy</span>
+                                </div>
+                                <div class="game-price">
+                                    <span class="price">$59.99</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Game Card 8 -->
+                        <div class="game-card new">
+                            <div class="game-card-image">
+                                <img src="../assets/images/placeholder-game8.jpg" alt="Game title">
+                                <div class="new-badge">New</div>
+                            </div>
+                            <div class="game-card-content">
+                                <h3 class="game-title">Final Fantasy XVI</h3>
+                                <div class="game-tags">
+                                    <span class="tag">RPG</span>
+                                    <span class="tag">Action</span>
+                                </div>
+                                <div class="game-price">
+                                    <span class="price">$69.99</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="pagination">
+                        <button class="pagination-btn prev" disabled>&laquo; Previous</button>
+                        <div class="pagination-pages">
+                            <a href="#" class="pagination-page active">1</a>
+                            <a href="#" class="pagination-page">2</a>
+                            <a href="#" class="pagination-page">3</a>
+                            <span class="pagination-ellipsis">...</span>
+                            <a href="#" class="pagination-page">10</a>
+                        </div>
+                        <button class="pagination-btn next">Next &raquo;</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h4>About GameHub</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="press.html">Press</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Help</h4>
+                    <ul>
+                        <li><a href="support.html">Support</a></li>
+                        <li><a href="refunds.html">Refunds</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>News</h4>
+                    <ul>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="updates.html">Game Updates</a></li>
+                        <li><a href="events.html">Events</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="legal.html">Legal Information</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="social-links">
+                    <a href="#" class="social-icon">Facebook</a>
+                    <a href="#" class="social-icon">Twitter</a>
+                    <a href="#" class="social-icon">Instagram</a>
+                    <a href="#" class="social-icon">Discord</a>
+                </div>
+                <p class="copyright">&copy; 2025 GameHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

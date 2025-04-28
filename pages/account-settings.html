@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Settings - GameHub</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html">
+                    <h1>Game<span>Hub</span></h1>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html">Store</a></li>
+                    <li><a href="library.html">Library</a></li>
+                    <li><a href="community.html">Community</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search games...">
+                    <button type="button" class="search-btn">
+                        <span class="sr-only">Search</span>
+                    </button>
+                </div>
+                <a href="cart.html" class="cart-icon">
+                    <span class="sr-only">Cart</span>
+                    <span class="cart-count">0</span>
+                </a>
+                <div class="user-dropdown">
+                    <div class="user-avatar">
+                        <img src="../assets/images/avatar-default.jpg" alt="User avatar">
+                        <span class="user-name">GamerX</span>
+                    </div>
+                    <div class="dropdown-menu">
+                        <a href="profile.html">View Profile</a>
+                        <a href="account-settings.html" class="active">Account Settings</a>
+                        <a href="wishlist.html">Wishlist</a>
+                        <a href="#" class="logout-btn">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="account-page">
+        <div class="container">
+            <div class="account-header">
+                <h1>Account Settings</h1>
+                <p>Manage your account settings and preferences</p>
+            </div>
+
+            <div class="account-layout">
+                <!-- Sidebar Navigation -->
+                <div class="account-sidebar">
+                    <nav class="account-nav">
+                        <ul>
+                            <li><a href="#profile" class="active" data-tab="profile">Profile</a></li>
+                            <li><a href="#security" data-tab="security">Security</a></li>
+                            <li><a href="#preferences" data-tab="preferences">Preferences</a></li>
+                            <li><a href="#payment" data-tab="payment">Payment Methods</a></li>
+                            <li><a href="#privacy" data-tab="privacy">Privacy</a></li>
+                            <li><a href="#notifications" data-tab="notifications">Notifications</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Main Content Area -->
+                <div class="account-content">
+                    <!-- Profile Section -->
+                    <section id="profile" class="settings-panel active">
+                        <div class="panel-header">
+                            <h2>Profile Information</h2>
+                            <p>Manage how your profile appears to other users</p>
+                        </div>
+
+                        <form class="settings-form">
+                            <div class="avatar-uploader">
+                                <div class="current-avatar">
+                                    <img src="../assets/images/avatar-default.jpg" alt="Current avatar" id="avatar-preview">
+                                </div>
+                                <div class="avatar-controls">
+                                    <input type="file" id="avatar-upload" class="hidden">
+                                    <label for="avatar-upload" class="btn btn-secondary">Upload New Avatar</label>
+                                    <button type="button" class="btn btn-text">Remove</button>
+                                </div>
+                                <p class="avatar-hint">Maximum file size: 2MB. Supported formats: JPG, PNG, GIF</p>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="display-name">Display Name</label>
+                                    <input type="text" id="display-name" name="display-name" value="GamerX">
+                                </div>
+                                <div class="form-group">
+                                    <label for="username">Username</label>
+                                    <input type="text" id="username" name="username" value="gamerx123" disabled>
+                                    <small class="input-hint">Username cannot be changed</small>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="bio">About Me</label>
+                                <textarea id="bio" name="bio" rows="4" placeholder="Tell other gamers about yourself...">Passionate gamer since 2010. I love RPGs, strategy games, and occasionally racing games. Always looking for new gaming buddies!</textarea>
+                                <small class="input-hint">Maximum 250 characters</small>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="country">Country</label>
+                                    <select id="country" name="country">
+                                        <option value="us" selected>United States</option>
+                                        <option value="ca">Canada</option>
+                                        <option value="uk">United Kingdom</option>
+                                        <option value="au">Australia</option>
+                                        <option value="jp">Japan</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="language">Primary Language</label>
+                                    <select id="language" name="language">
+                                        <option value="en" selected>English</option>
+                                        <option value="es">Spanish</option>
+                                        <option value="fr">French</option>
+                                        <option value="de">German</option>
+                                        <option value="ja">Japanese</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                                <button type="reset" class="btn btn-secondary">Cancel</button>
+                            </div>
+                        </form>
+                    </section>
+
+                    <!-- Security Section -->
+                    <section id="security" class="settings-panel">
+                        <div class="panel-header">
+                            <h2>Security Settings</h2>
+                            <p>Manage your password and account security options</p>
+                        </div>
+
+                        <div class="settings-card">
+                            <h3>Change Password</h3>
+                            <form class="settings-form">
+                                <div class="form-group">
+                                    <label for="current-password">Current Password</label>
+                                    <div class="password-input">
+                                        <input type="password" id="current-password" name="current-password" placeholder="Enter your current password" required>
+                                        <button type="button" class="password-toggle">
+                                            <span class="sr-only">Toggle password visibility</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="new-password">New Password</label>
+                                    <div class="password-input">
+                                        <input type="password" id="new-password" name="new-password" placeholder="Enter your new password" required>
+                                        <button type="button" class="password-toggle">
+                                            <span class="sr-only">Toggle password visibility</span>
+                                        </button>
+                                    </div>
+                                    <div class="password-strength">
+                                        <div class="strength-meter">
+                                            <span class="strength-segment"></span>
+                                            <span class="strength-segment"></span>
+                                            <span class="strength-segment"></span>
+                                            <span class="strength-segment"></span>
+                                        </div>
+                                        <span class="strength-text">Password strength: Enter a password</span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="confirm-password">Confirm New Password</label>
+                                    <div class="password-input">
+                                        <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your new password" required>
+                                    </div>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn-primary">Change Password</button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="settings-card">
+                            <h3>Two-Factor Authentication</h3>
+                            <p>Add an extra layer of security to your account by enabling two-factor authentication.</p>
+                            <div class="toggle-control">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" name="two-factor" id="two-factor">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                                <span class="toggle-label">Enable Two-Factor Authentication</span>
+                            </div>
+                            <div class="setting-hint">
+                                When enabled, you'll need to enter a one-time code from your authentication app whenever you sign in.
+                            </div>
+                            <button class="btn btn-secondary" disabled>Set Up Two-Factor Authentication</button>
+                        </div>
+
+                        <div class="settings-card">
+                            <h3>Login History</h3>
+                            <p>Review your recent login activity.</p>
+                            <div class="login-history">
+                                <div class="login-item">
+                                    <div class="login-info">
+                                        <div class="login-device">Windows PC - Chrome Browser</div>
+                                        <div class="login-location">New York, United States</div>
+                                    </div>
+                                    <div class="login-time">
+                                        <div class="login-date">April 28, 2025</div>
+                                        <div class="login-status current">Current Session</div>
+                                    </div>
+                                </div>
+                                <div class="login-item">
+                                    <div class="login-info">
+                                        <div class="login-device">iPhone - Safari Browser</div>
+                                        <div class="login-location">New York, United States</div>
+                                    </div>
+                                    <div class="login-time">
+                                        <div class="login-date">April 26, 2025</div>
+                                        <div class="login-status">Successful</div>
+                                    </div>
+                                </div>
+                                <div class="login-item">
+                                    <div class="login-info">
+                                        <div class="login-device">Android Phone - Chrome Browser</div>
+                                        <div class="login-location">Boston, United States</div>
+                                    </div>
+                                    <div class="login-time">
+                                        <div class="login-date">April 20, 2025</div>
+                                        <div class="login-status">Successful</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn btn-text">View Full Login History</button>
+                        </div>
+                    </section>
+
+                    <!-- Preferences Section -->
+                    <section id="preferences" class="settings-panel">
+                        <div class="panel-header">
+                            <h2>Preferences</h2>
+                            <p>Customize your GameHub experience</p>
+                        </div>
+
+                        <div class="settings-card">
+                            <h3>Display</h3>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>Theme</h4>
+                                    <p>Choose your preferred theme for GameHub</p>
+                                </div>
+                                <div class="setting-control">
+                                    <select id="theme-select" name="theme">
+                                        <option value="dark" selected>Dark Theme</option>
+                                        <option value="light">Light Theme</option>
+                                        <option value="system">System Default</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>Animations</h4>
+                                    <p>Enable or disable UI animations</p>
+                                </div>
+                                <div class="setting-control">
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" name="animations" id="animations" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="settings-card">
+                            <h3>Store Preferences</h3>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>Default Store Language</h4>
+                                    <p>Select the language for store content</p>
+                                </div>
+                                <div class="setting-control">
+                                    <select id="store-language" name="store-language">
+                                        <option value="en" selected>English</option>
+                                        <option value="es">Spanish</option>
+                                        <option value="fr">French</option>
+                                        <option value="de">German</option>
+                                        <option value="ja">Japanese</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>Currency</h4>
+                                    <p>Select your preferred currency for prices</p>
+                                </div>
+                                <div class="setting-control">
+                                    <select id="currency" name="currency">
+                                        <option value="usd" selected>USD ($)</option>
+                                        <option value="eur">EUR (€)</option>
+                                        <option value="gbp">GBP (£)</option>
+                                        <option value="cad">CAD ($)</option>
+                                        <option value="jpy">JPY (¥)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>Content Filtering</h4>
+                                    <p>Control what types of content you see</p>
+                                </div>
+                                <div class="setting-control column">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="mature-content" id="mature-content" checked>
+                                        <span class="checkbox-text">Show Mature Content</span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="violence-content" id="violence-content" checked>
+                                        <span class="checkbox-text">Show Violent Content</span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="adult-content" id="adult-content">
+                                        <span class="checkbox-text">Show Sexual Content</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-actions wide">
+                            <button type="submit" class="btn btn-primary">Save Preferences</button>
+                            <button type="reset" class="btn btn-secondary">Reset to Defaults</button>
+                        </div>
+                    </section>
+
+                    <!-- Payment Methods Section -->
+                    <section id="payment" class="settings-panel">
+                        <div class="panel-header">
+                            <h2>Payment Methods</h2>
+                            <p>Manage your payment methods for purchases</p>
+                        </div>
+
+                        <div class="payment-methods">
+                            <div class="payment-method">
+                                <div class="payment-info">
+                                    <div class="payment-icon credit-card"></div>
+                                    <div class="payment-details">
+                                        <h4>Visa ending in 4567</h4>
+                                        <p>Expires 12/26</p>
+                                    </div>
+                                </div>
+                                <div class="payment-actions">
+                                    <span class="badge primary">Default</span>
+                                    <button class="btn btn-sm btn-text">Edit</button>
+                                    <button class="btn btn-sm btn-text">Remove</button>
+                                </div>
+                            </div>
+
+                            <div class="payment-method">
+                                <div class="payment-info">
+                                    <div class="payment-icon paypal"></div>
+                                    <div class="payment-details">
+                                        <h4>PayPal</h4>
+                                        <p>user@example.com</p>
+                                    </div>
+                                </div>
+                                <div class="payment-actions">
+                                    <button class="btn btn-sm btn-text">Set Default</button>
+                                    <button class="btn btn-sm btn-text">Remove</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary add-payment">Add Payment Method</button>
+                    </section>
+
+                    <!-- Privacy Section -->
+                    <section id="privacy" class="settings-panel">
+                        <div class="panel-header">
+                            <h2>Privacy</h2>
+                            <p>Manage your privacy settings</p>
+                        </div>
+
+                        <div class="settings-card">
+                            <h3>Profile Privacy</h3>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>Profile Visibility</h4>
+                                    <p>Who can see your profile</p>
+                                </div>
+                                <div class="setting-control">
+                                    <select id="profile-visibility" name="profile-visibility">
+                                        <option value="public" selected>Public (Everyone)</option>
+                                        <option value="friends">Friends Only</option>
+                                        <option value="private">Private (Only Me)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>Game Library Visibility</h4>
+                                    <p>Who can see your game collection</p>
+                                </div>
+                                <div class="setting-control">
+                                    <select id="library-visibility" name="library-visibility">
+                                        <option value="public" selected>Public (Everyone)</option>
+                                        <option value="friends">Friends Only</option>
+                                        <option value="private">Private (Only Me)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>Hide Playtime</h4>
+                                    <p>Hide how long you've played each game</p>
+                                </div>
+                                <div class="setting-control">
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" name="hide-playtime" id="hide-playtime">
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="settings-card">
+                            <h3>Data & Personalization</h3>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>Personalized Recommendations</h4>
+                                    <p>Allow GameHub to recommend games based on your activity</p>
+                                </div>
+                                <div class="setting-control">
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" name="recommendations" id="recommendations" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>Activity Data Collection</h4>
+                                    <p>Allow GameHub to collect data about your usage for improvements</p>
+                                </div>
+                                <div class="setting-control">
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" name="data-collection" id="data-collection" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-actions wide">
+                            <button type="submit" class="btn btn-primary">Save Privacy Settings</button>
+                        </div>
+                    </section>
+
+                    <!-- Notifications Section -->
+                    <section id="notifications" class="settings-panel">
+                        <div class="panel-header">
+                            <h2>Notifications</h2>
+                            <p>Manage your notification preferences</p>
+                        </div>
+
+                        <div class="settings-card">
+                            <h3>Email Notifications</h3>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>Special Offers & Promotions</h4>
+                                    <p>Receive emails about sales, discounts, and special promotions</p>
+                                </div>
+                                <div class="setting-control">
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" name="email-offers" id="email-offers" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>Wishlist Notifications</h4>
+                                    <p>Get notified when items on your wishlist are on sale</p>
+                                </div>
+                                <div class="setting-control">
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" name="email-wishlist" id="email-wishlist" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>Friend Activities</h4>
+                                    <p>Receive updates about your friends' activities</p>
+                                </div>
+                                <div class="setting-control">
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" name="email-friends" id="email-friends">
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>Game Updates</h4>
+                                    <p>Receive notifications about updates for games you own</p>
+                                </div>
+                                <div class="setting-control">
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" name="email-updates" id="email-updates" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="settings-card">
+                            <h3>In-App Notifications</h3>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>Friend Requests</h4>
+                                    <p>Show notifications for friend requests</p>
+                                </div>
+                                <div class="setting-control">
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" name="notify-friend-requests" id="notify-friend-requests" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>Messages</h4>
+                                    <p>Show notifications for new messages</p>
+                                </div>
+                                <div class="setting-control">
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" name="notify-messages" id="notify-messages" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>Game Invites</h4>
+                                    <p>Show notifications for game invites</p>
+                                </div>
+                                <div class="setting-control">
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" name="notify-invites" id="notify-invites" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-actions wide">
+                            <button type="submit" class="btn btn-primary">Save Notification Settings</button>
+                            <button type="button" class="btn btn-secondary">Unsubscribe from All</button>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h4>About GameHub</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="press.html">Press</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Help</h4>
+                    <ul>
+                        <li><a href="support.html">Support</a></li>
+                        <li><a href="refunds.html">Refunds</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>News</h4>
+                    <ul>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="updates.html">Game Updates</a></li>
+                        <li><a href="events.html">Events</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="legal.html">Legal Information</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="social-links">
+                    <a href="#" class="social-icon">Facebook</a>
+                    <a href="#" class="social-icon">Twitter</a>
+                    <a href="#" class="social-icon">Instagram</a>
+                    <a href="#" class="social-icon">Discord</a>
+                </div>
+                <p class="copyright">&copy; 2025 GameHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

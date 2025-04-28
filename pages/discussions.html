@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discussion Forums - GameHub</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html">
+                    <h1>Game<span>Hub</span></h1>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html">Store</a></li>
+                    <li><a href="library.html">Library</a></li>
+                    <li><a href="community.html" class="active">Community</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search discussions...">
+                    <button type="button" class="search-btn">
+                        <span class="sr-only">Search</span>
+                    </button>
+                </div>
+                <a href="cart.html" class="cart-icon">
+                    <span class="sr-only">Cart</span>
+                    <span class="cart-count">0</span>
+                </a>
+                <a href="account-settings.html" class="user-dropdown">
+                    <img src="../assets/images/avatar-placeholder.jpg" alt="User avatar" class="avatar-small">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Community Navigation -->
+    <div class="community-nav">
+        <div class="container">
+            <ul class="community-tabs">
+                <li><a href="community.html">Home</a></li>
+                <li><a href="discussions.html" class="active">Discussions</a></li>
+                <li><a href="workshops.html">Workshop</a></li>
+                <li><a href="broadcasts.html">Broadcasts</a></li>
+                <li><a href="screenshots.html">Screenshots</a></li>
+                <li><a href="videos.html">Videos</a></li>
+                <li><a href="guides.html">Guides</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Discussion Forums -->
+    <main class="discussion-forums">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="page-header">
+                <h1>Discussion Forums</h1>
+                <div class="forum-actions">
+                    <button class="btn btn-primary">Start a New Discussion</button>
+                    <div class="forum-controls">
+                        <select class="filter-select">
+                            <option value="recent">Recent Discussions</option>
+                            <option value="popular">Popular Discussions</option>
+                            <option value="my-posts">My Discussions</option>
+                            <option value="subscribed">Subscribed Topics</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Forums Layout -->
+            <div class="forums-layout">
+                <!-- Forums Sidebar -->
+                <aside class="forums-sidebar">
+                    <div class="sidebar-section">
+                        <h3>Categories</h3>
+                        <ul class="forum-categories">
+                            <li><a href="#" class="active">All Forums</a></li>
+                            <li><a href="#">General Discussion</a></li>
+                            <li><a href="#">Game-Specific Forums</a></li>
+                            <li><a href="#">Hardware & Tech Support</a></li>
+                            <li><a href="#">Trading</a></li>
+                            <li><a href="#">Announcements</a></li>
+                            <li><a href="#">Bug Reports</a></li>
+                            <li><a href="#">Suggestions & Feedback</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sidebar-section">
+                        <h3>Your Games</h3>
+                        <ul class="game-forums">
+                            <li>
+                                <a href="#" class="game-forum">
+                                    <img src="../assets/images/game-cover-1.jpg" alt="Cyberpunk 2077" class="game-icon">
+                                    <span class="game-name">Cyberpunk 2077</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="game-forum">
+                                    <img src="../assets/images/game-cover-3.jpg" alt="Stardew Valley" class="game-icon">
+                                    <span class="game-name">Stardew Valley</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="game-forum">
+                                    <img src="../assets/images/game-cover-4.jpg" alt="Elden Ring" class="game-icon">
+                                    <span class="game-name">Elden Ring</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="game-forum">
+                                    <img src="../assets/images/game-cover-5.jpg" alt="Red Dead Redemption 2" class="game-icon">
+                                    <span class="game-name">Red Dead Redemption 2</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="game-forum">
+                                    <img src="../assets/images/game-cover-2.jpg" alt="The Witcher 3" class="game-icon">
+                                    <span class="game-name">The Witcher 3: Wild Hunt</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="view-all">
+                            <a href="#">View All Your Games</a>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-section">
+                        <h3>Popular Forums</h3>
+                        <ul class="popular-forums">
+                            <li>
+                                <a href="#" class="popular-forum">
+                                    <img src="../assets/images/game-cover-7.jpg" alt="God of War" class="game-icon">
+                                    <div class="forum-info">
+                                        <span class="game-name">God of War</span>
+                                        <span class="post-count">3.2K posts today</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="popular-forum">
+                                    <img src="../assets/images/game-cover-8.jpg" alt="Hollow Knight" class="game-icon">
+                                    <div class="forum-info">
+                                        <span class="game-name">Hollow Knight</span>
+                                        <span class="post-count">1.8K posts today</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="popular-forum">
+                                    <img src="../assets/images/game-cover-4.jpg" alt="Elden Ring" class="game-icon">
+                                    <div class="forum-info">
+                                        <span class="game-name">Elden Ring</span>
+                                        <span class="post-count">5.7K posts today</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sidebar-section">
+                        <h3>Forum Stats</h3>
+                        <div class="forum-stats">
+                            <div class="stat-item">
+                                <div class="stat-value">2.3M</div>
+                                <div class="stat-label">Topics</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value">42.7M</div>
+                                <div class="stat-label">Posts</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value">324K</div>
+                                <div class="stat-label">Active Users</div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Forums Content -->
+                <div class="forums-content">
+                    <!-- Featured Discussions -->
+                    <section class="featured-discussions">
+                        <h2 class="section-title">Featured Discussions</h2>
+                        <div class="discussion-items">
+                            <!-- Featured Discussion 1 -->
+                            <div class="discussion-item featured">
+                                <div class="discussion-pinned">
+                                    <span class="pin-icon"></span>
+                                    <span class="pin-text">Pinned</span>
+                                </div>
+                                <div class="discussion-header">
+                                    <div class="discussion-title">
+                                        <h3><a href="discussion-thread.html">Summer Sale 2025 - Official Announcement</a></h3>
+                                    </div>
+                                    <div class="discussion-tags">
+                                        <span class="tag official">Official</span>
+                                        <span class="tag announcement">Announcement</span>
+                                    </div>
+                                </div>
+                                <div class="discussion-meta">
+                                    <div class="discussion-user">
+                                        <img src="../assets/images/admin-avatar.jpg" alt="Admin avatar" class="avatar-small">
+                                        <span class="username admin">GameHub_Admin</span>
+                                    </div>
+                                    <div class="discussion-stats">
+                                        <div class="replies">
+                                            <span class="count">1,243</span>
+                                            <span class="label">Replies</span>
+                                        </div>
+                                        <div class="views">
+                                            <span class="count">52.4K</span>
+                                            <span class="label">Views</span>
+                                        </div>
+                                    </div>
+                                    <div class="discussion-last-post">
+                                        <span class="timestamp">2 hours ago</span>
+                                        <span class="last-poster">by <a href="#">ValueSeeker</a></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Featured Discussion 2 -->
+                            <div class="discussion-item featured">
+                                <div class="discussion-pinned">
+                                    <span class="pin-icon"></span>
+                                    <span class="pin-text">Pinned</span>
+                                </div>
+                                <div class="discussion-header">
+                                    <div class="discussion-title">
+                                        <h3><a href="discussion-thread.html">Community Guidelines - Please Read Before Posting</a></h3>
+                                    </div>
+                                    <div class="discussion-tags">
+                                        <span class="tag official">Official</span>
+                                        <span class="tag rules">Rules</span>
+                                    </div>
+                                </div>
+                                <div class="discussion-meta">
+                                    <div class="discussion-user">
+                                        <img src="../assets/images/admin-avatar.jpg" alt="Admin avatar" class="avatar-small">
+                                        <span class="username admin">GameHub_Admin</span>
+                                    </div>
+                                    <div class="discussion-stats">
+                                        <div class="replies">
+                                            <span class="count">432</span>
+                                            <span class="label">Replies</span>
+                                        </div>
+                                        <div class="views">
+                                            <span class="count">128.7K</span>
+                                            <span class="label">Views</span>
+                                        </div>
+                                    </div>
+                                    <div class="discussion-last-post">
+                                        <span class="timestamp">1 day ago</span>
+                                        <span class="last-poster">by <a href="#">GameHub_Mod</a></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Recent Discussions -->
+                    <section class="recent-discussions">
+                        <h2 class="section-title">Recent Discussions</h2>
+                        <div class="discussion-items">
+                            <!-- Recent Discussion 1 -->
+                            <div class="discussion-item">
+                                <div class="discussion-header">
+                                    <div class="discussion-title">
+                                        <h3><a href="discussion-thread.html">Elden Ring DLC speculation: What we know so far</a></h3>
+                                    </div>
+                                    <div class="discussion-tags">
+                                        <span class="tag game">Elden Ring</span>
+                                        <span class="tag discussion">Discussion</span>
+                                    </div>
+                                </div>
+                                <div class="discussion-meta">
+                                    <div class="discussion-user">
+                                        <img src="../assets/images/avatar-1.jpg" alt="User avatar" class="avatar-small">
+                                        <span class="username">DragonSlayer92</span>
+                                    </div>
+                                    <div class="discussion-stats">
+                                        <div class="replies">
+                                            <span class="count">78</span>
+                                            <span class="label">Replies</span>
+                                        </div>
+                                        <div class="views">
+                                            <span class="count">3.2K</span>
+                                            <span class="label">Views</span>
+                                        </div>
+                                    </div>
+                                    <div class="discussion-last-post">
+                                        <span class="timestamp">15 minutes ago</span>
+                                        <span class="last-poster">by <a href="#">SoulsBorne4Ever</a></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Recent Discussion 2 -->
+                            <div class="discussion-item">
+                                <div class="discussion-header">
+                                    <div class="discussion-title">
+                                        <h3><a href="discussion-thread.html">Best budget gaming PC build for 2025</a></h3>
+                                    </div>
+                                    <div class="discussion-tags">
+                                        <span class="tag hardware">Hardware</span>
+                                        <span class="tag guide">Guide</span>
+                                    </div>
+                                </div>
+                                <div class="discussion-meta">
+                                    <div class="discussion-user">
+                                        <img src="../assets/images/avatar-9.jpg" alt="User avatar" class="avatar-small">
+                                        <span class="username">TechGuru</span>
+                                    </div>
+                                    <div class="discussion-stats">
+                                        <div class="replies">
+                                            <span class="count">42</span>
+                                            <span class="label">Replies</span>
+                                        </div>
+                                        <div class="views">
+                                            <span class="count">1.8K</span>
+                                            <span class="label">Views</span>
+                                        </div>
+                                    </div>
+                                    <div class="discussion-last-post">
+                                        <span class="timestamp">35 minutes ago</span>
+                                        <span class="last-poster">by <a href="#">BudgetGamer</a></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Recent Discussion 3 -->
+                            <div class="discussion-item">
+                                <div class="discussion-header">
+                                    <div class="discussion-title">
+                                        <h3><a href="discussion-thread.html">The Witcher 3 modding guide: Essential mods for 2025</a></h3>
+                                    </div>
+                                    <div class="discussion-tags">
+                                        <span class="tag game">The Witcher 3</span>
+                                        <span class="tag mods">Mods</span>
+                                    </div>
+                                </div>
+                                <div class="discussion-meta">
+                                    <div class="discussion-user">
+                                        <img src="../assets/images/avatar-10.jpg" alt="User avatar" class="avatar-small">
+                                        <span class="username">WitcherFan</span>
+                                    </div>
+                                    <div class="discussion-stats">
+                                        <div class="replies">
+                                            <span class="count">56</span>
+                                            <span class="label">Replies</span>
+                                        </div>
+                                        <div class="views">
+                                            <span class="count">2.4K</span>
+                                            <span class="label">Views</span>
+                                        </div>
+                                    </div>
+                                    <div class="discussion-last-post">
+                                        <span class="timestamp">1 hour ago</span>
+                                        <span class="last-poster">by <a href="#">ModMaster64</a></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Recent Discussion 4 -->
+                            <div class="discussion-item">
+                                <div class="discussion-header">
+                                    <div class="discussion-title">
+                                        <h3><a href="discussion-thread.html">What are your most anticipated games of 2025?</a></h3>
+                                    </div>
+                                    <div class="discussion-tags">
+                                        <span class="tag discussion">Discussion</span>
+                                        <span class="tag poll">Poll</span>
+                                    </div>
+                                </div>
+                                <div class="discussion-meta">
+                                    <div class="discussion-user">
+                                        <img src="../assets/images/avatar-11.jpg" alt="User avatar" class="avatar-small">
+                                        <span class="username">GameJournalist</span>
+                                    </div>
+                                    <div class="discussion-stats">
+                                        <div class="replies">
+                                            <span class="count">124</span>
+                                            <span class="label">Replies</span>
+                                        </div>
+                                        <div class="views">
+                                            <span class="count">5.7K</span>
+                                            <span class="label">Views</span>
+                                        </div>
+                                    </div>
+                                    <div class="discussion-last-post">
+                                        <span class="timestamp">2 hours ago</span>
+                                        <span class="last-poster">by <a href="#">FPSMaster</a></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Recent Discussion 5 -->
+                            <div class="discussion-item">
+                                <div class="discussion-header">
+                                    <div class="discussion-title">
+                                        <h3><a href="discussion-thread.html">Stardew Valley farm layout ideas - Show off your farm!</a></h3>
+                                    </div>
+                                    <div class="discussion-tags">
+                                        <span class="tag game">Stardew Valley</span>
+                                        <span class="tag showcase">Showcase</span>
+                                    </div>
+                                </div>
+                                <div class="discussion-meta">
+                                    <div class="discussion-user">
+                                        <img src="../assets/images/avatar-12.jpg" alt="User avatar" class="avatar-small">
+                                        <span class="username">FarmingSimFan</span>
+                                    </div>
+                                    <div class="discussion-stats">
+                                        <div class="replies">
+                                            <span class="count">87</span>
+                                            <span class="label">Replies</span>
+                                        </div>
+                                        <div class="views">
+                                            <span class="count">3.6K</span>
+                                            <span class="label">Views</span>
+                                        </div>
+                                    </div>
+                                    <div class="discussion-last-post">
+                                        <span class="timestamp">3 hours ago</span>
+                                        <span class="last-poster">by <a href="#">PelicanTown</a></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Recent Discussion 6 -->
+                            <div class="discussion-item">
+                                <div class="discussion-header">
+                                    <div class="discussion-title">
+                                        <h3><a href="discussion-thread.html">Looking for teammates for CS2 tournament</a></h3>
+                                    </div>
+                                    <div class="discussion-tags">
+                                        <span class="tag game">Counter-Strike 2</span>
+                                        <span class="tag lfg">LFG</span>
+                                    </div>
+                                </div>
+                                <div class="discussion-meta">
+                                    <div class="discussion-user">
+                                        <img src="../assets/images/avatar-13.jpg" alt="User avatar" class="avatar-small">
+                                        <span class="username">ESportsPro</span>
+                                    </div>
+                                    <div class="discussion-stats">
+                                        <div class="replies">
+                                            <span class="count">32</span>
+                                            <span class="label">Replies</span>
+                                        </div>
+                                        <div class="views">
+                                            <span class="count">1.4K</span>
+                                            <span class="label">Views</span>
+                                        </div>
+                                    </div>
+                                    <div class="discussion-last-post">
+                                        <span class="timestamp">4 hours ago</span>
+                                        <span class="last-poster">by <a href="#">HeadshotKing</a></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="pagination">
+                            <a href="#" class="pagination-btn prev" disabled>Previous</a>
+                            <div class="pagination-pages">
+                                <a href="#" class="pagination-page active">1</a>
+                                <a href="#" class="pagination-page">2</a>
+                                <a href="#" class="pagination-page">3</a>
+                                <span class="pagination-ellipsis">...</span>
+                                <a href="#" class="pagination-page">48</a>
+                            </div>
+                            <a href="#" class="pagination-btn next">Next</a>
+                        </div>
+                    </section>
+                    
+                    <!-- Hot Topics -->
+                    <section class="hot-topics">
+                        <h2 class="section-title">Hot Topics</h2>
+                        <div class="topic-grid">
+                            <!-- Hot Topic 1 -->
+                            <div class="topic-item">
+                                <div class="topic-info">
+                                    <h3 class="topic-title"><a href="discussion-thread.html">GTA 6 release date rumors</a></h3>
+                                    <div class="topic-meta">
+                                        <div class="topic-stats">
+                                            <span class="stat-value">324</span>
+                                            <span class="stat-label">replies</span>
+                                        </div>
+                                        <div class="topic-author">
+                                            by <a href="#">GTA_Fan_1995</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="hot-indicator">
+                                    <span class="fire-icon"></span>
+                                    <span class="hot-value">+256</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Hot Topic 2 -->
+                            <div class="topic-item">
+                                <div class="topic-info">
+                                    <h3 class="topic-title"><a href="discussion-thread.html">Best roguelike games of all time</a></h3>
+                                    <div class="topic-meta">
+                                        <div class="topic-stats">
+                                            <span class="stat-value">187</span>
+                                            <span class="stat-label">replies</span>
+                                        </div>
+                                        <div class="topic-author">
+                                            by <a href="#">RNGMaster</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="hot-indicator">
+                                    <span class="fire-icon"></span>
+                                    <span class="hot-value">+183</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Hot Topic 3 -->
+                            <div class="topic-item">
+                                <div class="topic-info">
+                                    <h3 class="topic-title"><a href="discussion-thread.html">GPU prices finally dropping!</a></h3>
+                                    <div class="topic-meta">
+                                        <div class="topic-stats">
+                                            <span class="stat-value">163</span>
+                                            <span class="stat-label">replies</span>
+                                        </div>
+                                        <div class="topic-author">
+                                            by <a href="#">HardwareDeal</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="hot-indicator">
+                                    <span class="fire-icon"></span>
+                                    <span class="hot-value">+142</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Hot Topic 4 -->
+                            <div class="topic-item">
+                                <div class="topic-info">
+                                    <h3 class="topic-title"><a href="discussion-thread.html">Hidden gems under $10</a></h3>
+                                    <div class="topic-meta">
+                                        <div class="topic-stats">
+                                            <span class="stat-value">112</span>
+                                            <span class="stat-label">replies</span>
+                                        </div>
+                                        <div class="topic-author">
+                                            by <a href="#">BudgetGamer</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="hot-indicator">
+                                    <span class="fire-icon"></span>
+                                    <span class="hot-value">+97</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h4>About GameHub</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="press.html">Press</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Help</h4>
+                    <ul>
+                        <li><a href="support.html">Support</a></li>
+                        <li><a href="refunds.html">Refunds</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>News</h4>
+                    <ul>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="updates.html">Game Updates</a></li>
+                        <li><a href="events.html">Events</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="legal.html">Legal Information</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="social-links">
+                    <a href="#" class="social-icon">Facebook</a>
+                    <a href="#" class="social-icon">Twitter</a>
+                    <a href="#" class="social-icon">Instagram</a>
+                    <a href="#" class="social-icon">Discord</a>
+                </div>
+                <p class="copyright">&copy; 2025 GameHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
