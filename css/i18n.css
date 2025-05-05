@@ -1,0 +1,249 @@
+/* Language Switcher styles */
+.language-switcher {
+  position: relative;
+  display: inline-block;
+  margin-left: 15px;
+  font-family: var(--font-primary);
+  z-index: 1000;
+}
+
+.current-language {
+  display: flex;
+  align-items: center;
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.current-language:hover {
+  background-color: var(--color-bg-hover);
+}
+
+.language-flag {
+  width: 20px;
+  height: 15px;
+  margin-right: 8px;
+  border-radius: 2px;
+  object-fit: cover;
+}
+
+.dropdown-icon {
+  margin-left: 8px;
+  font-size: 10px;
+  transition: transform 0.2s ease;
+}
+
+.current-language:hover .dropdown-icon {
+  transform: rotate(180deg);
+}
+
+.language-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 180px;
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: none;
+  flex-direction: column;
+  margin-top: 5px;
+  z-index: 1001;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.language-dropdown.show {
+  display: flex;
+}
+
+.language-option {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  border: none;
+  background: none;
+  text-align: left;
+  color: var(--color-text-primary);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.language-option:hover {
+  background-color: var(--color-bg-hover);
+}
+
+.language-option.active {
+  background-color: var(--color-bg-active);
+  font-weight: bold;
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+  .language-dropdown {
+    background-color: var(--color-bg-secondary-dark, #333);
+    border-color: var(--color-border-dark, #444);
+  }
+  
+  .current-language {
+    background-color: var(--color-bg-secondary-dark, #333);
+    border-color: var(--color-border-dark, #444);
+    color: var(--color-text-primary-dark, #fff);
+  }
+  
+  .language-option {
+    color: var(--color-text-primary-dark, #fff);
+  }
+  
+  .language-option:hover {
+    background-color: var(--color-bg-hover-dark, #444);
+  }
+  
+  .language-option.active {
+    background-color: var(--color-bg-active-dark, #555);
+  }
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .current-language span:not(.dropdown-icon) {
+    display: none;
+  }
+  
+  .language-flag {
+    margin-right: 0;
+  }
+  
+  .language-switcher {
+    margin-left: 10px;
+  }
+}
+
+/* RTL Support */
+html[dir="rtl"] body {
+  text-align: right;
+}
+
+html[dir="rtl"] .header-container .logo {
+  margin-right: 0;
+  margin-left: 20px;
+}
+
+html[dir="rtl"] .main-nav ul li {
+  margin-right: 0;
+  margin-left: 20px;
+}
+
+html[dir="rtl"] .search-box .search-button {
+  right: auto;
+  left: 10px;
+}
+
+html[dir="rtl"] .cart-icon {
+  margin-left: 0;
+  margin-right: 20px;
+}
+
+html[dir="rtl"] .cart-count {
+  right: auto;
+  left: -5px;
+}
+
+html[dir="rtl"] .game-info {
+  text-align: right;
+}
+
+html[dir="rtl"] .discount {
+  margin-right: 0;
+  margin-left: 10px;
+}
+
+html[dir="rtl"] .footer-column ul li::before {
+  content: "";
+  margin-right: 0;
+}
+
+html[dir="rtl"] .footer-column ul li::after {
+  content: "←";
+  margin-left: 5px;
+}
+
+html[dir="rtl"] .social-links {
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .category-icon {
+  margin-right: 0;
+  margin-left: 10px;
+}
+
+/* RTL adjustments for language switcher */
+html[dir="rtl"] .language-dropdown {
+  right: auto;
+  left: 0;
+}
+
+html[dir="rtl"] .current-language img {
+  margin-right: 0;
+  margin-left: 8px;
+}
+
+/* Utilities for handling bidirectional content */
+.bidi-override {
+  unicode-bidi: bidi-override;
+}
+
+/* Ensure correct display of numbers in RTL context */
+html[dir="rtl"] .price-amount,
+html[dir="rtl"] .numeric {
+  direction: ltr;
+  display: inline-block;
+}
+
+/* Handle input fields in RTL mode */
+html[dir="rtl"] input[type="text"],
+html[dir="rtl"] input[type="email"],
+html[dir="rtl"] input[type="search"],
+html[dir="rtl"] textarea {
+  text-align: right;
+}
+
+/* Handle form labels in RTL mode */
+html[dir="rtl"] label {
+  margin-right: 0;
+  margin-left: 10px;
+}
+
+/* Handle RTL for game details page */
+html[dir="rtl"] .game-details-header .game-title {
+  text-align: right;
+}
+
+html[dir="rtl"] .game-details-header .game-meta {
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .game-details-tabs .tab {
+  margin-right: 0;
+  margin-left: 2px;
+}
+
+html[dir="rtl"] .system-requirements th {
+  text-align: right;
+}
+
+/* Handle RTL for buttons with icons */
+html[dir="rtl"] .button-with-icon .icon {
+  margin-right: 0;
+  margin-left: 8px;
+}
+
+html[dir="rtl"] .button-with-icon {
+  flex-direction: row-reverse;
+}

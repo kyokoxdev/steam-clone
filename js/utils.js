@@ -1,295 +1,199 @@
 /**
- * GameHub - Utility Functions
- * Reusable utility functions for the GameHub application
+ * Utility functions for the game store website
  */
 
-const Utils = {
-    /**
-     * Debounce function to limit how often a function is called
-     * @param {Function} func - The function to debounce
-     * @param {number} wait - The time to wait in milliseconds
-     * @return {Function} - The debounced function
-     */
-    debounce: function(func, wait) {
-        let timeout;
-        return function() {
-            const context = this;
-            const args = arguments;
-            clearTimeout(timeout);
-            timeout = setTimeout(() => {
-                func.apply(context, args);
-            }, wait);
-        };
-    },
+/**
+ * Format a date as a relative time (e.g., "2 days ago")
+ * or as a date string if it's older than 30 days
+ * @param {number} timestamp - Unix timestamp in milliseconds
+ * @returns {string} - Formatted date string
+ */
+export function formatDate(timestamp) {
+    const now = Date.now();
+    const diff = now - timestamp;
     
-    /**
-     * Throttle function to limit the rate at which a function is executed
-     * @param {Function} func - The function to throttle
-     * @param {number} limit - The time limit in milliseconds
-     * @return {Function} - The throttled function
-     */
-    throttle: function(func, limit) {
-        let inThrottle;
-        return function() {
-            const context = this;
-            const args = arguments;
-            if (!inThrottle) {
-                func.apply(context, args);
-                inThrottle = true;
-                setTimeout(() => inThrottle = false, limit);
-            }
-        };
-    },
+    // Convert milliseconds to seconds, minutes, hours, days
+    const seconds = Math.floor(diff / 1000);
+    const minutes = Math.floor(seconds / 60);
+    const hours = Math.floor(minutes / 60);
+    const days = Math.floor(hours / 24);
     
-    /**
-     * Format a number as currency
-     * @param {number} amount - The amount to format
-     * @param {string} currency - Currency code (default: USD)
-     * @return {string} - Formatted currency string
-     */
-    formatCurrency: function(amount, currency = 'USD') {
-        return new Intl.NumberFormat('en-US', {
-            style: 'currency',
-            currency: currency
-        }).format(amount);
-    },
-    
-    /**
-     * Format a date
-     * @param {string|Date} date - Date to format
-     * @param {string} format - Format type ('short', 'medium', 'long')
-     * @return {string} - Formatted date string
-     */
-    formatDate: function(date, format = 'medium') {
-        const dateObj = typeof date === 'string' ? new Date(date) : date;
-        
-        let options;
-        switch(format) {
-            case 'short':
-                options = { month: 'short', day: 'numeric', year: 'numeric' };
-                break;
-            case 'long':
-                options = { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' };
-                break;
-            case 'time':
-                options = { hour: '2-digit', minute: '2-digit' };
-                break;
-            case 'datetime':
-                options = { month: 'short', day: 'numeric', year: 'numeric', hour: '2-digit', minute: '2-digit' };
-                break;
-            default: // medium
-                options = { month: 'long', day: 'numeric', year: 'numeric' };
-        }
-        
-        return new Intl.DateTimeFormat('en-US', options).format(dateObj);
-    },
-    
-    /**
-     * Calculate time elapsed since a date
-     * @param {string|Date} date - The date to compare against current time
-     * @return {string} - Human-readable time elapsed
-     */
-    timeAgo: function(date) {
-        const dateObj = typeof date === 'string' ? new Date(date) : date;
-        const now = new Date();
-        const seconds = Math.floor((now - dateObj) / 1000);
-        
-        let interval = Math.floor(seconds / 31536000);
-        if (interval >= 1) {
-            return interval === 1 ? '1 year ago' : `${interval} years ago`;
-        }
-        
-        interval = Math.floor(seconds / 2592000);
-        if (interval >= 1) {
-            return interval === 1 ? '1 month ago' : `${interval} months ago`;
-        }
-        
-        interval = Math.floor(seconds / 86400);
-        if (interval >= 1) {
-            return interval === 1 ? '1 day ago' : `${interval} days ago`;
-        }
-        
-        interval = Math.floor(seconds / 3600);
-        if (interval >= 1) {
-            return interval === 1 ? '1 hour ago' : `${interval} hours ago`;
-        }
-        
-        interval = Math.floor(seconds / 60);
-        if (interval >= 1) {
-            return interval === 1 ? '1 minute ago' : `${interval} minutes ago`;
-        }
-        
-        return seconds < 10 ? 'just now' : `${Math.floor(seconds)} seconds ago`;
-    },
-    
-    /**
-     * Truncate a string to a specified length
-     * @param {string} str - The string to truncate
-     * @param {number} maxLength - Maximum length before truncation
-     * @param {string} suffix - String to append after truncation
-     * @return {string} - Truncated string
-     */
-    truncateString: function(str, maxLength, suffix = '...') {
-        if (str.length <= maxLength) {
-            return str;
-        }
-        return str.substring(0, maxLength).trim() + suffix;
-    },
-    
-    /**
-     * Generate a random string (useful for IDs)
-     * @param {number} length - Length of string to generate
-     * @return {string} - Random alphanumeric string
-     */
-    generateRandomString: function(length = 8) {
-        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-        let result = '';
-        for (let i = 0; i < length; i++) {
-            result += chars.charAt(Math.floor(Math.random() * chars.length));
-        }
-        return result;
-    },
-    
-    /**
-     * Validate an email address
-     * @param {string} email - Email to validate
-     * @return {boolean} - Whether the email is valid
-     */
-    isValidEmail: function(email) {
-        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return regex.test(email);
-    },
-    
-    /**
-     * Create a slugified version of a string
-     * @param {string} text - Text to convert to slug
-     * @return {string} - URL-friendly slug
-     */
-    createSlug: function(text) {
-        return text
-            .toLowerCase()
-            .replace(/[^\w\s-]/g, '') // Remove non-word chars
-            .replace(/[\s_-]+/g, '-') // Replace spaces and underscores with hyphens
-            .replace(/^-+|-+$/g, ''); // Remove leading/trailing hyphens
-    },
-    
-    /**
-     * Get URL parameter by name
-     * @param {string} name - Parameter name to retrieve
-     * @return {string|null} - Parameter value or null
-     */
-    getUrlParameter: function(name) {
-        const params = new URLSearchParams(window.location.search);
-        return params.get(name);
-    },
-    
-    /**
-     * Set URL parameter
-     * @param {string} name - Parameter name
-     * @param {string} value - Parameter value
-     * @param {boolean} reload - Whether to reload page
-     */
-    setUrlParameter: function(name, value, reload = false) {
-        const url = new URL(window.location.href);
-        url.searchParams.set(name, value);
-        if (reload) {
-            window.location.href = url.toString();
-        } else {
-            window.history.pushState({}, '', url.toString());
-        }
-    },
-    
-    /**
-     * Copy text to clipboard
-     * @param {string} text - Text to copy
-     * @return {Promise} - Promise resolving to success boolean
-     */
-    copyToClipboard: function(text) {
-        return navigator.clipboard.writeText(text)
-            .then(() => true)
-            .catch(err => {
-                console.error('Failed to copy text: ', err);
-                return false;
-            });
-    },
-    
-    /**
-     * Get a cookie by name
-     * @param {string} name - Cookie name
-     * @return {string|null} - Cookie value or null
-     */
-    getCookie: function(name) {
-        const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
-        return match ? decodeURIComponent(match[2]) : null;
-    },
-    
-    /**
-     * Set a cookie
-     * @param {string} name - Cookie name
-     * @param {string} value - Cookie value
-     * @param {number} days - Days until expiration
-     */
-    setCookie: function(name, value, days = 30) {
-        const date = new Date();
-        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-        const expires = '; expires=' + date.toUTCString();
-        document.cookie = name + '=' + encodeURIComponent(value) + expires + '; path=/; SameSite=Lax';
-    },
-    
-    /**
-     * Delete a cookie
-     * @param {string} name - Cookie name
-     */
-    deleteCookie: function(name) {
-        document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-    },
-    
-    /**
-     * Create DOM element with attributes and children
-     * @param {string} tag - Element tag name
-     * @param {Object} attributes - Element attributes
-     * @param {string|Node|Array} children - Child content
-     * @return {HTMLElement} - Created element
-     */
-    createElement: function(tag, attributes = {}, children = null) {
-        const element = document.createElement(tag);
-        
-        // Set attributes
-        Object.entries(attributes).forEach(([key, value]) => {
-            if (key === 'className') {
-                element.className = value;
-            } else if (key === 'dataset') {
-                Object.entries(value).forEach(([dataKey, dataValue]) => {
-                    element.dataset[dataKey] = dataValue;
-                });
-            } else {
-                element.setAttribute(key, value);
-            }
+    if (seconds < 60) {
+        return 'Just now';
+    } else if (minutes < 60) {
+        return `${minutes} minute${minutes !== 1 ? 's' : ''} ago`;
+    } else if (hours < 24) {
+        return `${hours} hour${hours !== 1 ? 's' : ''} ago`;
+    } else if (days < 30) {
+        return `${days} day${days !== 1 ? 's' : ''} ago`;
+    } else {
+        // Format as date string
+        const date = new Date(timestamp);
+        return date.toLocaleDateString('en-US', { 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric' 
         });
-        
-        // Add children
-        if (children) {
-            if (Array.isArray(children)) {
-                children.forEach(child => {
-                    if (typeof child === 'string') {
-                        element.appendChild(document.createTextNode(child));
-                    } else if (child instanceof Node) {
-                        element.appendChild(child);
-                    }
-                });
-            } else if (typeof children === 'string') {
-                element.textContent = children;
-            } else if (children instanceof Node) {
-                element.appendChild(children);
-            }
-        }
-        
-        return element;
     }
-};
+}
 
-// Make utils available globally for now
-window.Utils = Utils;
+/**
+ * Format a price with currency symbol and decimal places
+ * @param {number} price - Price in cents
+ * @param {string} currency - Currency code (default: 'USD')
+ * @returns {string} - Formatted price
+ */
+export function formatPrice(price, currency = 'USD') {
+    const priceInDollars = price / 100;
+    
+    const formatter = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: currency,
+        minimumFractionDigits: 2
+    });
+    
+    return formatter.format(priceInDollars);
+}
 
-// Export for module usage (future implementation)
-// export default Utils;
+/**
+ * Calculate discount price
+ * @param {number} price - Original price in cents
+ * @param {number} discountPercent - Discount percentage (0-100)
+ * @returns {number} - Discounted price in cents
+ */
+export function calculateDiscountPrice(price, discountPercent) {
+    return Math.floor(price * (1 - discountPercent / 100));
+}
+
+/**
+ * Format file size in human-readable format
+ * @param {number} bytes - Size in bytes
+ * @returns {string} - Formatted size (e.g., "1.5 MB")
+ */
+export function formatFileSize(bytes) {
+    if (bytes === 0) return '0 Bytes';
+    
+    const k = 1024;
+    const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
+    const i = Math.floor(Math.log(bytes) / Math.log(k));
+    
+    return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+}
+
+/**
+ * Generate a random ID
+ * @param {number} length - Length of ID (default: 8)
+ * @returns {string} - Random ID
+ */
+export function generateId(length = 8) {
+    const chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    let id = '';
+    
+    for (let i = 0; i < length; i++) {
+        id += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    
+    return id;
+}
+
+/**
+ * Debounce function to limit how often a function can be called
+ * @param {Function} func - Function to debounce
+ * @param {number} wait - Wait time in milliseconds
+ * @returns {Function} - Debounced function
+ */
+export function debounce(func, wait) {
+    let timeout;
+    
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+/**
+ * Truncate text to a specified length
+ * @param {string} text - Text to truncate
+ * @param {number} length - Maximum length
+ * @returns {string} - Truncated text
+ */
+export function truncateText(text, length) {
+    if (text.length <= length) return text;
+    return text.slice(0, length) + '...';
+}
+
+/**
+ * Check if an element is in viewport
+ * @param {HTMLElement} element - Element to check
+ * @returns {boolean} - Whether element is in viewport
+ */
+export function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+
+/**
+ * Get query parameters from URL
+ * @returns {Object} - Object with query parameters
+ */
+export function getQueryParams() {
+    const params = {};
+    const queryString = window.location.search.substring(1);
+    
+    if (queryString) {
+        const pairs = queryString.split('&');
+        
+        for (let i = 0; i < pairs.length; i++) {
+            const pair = pairs[i].split('=');
+            params[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1] || '');
+        }
+    }
+    
+    return params;
+}
+
+/**
+ * Check if user is logged in
+ * @returns {boolean} - Whether user is logged in
+ */
+export function isUserLoggedIn() {
+    return localStorage.getItem('user_id') !== null;
+}
+
+/**
+ * Get current user ID
+ * @returns {string|null} - User ID or null if not logged in
+ */
+export function getCurrentUserId() {
+    return localStorage.getItem('user_id');
+}
+
+/**
+ * Get user's avatar URL
+ * @param {string} userId - User ID
+ * @returns {string} - Avatar URL
+ */
+export function getUserAvatar(userId) {
+    // In a real implementation, this would fetch from user database
+    // For demo, we'll return a default or random avatar
+    
+    // If no user ID, return default avatar
+    if (!userId) {
+        return '../assets/images/avatars/avatar-default.jpg';
+    }
+    
+    // Generate deterministic avatar number based on user ID
+    const avatarNumber = (userId.charCodeAt(0) % 5) + 1;
+    return `../assets/images/avatars/avatar${avatarNumber}.jpg`;
+}

@@ -1,0 +1,13 @@
+{
+  "name": "steam-clone-image-optimization",
+  "version": "1.0.0",
+  "description": "Image optimization pipeline for Steam Clone website",
+  "main": "optimize.js",
+  "scripts": {
+    "optimize": "node optimize.js"
+  },
+  "dependencies": {
+    "sharp": "^0.32.1",
+    "glob": "^10.2.2"
+  }
+}

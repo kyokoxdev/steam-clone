@@ -112,7 +112,8 @@
                                         
                                         <div class="save-payment-info">
                                             <input type="checkbox" id="save-card">
-                                            <label for="save-card">Save this card for future purchases</label>
+                                            <label for="save-card">Save this card for future purchases <span class="optional-text">(optional)</span></label>
+                                            <p class="data-usage-note">Your card details will only be saved on your device and can be removed at any time from your <a href="account-settings.html">Account Settings</a>.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -252,8 +253,9 @@
                             </div>
                             
                             <div class="save-address">
-                                <input type="checkbox" id="save-address" checked>
-                                <label for="save-address">Save this address for future purchases</label>
+                                <input type="checkbox" id="save-address">
+                                <label for="save-address">Save this address for future purchases <span class="optional-text">(optional)</span></label>
+                                <p class="data-usage-note">Your address information will only be used for processing your orders and can be removed at any time.</p>
                             </div>
                         </div>
                         
@@ -373,7 +375,17 @@
                         <div class="terms-agreement">
                             <div class="agreement-check">
                                 <input type="checkbox" id="agree-terms" required>
-                                <label for="agree-terms">I agree to the <a href="#" class="terms-link">Terms of Sale</a> and acknowledge the <a href="#" class="privacy-link">Privacy Policy</a></label>
+                                <label for="agree-terms">I agree to the <a href="terms.html" target="_blank" class="terms-link">Terms of Sale</a> and acknowledge the <a href="privacy.html" target="_blank" class="privacy-link">Privacy Policy</a></label>
+                            </div>
+                            <!-- Added clear explanation of terms with option to review first -->
+                            <div class="terms-summary">
+                                <p>By checking this box, you understand that:</p>
+                                <ul>
+                                    <li>Your purchase is for digital content that will be added to your library</li>
+                                    <li>You have the right to cancel this order before downloading</li>
+                                    <li>Our refund policy allows returns within 14 days if played less than 2 hours</li>
+                                </ul>
+                                <a href="terms.html" target="_blank" class="btn-text view-full-terms">View full Terms before accepting</a>
                             </div>
                         </div>
                         
@@ -565,7 +577,45 @@
                         </div>
                         
                         <div class="savings-message">
-                            You save $22.50 on this order!
+                            You're receiving $22.50 in discounts
+                        </div>
+                        
+                        <!-- Added transparent breakdown of costs -->
+                        <div class="cost-transparency">
+                            <button class="btn-text cost-breakdown-toggle">
+                                <span class="toggle-text">Show price breakdown</span>
+                                <span class="toggle-icon">+</span>
+                            </button>
+                            <div class="cost-breakdown">
+                                <div class="breakdown-item">
+                                    <span class="item-name">Cyberpunk 2077</span>
+                                    <div class="price-details">
+                                        <div class="original-price">$59.99</div>
+                                        <div class="discount-info">30% off</div>
+                                        <div class="final-price">$41.99</div>
+                                    </div>
+                                </div>
+                                <div class="breakdown-item">
+                                    <span class="item-name">Stardew Valley</span>
+                                    <div class="price-details">
+                                        <div class="original-price">$14.99</div>
+                                        <div class="final-price">$14.99</div>
+                                    </div>
+                                </div>
+                                <div class="breakdown-item">
+                                    <span class="item-name">Elden Ring - Season Pass</span>
+                                    <div class="price-details">
+                                        <div class="original-price">$29.99</div>
+                                        <div class="discount-info">15% off</div>
+                                        <div class="final-price">$25.49</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Added text about cancellations and subscription info -->
+                        <div class="additional-info">
+                            <p class="cancel-info">You can easily cancel your order anytime before it's processed. <a href="refunds.html">View our refund policy</a>.</p>
                         </div>
                     </div>
                     

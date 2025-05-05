@@ -441,6 +441,13 @@
 
                         <div class="settings-card">
                             <h3>Data & Personalization</h3>
+                            
+                            <!-- Added clear explanation of data usage -->
+                            <div class="data-usage-explanation">
+                                <p>We collect certain data to improve your experience. You have full control over what data is collected and how it's used.</p>
+                                <a href="privacy.html#data-collection" class="btn-text">Learn more about our data practices</a>
+                            </div>
+                            
                             <div class="setting-item">
                                 <div class="setting-info">
                                     <h4>Personalized Recommendations</h4>
@@ -448,7 +455,7 @@
                                 </div>
                                 <div class="setting-control">
                                     <label class="toggle-switch">
-                                        <input type="checkbox" name="recommendations" id="recommendations" checked>
+                                        <input type="checkbox" name="recommendations" id="recommendations">
                                         <span class="toggle-slider"></span>
                                     </label>
                                 </div>
@@ -461,9 +468,55 @@
                                 </div>
                                 <div class="setting-control">
                                     <label class="toggle-switch">
-                                        <input type="checkbox" name="data-collection" id="data-collection" checked>
+                                        <input type="checkbox" name="data-collection" id="data-collection">
                                         <span class="toggle-slider"></span>
                                     </label>
+                                </div>
+                            </div>
+                            
+                            <!-- Added granular data permissions -->
+                            <div class="data-permissions">
+                                <h4>Manage Data Permissions</h4>
+                                <div class="data-permission-item">
+                                    <div class="permission-info">
+                                        <span class="permission-name">Game play statistics</span>
+                                        <span class="permission-desc">Time spent, achievements, game progress</span>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" name="data-stats" id="data-stats">
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                                <div class="data-permission-item">
+                                    <div class="permission-info">
+                                        <span class="permission-name">Purchase history</span>
+                                        <span class="permission-desc">Games bought, wishlist items, browsing</span>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" name="data-purchase" id="data-purchase">
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                                <div class="data-permission-item">
+                                    <div class="permission-info">
+                                        <span class="permission-name">Device information</span>
+                                        <span class="permission-desc">System specs, performance data</span>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" name="data-device" id="data-device">
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <!-- Added data export/deletion section -->
+                            <div class="data-management">
+                                <h4>Your Data Rights</h4>
+                                <p>You have the right to access, export, or delete your data at any time.</p>
+                                <div class="data-actions">
+                                    <button class="btn btn-secondary btn-sm">Export My Data</button>
+                                    <button class="btn btn-secondary btn-sm">View My Data</button>
+                                    <button class="btn btn-text">Request Data Deletion</button>
                                 </div>
                             </div>
                         </div>
@@ -478,10 +531,26 @@
                         <div class="panel-header">
                             <h2>Notifications</h2>
                             <p>Manage your notification preferences</p>
+                            
+                            <!-- Added master notification control for easier management -->
+                            <div class="notification-master-control">
+                                <button type="button" class="btn btn-secondary btn-manage-all">Manage All Notifications</button>
+                                <div class="frequency-control">
+                                    <label for="notification-frequency">Email Frequency:</label>
+                                    <select id="notification-frequency" name="notification-frequency">
+                                        <option value="immediate">As they happen</option>
+                                        <option value="daily">Daily digest</option>
+                                        <option value="weekly" selected>Weekly digest</option>
+                                        <option value="none">Do not send</option>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="settings-card">
                             <h3>Email Notifications</h3>
+                            <p class="settings-description">Choose what emails you receive. You can change these settings anytime.</p>
+                            
                             <div class="setting-item">
                                 <div class="setting-info">
                                     <h4>Special Offers & Promotions</h4>
@@ -489,9 +558,14 @@
                                 </div>
                                 <div class="setting-control">
                                     <label class="toggle-switch">
-                                        <input type="checkbox" name="email-offers" id="email-offers" checked>
+                                        <input type="checkbox" name="email-offers" id="email-offers">
                                         <span class="toggle-slider"></span>
                                     </label>
+                                    <select class="notification-frequency" name="email-offers-frequency">
+                                        <option value="weekly" selected>Weekly</option>
+                                        <option value="monthly">Monthly</option>
+                                        <option value="major-sales-only">Major sales only</option>
+                                    </select>
                                 </div>
                             </div>
 
@@ -502,9 +576,14 @@
                                 </div>
                                 <div class="setting-control">
                                     <label class="toggle-switch">
-                                        <input type="checkbox" name="email-wishlist" id="email-wishlist" checked>
+                                        <input type="checkbox" name="email-wishlist" id="email-wishlist">
                                         <span class="toggle-slider"></span>
                                     </label>
+                                    <select class="notification-frequency" name="wishlist-frequency">
+                                        <option value="always">Every sale</option>
+                                        <option value="discount-25" selected>25% off or more</option>
+                                        <option value="discount-50">50% off or more</option>
+                                    </select>
                                 </div>
                             </div>
 
@@ -518,6 +597,10 @@
                                         <input type="checkbox" name="email-friends" id="email-friends">
                                         <span class="toggle-slider"></span>
                                     </label>
+                                    <select class="notification-frequency" name="friends-frequency">
+                                        <option value="daily">Daily digest</option>
+                                        <option value="weekly" selected>Weekly digest</option>
+                                    </select>
                                 </div>
                             </div>
 
@@ -528,15 +611,27 @@
                                 </div>
                                 <div class="setting-control">
                                     <label class="toggle-switch">
-                                        <input type="checkbox" name="email-updates" id="email-updates" checked>
+                                        <input type="checkbox" name="email-updates" id="email-updates">
                                         <span class="toggle-slider"></span>
                                     </label>
+                                    <select class="notification-frequency" name="updates-frequency">
+                                        <option value="all">All updates</option>
+                                        <option value="major" selected>Major updates only</option>
+                                    </select>
                                 </div>
+                            </div>
+                            
+                            <!-- Added data usage explanation -->
+                            <div class="notification-data-usage">
+                                <h4>How we use your email</h4>
+                                <p>We only send emails based on the preferences you select above. We will never share your email address with third parties for marketing purposes. You can unsubscribe from any email using the link at the bottom of the message.</p>
                             </div>
                         </div>
 
                         <div class="settings-card">
                             <h3>In-App Notifications</h3>
+                            <p class="settings-description">Manage notifications that appear within the GameHub application.</p>
+                            
                             <div class="setting-item">
                                 <div class="setting-info">
                                     <h4>Friend Requests</h4>
@@ -575,11 +670,74 @@
                                     </label>
                                 </div>
                             </div>
+                            
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>Silent Hours</h4>
+                                    <p>Mute notifications during specific hours</p>
+                                </div>
+                                <div class="setting-control column">
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" name="silent-hours" id="silent-hours">
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                    <div class="time-range">
+                                        <label for="silent-start">From:</label>
+                                        <input type="time" id="silent-start" name="silent-start" value="22:00">
+                                        <label for="silent-end">To:</label>
+                                        <input type="time" id="silent-end" name="silent-end" value="08:00">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Added notification browser settings section -->
+                        <div class="settings-card">
+                            <h3>Browser Notifications</h3>
+                            <p class="settings-description">Control notifications that appear in your web browser when GameHub is not open.</p>
+                            
+                            <div class="browser-notification-prompt">
+                                <p>Browser notifications allow you to receive important updates even when you're not actively using GameHub.</p>
+                                <button class="btn btn-secondary" id="browser-notification-permission">
+                                    Enable Browser Notifications
+                                </button>
+                            </div>
+                            
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>Wishlist Sale Alerts</h4>
+                                    <p>Get browser alerts when wishlist items go on sale</p>
+                                </div>
+                                <div class="setting-control">
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" name="browser-wishlist" id="browser-wishlist">
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>Friend Online Status</h4>
+                                    <p>Get notified when friends come online</p>
+                                </div>
+                                <div class="setting-control">
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" name="browser-friends" id="browser-friends">
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                    <select class="friend-priority" name="friend-priority">
+                                        <option value="all">All friends</option>
+                                        <option value="favorite" selected>Favorite friends only</option>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="form-actions wide">
                             <button type="submit" class="btn btn-primary">Save Notification Settings</button>
-                            <button type="button" class="btn btn-secondary">Unsubscribe from All</button>
+                            <button type="button" class="btn btn-secondary opt-out-all">Opt Out of All Marketing</button>
+                            <p class="settings-note">You can change your notification preferences at any time. <a href="privacy.html">Learn more about our privacy practices</a>.</p>
                         </div>
                     </section>
                 </div>

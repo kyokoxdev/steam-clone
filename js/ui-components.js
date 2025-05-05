@@ -1211,6 +1211,106 @@ const UIComponents = {
     }
 };
 
+/**
+ * Enhanced Game Card Component
+ * Adds better accessibility features to game cards
+ */
+
+function enhanceGameCardAccessibility() {
+    // Select all game cards
+    const gameCards = document.querySelectorAll('.game-card');
+    
+    gameCards.forEach((card, index) => {
+        // Give each card a unique ID if it doesn't have one
+        if (!card.id) {
+            card.id = `game-card-${index}`;
+        }
+        
+        // Add appropriate role
+        card.setAttribute('role', 'article');
+        
+        // Make the entire card keyboard focusable if it doesn't have a focusable child
+        const hasLinkOrButton = card.querySelector('a, button');
+        if (!hasLinkOrButton) {
+            card.setAttribute('tabindex', '0');
+            
+            // Add keyboard event to trigger click on Enter or Space
+            card.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    // Find the game title and use it for the link, or default to details page
+                    const gameTitle = card.querySelector('.game-title');
+                    if (gameTitle) {
+                        window.location.href = `pages/game-details.html?game=${encodeURIComponent(gameTitle.textContent)}`;
+                    }
+                }
+            });
+        }
+        
+        // Improve image alt text
+        const image = card.querySelector('img');
+        if (image && (!image.alt || image.alt === 'Game title')) {
+            const gameTitle = card.querySelector('.game-title');
+            if (gameTitle) {
+                image.alt = `${gameTitle.textContent} cover art`;
+            }
+        }
+        
+        // Add price information for screen readers
+        const priceElement = card.querySelector('.price, .sale-price');
+        if (priceElement) {
+            const originalPrice = card.querySelector('.original-price');
+            if (originalPrice) {
+                // For sale items, make the discount information clear to screen readers
+                const discountBadge = card.querySelector('.discount-badge');
+                if (discountBadge) {
+                    const srPriceInfo = document.createElement('span');
+                    srPriceInfo.className = 'sr-only';
+                    srPriceInfo.textContent = `Original price ${originalPrice.textContent}, now ${priceElement.textContent}. ${discountBadge.textContent} off.`;
+                    priceElement.parentNode.appendChild(srPriceInfo);
+                }
+            }
+        }
+        
+        // Add New Release info for screen readers
+        const newBadge = card.querySelector('.new-badge');
+        if (newBadge) {
+            const srNewInfo = document.createElement('span');
+            srNewInfo.className = 'sr-only';
+            srNewInfo.textContent = 'New Release';
+            newBadge.parentNode.appendChild(srNewInfo);
+        }
+    });
+}
+
+// Add to GameHub namespace if it exists
+if (typeof GameHub !== 'undefined') {
+    // Add to UI components module if it exists
+    if (GameHub.UI) {
+        GameHub.UI.enhanceGameCardAccessibility = enhanceGameCardAccessibility;
+        
+        // Call during initialization if the UI module has an init function
+        const originalInit = GameHub.UI.init || function() {};
+        GameHub.UI.init = function() {
+            originalInit.apply(this, arguments);
+            enhanceGameCardAccessibility();
+        };
+    } else {
+        // Otherwise add directly to GameHub
+        GameHub.enhanceGameCardAccessibility = enhanceGameCardAccessibility;
+        
+        // Call during initialization
+        const originalInit = GameHub.init || function() {};
+        GameHub.init = function() {
+            originalInit.apply(this, arguments);
+            enhanceGameCardAccessibility();
+        };
+    }
+} else {
+    // If no GameHub object, just call on DOMContentLoaded
+    document.addEventListener('DOMContentLoaded', enhanceGameCardAccessibility);
+}
+
 // Make UIComponents available globally for now
 window.UIComponents = UIComponents;
 

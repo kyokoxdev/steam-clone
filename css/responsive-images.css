@@ -1,0 +1,571 @@
+/**
+ * Responsive Images System - CSS Component
+ * 
+ * This CSS file contains styles to support the responsive image system,
+ * including art direction breakpoints, aspect ratio preservation,
+ * and placeholder styling.
+ */
+
+/* Aspect Ratio Container */
+.aspect-ratio-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+}
+
+/* Common aspect ratios */
+.aspect-16-9 {
+  padding-bottom: 56.25%; /* 9/16 = 0.5625 */
+}
+
+.aspect-4-3 {
+  padding-bottom: 75%; /* 3/4 = 0.75 */
+}
+
+.aspect-1-1 {
+  padding-bottom: 100%; /* Square */
+}
+
+.aspect-game-cover {
+  padding-bottom: 150%; /* Common game cover ratio (2:3) */
+}
+
+.aspect-game-banner {
+  padding-bottom: 42.85%; /* Common banner ratio (7:3) */
+}
+
+.aspect-3-2 {
+  padding-bottom: 66.66%; /* 3:2 Aspect Ratio */
+}
+
+/* Responsive image inside container */
+.aspect-ratio-container img,
+.aspect-ratio-container picture,
+.aspect-ratio-container source {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Contain instead of cover for specific cases */
+.object-contain img {
+  object-fit: contain;
+}
+
+/* Art direction breakpoints for responsive images */
+@media (max-width: 767px) {
+  .art-direction-mobile-only {
+    display: block;
+  }
+  
+  .art-direction-tablet-up,
+  .art-direction-desktop-only {
+    display: none;
+  }
+  
+  /* Mobile-specific image adjustments */
+  .game-gallery .game-main-image {
+    height: auto;
+    max-height: 300px;
+  }
+  
+  .game-card-image {
+    height: 120px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .art-direction-tablet-up {
+    display: block;
+  }
+  
+  .art-direction-mobile-only,
+  .art-direction-desktop-only {
+    display: none;
+  }
+  
+  /* Tablet-specific image adjustments */
+  .game-gallery .game-main-image {
+    height: auto;
+    max-height: 400px;
+  }
+  
+  .game-card-image {
+    height: 160px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .art-direction-desktop-only,
+  .art-direction-tablet-up {
+    display: block;
+  }
+  
+  .art-direction-mobile-only {
+    display: none;
+  }
+  
+  /* Desktop-specific image adjustments */
+  .game-gallery .game-main-image {
+    height: auto;
+    max-height: 500px;
+  }
+  
+  .game-card-image {
+    height: 180px;
+  }
+}
+
+/* Image loading states */
+.img-loading {
+  background-color: #1b2838; /* Steam-like dark blue */
+  position: relative;
+  overflow: hidden;
+}
+
+.img-loading::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -200%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(to right, 
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0.05) 100%);
+  animation: loading-shimmer 2s infinite linear;
+}
+
+@keyframes loading-shimmer {
+  to {
+    transform: translateX(200%);
+  }
+}
+
+.img-loaded {
+  animation: fade-in 0.3s ease-in;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Print styles for responsive images */
+@media print {
+  /* Use higher resolution images for print */
+  img[data-print-src] {
+    content: attr(data-print-src);
+  }
+  
+  /* Hide video thumbnails and interactive elements when printing */
+  .thumbnail.video, 
+  .play-button {
+    display: none !important;
+  }
+}
+
+/* Lazy loading */
+.lazy-load {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.lazy-load.loaded {
+  opacity: 1;
+}
+
+/* Blur-up technique */
+.blur-up {
+  filter: blur(5px);
+  transition: filter 0.3s ease-in-out;
+}
+
+.blur-up.loaded {
+  filter: blur(0);
+}
+
+/* Placeholder styles */
+.image-placeholder {
+  background-color: #1b2838;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.placeholder-icon {
+  width: 40px;
+  height: 40px;
+  opacity: 0.5;
+}
+
+/* Responsive game card images */
+.game-card-image img {
+  transition: transform 0.3s ease;
+}
+
+.game-card:hover .game-card-image img {
+  transform: scale(1.05);
+}
+
+/* Hero image responsive behavior */
+.hero-image {
+  width: 100%;
+  max-height: 400px;
+}
+
+@media (max-width: 768px) {
+  .hero-image {
+    max-height: 250px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-image {
+    max-height: 180px;
+  }
+}
+
+/* ==========================================================================
+   Responsive Images System
+   ========================================================================== */
+
+/* Aspect ratio containers */
+.aspect-ratio-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+}
+
+.aspect-16-9 {
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+}
+
+.aspect-4-3 {
+  padding-bottom: 75%; /* 4:3 Aspect Ratio */
+}
+
+.aspect-1-1 {
+  padding-bottom: 100%; /* Square 1:1 Aspect Ratio */
+}
+
+.aspect-3-2 {
+  padding-bottom: 66.66%; /* 3:2 Aspect Ratio */
+}
+
+.aspect-game-cover {
+  padding-bottom: 133.33%; /* 3:4 Aspect Ratio (typical game cover) */
+}
+
+/* Image fit inside container */
+.aspect-ratio-container img,
+.aspect-ratio-container picture,
+.aspect-ratio-container source {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Contain instead of cover for specific cases */
+.object-contain img {
+  object-fit: contain;
+}
+
+/* Art direction breakpoints */
+@media (max-width: 576px) {
+  .art-direction-mobile {
+    display: block;
+  }
+  .art-direction-tablet,
+  .art-direction-desktop {
+    display: none;
+  }
+  
+  /* Mobile-specific image optimizations */
+  .game-card-image {
+    max-height: 180px;
+  }
+  
+  /* Optimize game detail images for mobile */
+  .game-main-image {
+    max-height: 200px;
+  }
+  
+  .game-thumbnails .thumbnail {
+    width: calc(33.33% - 8px);
+  }
+}
+
+@media (min-width: 577px) and (max-width: 992px) {
+  .art-direction-mobile {
+    display: none;
+  }
+  .art-direction-tablet {
+    display: block;
+  }
+  .art-direction-desktop {
+    display: none;
+  }
+  
+  /* Tablet-specific image optimizations */
+  .game-card-image {
+    max-height: 220px;
+  }
+  
+  /* Optimize game detail images for tablet */
+  .game-main-image {
+    max-height: 300px;
+  }
+  
+  .game-thumbnails .thumbnail {
+    width: calc(25% - 8px);
+  }
+}
+
+@media (min-width: 993px) {
+  .art-direction-mobile,
+  .art-direction-tablet {
+    display: none;
+  }
+  .art-direction-desktop {
+    display: block;
+  }
+  
+  /* Desktop-specific image optimizations */
+  .game-card-image {
+    max-height: 260px;
+  }
+}
+
+/* Resolution switching */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .high-dpi-support {
+    display: block;
+  }
+  .standard-dpi {
+    display: none;
+  }
+}
+
+/* Lazy loading */
+.lazy-load {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.lazy-load.loaded {
+  opacity: 1;
+}
+
+/* Blur-up technique */
+.blur-up {
+  filter: blur(5px);
+  transition: filter 0.3s ease-in-out;
+}
+
+.blur-up.loaded {
+  filter: blur(0);
+}
+
+/* Placeholder styles */
+.image-placeholder {
+  background-color: #1b2838;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.placeholder-icon {
+  width: 40px;
+  height: 40px;
+  opacity: 0.5;
+}
+
+/* Responsive game card images */
+.game-card-image img {
+  transition: transform 0.3s ease;
+}
+
+.game-card:hover .game-card-image img {
+  transform: scale(1.05);
+}
+
+/* Hero image responsive behavior */
+.hero-image {
+  width: 100%;
+  max-height: 500px;
+  overflow: hidden;
+}
+
+@media (max-width: 992px) {
+  .hero-image {
+    max-height: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-image {
+    max-height: 250px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-image {
+    max-height: 180px;
+  }
+}
+
+/* Game gallery in detail page */
+.game-gallery {
+  margin-bottom: 2rem;
+}
+
+.game-main-image {
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.game-thumbnails {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.game-thumbnails .thumbnail {
+  width: calc(20% - 8px);
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.game-thumbnails .thumbnail:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.game-thumbnails .thumbnail.active {
+  border-color: #66c0f4;
+  box-shadow: 0 0 8px rgba(102, 192, 244, 0.6);
+}
+
+.game-thumbnails .thumbnail.video::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 0 10px 16px;
+  border-color: transparent transparent transparent rgba(255, 255, 255, 0.8);
+  z-index: 1;
+}
+
+.game-thumbnails .thumbnail::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: 1;
+}
+
+.game-thumbnails .thumbnail:hover::before {
+  opacity: 1;
+}
+
+.game-thumbnails .thumbnail.active::before {
+  opacity: 0;
+}
+
+.img-loading {
+  filter: blur(10px);
+  transition: filter 0.5s;
+}
+
+.img-loaded {
+  filter: blur(0);
+}
+
+/* Responsive background techniques */
+.responsive-bg {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Connection-aware loading */
+@media (prefers-reduced-data: reduce) {
+  img {
+    image-rendering: optimize-speed;
+  }
+  
+  video {
+    display: none;
+  }
+  
+  .high-quality-bg {
+    background-image: none !important;
+  }
+}
+
+/* WebP support detection */
+.webp .webp-bg {
+  /* WebP-specific backgrounds will be applied when WebP is supported */
+}
+
+.no-webp .webp-bg {
+  /* Fallback backgrounds will be applied when WebP is not supported */
+}
+
+/* Print-optimized images */
+@media print {
+  .aspect-ratio-container {
+    height: auto;
+    padding-bottom: 0;
+  }
+  
+  .aspect-ratio-container img {
+    position: static;
+    max-height: 300px;
+    width: auto;
+    margin: 0 auto;
+  }
+  
+  .game-gallery {
+    page-break-inside: avoid;
+  }
+  
+  .game-thumbnails {
+    display: none;
+  }
+}

@@ -1,0 +1,244 @@
+/**
+ * Print Styles - Optimized for printing game store content
+ * For Steam Clone Website
+ */
+
+/* Print Styles for Steam Clone Website */
+
+@media print {
+  /* Global print reset */
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    filter: none !important;
+    -ms-filter: none !important;
+  }
+
+  /* Global Print Styles */
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 12pt;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Hide non-essential elements */
+  header, footer, nav, .sidebar, .banner, .carousel, 
+  .ads, .social-links, #search-bar, .cart-icon, 
+  .user-controls, .game-actions, .navigation, 
+  .mobile-menu, .cookie-notice, .newsletter-signup,
+  .recommendation-section, video, iframe, button:not(.print-only),
+  .footer, .social-buttons, .user-menu,
+  .carousel-indicators, .modal, .toast-container {
+    display: none !important;
+  }
+
+  /* Main content container */
+  main, .main-content, .content-area, .container {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    float: none !important;
+  }
+
+  /* Links */
+  a {
+    color: black !important;
+    text-decoration: none !important;
+  }
+
+  a[href]:after {
+    content: " (" attr(href) ")";
+    font-size: 90%;
+    color: #555;
+  }
+
+  /* Don't show URL for internal or javascript links */
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
+  }
+
+  /* Game details optimization */
+  .game-details {
+    page-break-inside: avoid;
+    margin-bottom: 2cm;
+    margin-top: 1cm;
+  }
+
+  .game-title {
+    font-size: 18pt;
+    margin: 1cm 0 0.5cm 0;
+    page-break-after: avoid;
+    font-size: 24pt;
+    margin-bottom: 0.5cm;
+  }
+
+  .game-description {
+    margin-bottom: 1cm;
+    margin: 1cm 0;
+  }
+
+  /* Game image handling */
+  .game-header-image {
+    max-width: 100% !important;
+    height: auto !important;
+    margin-bottom: 1cm;
+  }
+
+  .screenshot-gallery img {
+    max-width: 30% !important;
+    height: auto !important;
+    margin-bottom: 0.5cm;
+  }
+
+  img, .game-image {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+  }
+
+  .game-screenshots {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 1cm 0;
+  }
+
+  .game-screenshots img {
+    width: 45%;
+    margin-bottom: 0.5cm;
+  }
+
+  /* System requirements table */
+  .system-requirements {
+    width: 100%;
+    margin-bottom: 1cm;
+    border-collapse: collapse;
+  }
+
+  .system-requirements th,
+  .system-requirements td {
+    border: 1px solid #ddd;
+    padding: 0.5cm;
+    text-align: left;
+  }
+
+  .requirements-table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1cm 0;
+  }
+
+  .requirements-table th,
+  .requirements-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+
+  /* Receipt/invoice styling */
+  .invoice, .receipt, .purchase-receipt {
+    border: 1px solid #000;
+    padding: 1cm;
+    margin-bottom: 1cm;
+    margin: 1cm 0;
+  }
+
+  .invoice-header, .receipt-header {
+    border-bottom: 1pt solid #000;
+    margin-bottom: 0.5cm;
+    padding-bottom: 0.5cm;
+    border-bottom: 1px solid #000;
+  }
+
+  .invoice-items, .receipt-items {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0.5cm 0;
+  }
+
+  .invoice-items th,
+  .invoice-items td,
+  .receipt-items th,
+  .receipt-items td {
+    border: 1pt solid #000;
+    padding: 0.2cm;
+  }
+
+  .receipt-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.3cm;
+  }
+
+  .invoice-total, .receipt-total {
+    text-align: right;
+    font-weight: bold;
+    margin-top: 0.5cm;
+    border-top: 1px solid #000;
+    padding-top: 0.5cm;
+  }
+
+  /* QR codes for digital references */
+  .print-qr-code {
+    display: block !important;
+    max-width: 3cm;
+    height: auto;
+    margin: 1cm auto;
+    width: 2cm;
+    height: 2cm;
+    margin: 0.5cm auto;
+    background-color: #f0f0f0;
+  }
+
+  /* Page breaks */
+  h1, h2, h3, h4, h5, h6, 
+  .game-header, 
+  .section-title {
+    page-break-after: avoid;
+    page-break-inside: avoid;
+  }
+
+  p, h2, h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  img, table, figure {
+    page-break-inside: avoid;
+  }
+
+  /* Page numbers */
+  @page {
+    margin: 2cm;
+  }
+
+  @page :first {
+    margin-top: 3cm;
+  }
+
+  /* Add page numbers */
+  @page {
+    @bottom-right {
+      content: "Page " counter(page) " of " counter(pages);
+    }
+  }
+
+  body:after {
+    content: "Page " counter(page);
+    counter-increment: page;
+    position: fixed;
+    bottom: 1cm;
+    right: 1cm;
+    font-size: 10pt;
+  }
+
+  /* URLs after links */
+  a:link, a:visited {
+    text-decoration: underline;
+  }
+}

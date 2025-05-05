@@ -1,0 +1,20 @@
+{
+  "name": "game-store-website",
+  "version": "1.0.0",
+  "description": "A website clone of the popular Steam gaming platform, featuring game browsing, user accounts, shopping cart functionality, and community features.",
+  "main": "service-worker.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "optimize-images": "node scripts/optimize-images.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "imagemin": "^9.0.1",
+    "imagemin-webp": "^8.0.0",
+    "normalize.css": "^8.0.1",
+    "sharp": "^0.34.1"
+  }
+}

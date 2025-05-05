@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Parental Controls - Manage content restrictions and family settings">
+    <title>Parental Controls - Steam Clone</title>
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/themes.css">
+    <link rel="stylesheet" href="../css/age-verification.css">
+    <link rel="stylesheet" href="../css/parental-controls.css">
+    <link rel="icon" href="../assets/images/favicon.ico">
+    <!-- Load main JavaScript as a module -->
+    <script type="module" src="../js/main.js" defer></script>
+    <script type="module" src="../js/parental-controls.js" defer></script>
+</head>
+<body>
+    <header class="main-header">
+        <!-- Header content will be the same as index.html -->
+        <div class="container">
+            <div class="header-left">
+                <a href="#" class="menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+                <a href="../index.html" class="logo">
+                    <img src="../assets/images/logo.png" alt="Steam Clone Logo">
+                </a>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="../index.html">Store</a></li>
+                        <li><a href="../library.html">Library</a></li>
+                        <li><a href="../community.html">Community</a></li>
+                        <li><a href="../about.html">About</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="header-right">
+                <div class="search-container">
+                    <form action="../search-results.html" method="get">
+                        <input type="text" name="q" placeholder="Search games..." aria-label="Search games">
+                        <button type="submit" aria-label="Search"><i class="icon-search"></i></button>
+                    </form>
+                </div>
+                <div class="user-nav">
+                    <a href="../cart.html" class="cart-icon" aria-label="Shopping cart">
+                        <i class="icon-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                    <a href="../login.html" class="login-btn">Login</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-menu">
+        <!-- Mobile menu content same as index.html -->
+        <nav>
+            <ul>
+                <li><a href="../index.html">Store</a></li>
+                <li><a href="../library.html">Library</a></li>
+                <li><a href="../community.html">Community</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../login.html">Login</a></li>
+                <li><a href="../cart.html">Cart</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <main class="account-page">
+        <div class="container">
+            <div class="account-container">
+                <aside class="account-sidebar">
+                    <h2>Account Settings</h2>
+                    <nav class="account-nav">
+                        <ul>
+                            <li><a href="profile.html">Profile</a></li>
+                            <li><a href="account.html">Account</a></li>
+                            <li><a href="preferences.html">Preferences</a></li>
+                            <li><a href="parental-controls.html" class="active">Parental Controls</a></li>
+                            <li><a href="privacy.html">Privacy Settings</a></li>
+                            <li><a href="payment.html">Payment Methods</a></li>
+                        </ul>
+                    </nav>
+                </aside>
+
+                <div class="account-content">
+                    <header class="account-header">
+                        <h1>Parental Controls</h1>
+                        <p>Manage content restrictions and family view settings</p>
+                    </header>
+
+                    <section class="parental-section">
+                        <h2>Family View Settings</h2>
+                        <p>Family View is designed to help adults keep access to their account and content while allowing children to play age-appropriate games.</p>
+                        
+                        <div class="toggle-card">
+                            <div class="toggle-header">
+                                <h3>Family View</h3>
+                                <div class="toggle-switch">
+                                    <input type="checkbox" id="family-view-toggle" class="toggle-input">
+                                    <label for="family-view-toggle" class="toggle-label"></label>
+                                </div>
+                            </div>
+                            <div class="toggle-content">
+                                <p>When enabled, Family View restricts access to certain features unless a PIN is entered.</p>
+                                <div class="pin-section" id="pin-section" style="display: none;">
+                                    <h4>PIN Protection</h4>
+                                    <form id="pin-form" class="pin-form">
+                                        <div class="form-group">
+                                            <label for="current-pin">Current PIN</label>
+                                            <input type="password" id="current-pin" maxlength="4" pattern="[0-9]{4}" placeholder="Enter 4-digit PIN">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="new-pin">New PIN</label>
+                                            <input type="password" id="new-pin" maxlength="4" pattern="[0-9]{4}" placeholder="Enter 4-digit PIN">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="confirm-pin">Confirm PIN</label>
+                                            <input type="password" id="confirm-pin" maxlength="4" pattern="[0-9]{4}" placeholder="Confirm 4-digit PIN">
+                                        </div>
+                                        <div class="form-actions">
+                                            <button type="submit" class="btn btn-primary">Save PIN</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="parental-section">
+                        <h2>Content Filtering</h2>
+                        <p>Control which types of content are displayed in the store and community.</p>
+                        
+                        <form id="content-filter-form">
+                            <div class="filter-card">
+                                <h3>Store Content Filters</h3>
+                                
+                                <div class="filter-group">
+                                    <h4>Mature Content</h4>
+                                    <div class="checkbox-group">
+                                        <div class="checkbox-item">
+                                            <input type="checkbox" id="filter-adult" class="filter-checkbox">
+                                            <label for="filter-adult">Hide adult or sexual content</label>
+                                        </div>
+                                        <div class="checkbox-item">
+                                            <input type="checkbox" id="filter-violence" class="filter-checkbox">
+                                            <label for="filter-violence">Hide violence or gore</label>
+                                        </div>
+                                        <div class="checkbox-item">
+                                            <input type="checkbox" id="filter-horror" class="filter-checkbox">
+                                            <label for="filter-horror">Hide horror or disturbing content</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="filter-group">
+                                    <h4>Age Rating Filters</h4>
+                                    <div class="select-group">
+                                        <label for="max-rating">Maximum rating allowed:</label>
+                                        <select id="max-rating" class="form-select">
+                                            <option value="all">Show all ratings</option>
+                                            <option value="mature">Mature (17+)</option>
+                                            <option value="teen">Teen (13+)</option>
+                                            <option value="everyone10">Everyone 10+ (10+)</option>
+                                            <option value="everyone">Everyone (All ages)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="filter-card">
+                                <h3>Purchase Restrictions</h3>
+                                
+                                <div class="filter-group">
+                                    <h4>Purchase Controls</h4>
+                                    <div class="checkbox-group">
+                                        <div class="checkbox-item">
+                                            <input type="checkbox" id="require-pin-purchase" class="filter-checkbox">
+                                            <label for="require-pin-purchase">Require PIN for all purchases</label>
+                                        </div>
+                                        <div class="checkbox-item">
+                                            <input type="checkbox" id="restrict-spending" class="filter-checkbox">
+                                            <label for="restrict-spending">Set spending limits</label>
+                                        </div>
+                                    </div>
+                                    
+                                    <div id="spending-limits" class="sub-options" style="display: none;">
+                                        <div class="form-group">
+                                            <label for="spending-amount">Monthly spending limit:</label>
+                                            <div class="input-with-prefix">
+                                                <span class="input-prefix">$</span>
+                                                <input type="number" id="spending-amount" min="0" max="1000" step="5" value="50">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="filter-card">
+                                <h3>Play Time Management</h3>
+                                
+                                <div class="filter-group">
+                                    <h4>Time Limits</h4>
+                                    <div class="checkbox-group">
+                                        <div class="checkbox-item">
+                                            <input type="checkbox" id="enable-time-limits" class="filter-checkbox">
+                                            <label for="enable-time-limits">Enable daily time limits</label>
+                                        </div>
+                                    </div>
+                                    
+                                    <div id="time-limit-options" class="sub-options" style="display: none;">
+                                        <div class="form-group">
+                                            <label for="weekday-hours">Weekday limit (hours):</label>
+                                            <input type="number" id="weekday-hours" min="0" max="24" step="0.5" value="2">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="weekend-hours">Weekend limit (hours):</label>
+                                            <input type="number" id="weekend-hours" min="0" max="24" step="0.5" value="4">
+                                        </div>
+                                        <div class="checkbox-item">
+                                            <input type="checkbox" id="enable-bedtime" class="filter-checkbox">
+                                            <label for="enable-bedtime">Set gaming curfew</label>
+                                        </div>
+                                        <div id="curfew-options" class="sub-options nested" style="display: none;">
+                                            <div class="time-range">
+                                                <div class="form-group">
+                                                    <label for="curfew-start">No gaming after:</label>
+                                                    <input type="time" id="curfew-start" value="21:00">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="curfew-end">Until:</label>
+                                                    <input type="time" id="curfew-end" value="07:00">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">Save Settings</button>
+                                <button type="reset" class="btn btn-secondary">Reset to Defaults</button>
+                            </div>
+                        </form>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <img src="../assets/images/logo.png" alt="Steam Clone Logo">
+                </div>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="icon-facebook"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="icon-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="icon-instagram"></i></a>
+                    <a href="#" aria-label="Discord"><i class="icon-discord"></i></a>
+                </div>
+            </div>
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h3>About</h3>
+                    <ul>
+                        <li><a href="#">About Steam Clone</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Developers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Help</h3>
+                    <ul>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">System Requirements</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Account</h3>
+                    <ul>
+                        <li><a href="#">My Account</a></li>
+                        <li><a href="#">My Library</a></li>
+                        <li><a href="#">Wishlist</a></li>
+                        <li><a href="#">Purchase History</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Steam Clone. All rights reserved. This is a demo project, not affiliated with Valve or Steam.</p>
+                <div class="language-select">
+                    <select aria-label="Select language">
+                        <option value="en">English</option>
+                        <option value="es">Español</option>
+                        <option value="fr">Français</option>
+                        <option value="de">Deutsch</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

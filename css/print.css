@@ -1,0 +1,194 @@
+/* Print Stylesheet for Steam Clone Website */
+
+@media print {
+  /* Global print settings */
+  body {
+    background: white !important;
+    color: black !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+
+  /* Hide navigation and UI elements not needed for print */
+  header, 
+  nav, 
+  footer, 
+  .main-navigation, 
+  .sidebar, 
+  .search-bar, 
+  .social-links, 
+  .game-actions,
+  .community-sidebar,
+  .age-verification,
+  #cookie-notice,
+  button:not(.print-only),
+  .back-to-top,
+  .dropdown-menu,
+  .user-controls,
+  .advertisement,
+  .notification-area {
+    display: none !important;
+  }
+
+  /* Container adjustments */
+  .container, 
+  .content-container,
+  .main-content {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    float: none !important;
+  }
+
+  /* Game detail page specific styles */
+  .game-detail {
+    page-break-before: always;
+  }
+
+  .game-header {
+    border-bottom: 1pt solid #ccc;
+    margin-bottom: 15pt;
+  }
+
+  .game-title {
+    font-size: 18pt;
+    font-weight: bold;
+    margin-bottom: 10pt;
+  }
+
+  .game-info {
+    margin-bottom: 15pt;
+  }
+
+  .game-description {
+    margin-bottom: 15pt;
+  }
+
+  .game-specs {
+    border: 1pt solid #ccc;
+    padding: 10pt;
+    margin-bottom: 15pt;
+  }
+
+  .system-requirements {
+    page-break-inside: avoid;
+  }
+
+  /* Receipt/invoice print styles */
+  .invoice {
+    page-break-before: always;
+    border: 1pt solid #ccc;
+    padding: 15pt;
+  }
+
+  .invoice-header {
+    border-bottom: 1pt solid #ccc;
+    padding-bottom: 10pt;
+    margin-bottom: 15pt;
+  }
+
+  .invoice-id {
+    font-weight: bold;
+  }
+
+  .invoice-date {
+    float: right;
+  }
+
+  .invoice-items {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15pt 0;
+  }
+
+  .invoice-items th,
+  .invoice-items td {
+    padding: 5pt;
+    border-bottom: 1pt solid #eee;
+    text-align: left;
+  }
+
+  .invoice-total {
+    text-align: right;
+    font-weight: bold;
+    margin-top: 15pt;
+    border-top: 1pt solid #ccc;
+    padding-top: 10pt;
+  }
+
+  /* QR code styles */
+  .qr-code {
+    display: block !important;
+    page-break-inside: avoid;
+    margin: 15pt 0;
+    text-align: center;
+  }
+
+  .qr-code img {
+    max-width: 100pt;
+    height: auto;
+  }
+
+  .qr-code-text {
+    font-size: 9pt;
+    margin-top: 5pt;
+    color: #555;
+  }
+
+  /* Link handling */
+  a {
+    color: black !important;
+    text-decoration: none;
+  }
+
+  a::after {
+    content: " (" attr(href) ")";
+    font-size: 90%;
+    color: #333;
+  }
+
+  /* Image handling */
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+  }
+
+  /* Page breaks */
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+    page-break-inside: avoid;
+  }
+
+  p, blockquote, table {
+    page-break-inside: avoid;
+  }
+
+  img {
+    page-break-inside: avoid;
+  }
+
+  /* Added print-only elements */
+  .print-only {
+    display: block !important;
+  }
+
+  .print-logo {
+    max-width: 200pt;
+    margin-bottom: 15pt;
+  }
+
+  .print-header {
+    text-align: center;
+    margin-bottom: 15pt;
+  }
+
+  .print-footer {
+    text-align: center;
+    margin-top: 15pt;
+    font-size: 9pt;
+    color: #666;
+    border-top: 1pt solid #ccc;
+    padding-top: 10pt;
+  }
+}

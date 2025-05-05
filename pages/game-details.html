@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cyberpunk 2077 - GameHub</title>
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/responsive-images.css">
 </head>
 <body>
     <!-- Header Section -->
@@ -67,26 +68,98 @@
             <div class="game-details-layout">
                 <!-- Left Column: Gallery & Info -->
                 <div class="game-details-main">
-                    <!-- Game Gallery -->
+                    <!-- Game Gallery with Responsive Images -->
                     <section class="game-gallery">
-                        <div class="game-main-image">
-                            <img src="../assets/images/cyberpunk-main.jpg" alt="Cyberpunk 2077 main image">
+                        <div class="game-main-image aspect-ratio-container aspect-16-9">
+                            <!-- Using picture element for better art direction control -->
+                            <picture>
+                                <!-- Mobile image -->
+                                <source 
+                                    media="(max-width: 767px)" 
+                                    srcset="../assets/images/cyberpunk-main-mobile.webp" 
+                                    type="image/webp">
+                                <source 
+                                    media="(max-width: 767px)" 
+                                    srcset="../assets/images/cyberpunk-main-mobile.jpg">
+                                
+                                <!-- Tablet image -->
+                                <source 
+                                    media="(max-width: 1199px)" 
+                                    srcset="../assets/images/cyberpunk-main-tablet.webp" 
+                                    type="image/webp">
+                                <source 
+                                    media="(max-width: 1199px)" 
+                                    srcset="../assets/images/cyberpunk-main-tablet.jpg">
+                                
+                                <!-- Desktop image with WebP and fallback -->
+                                <source 
+                                    srcset="../assets/images/cyberpunk-main.webp" 
+                                    type="image/webp">
+                                
+                                <!-- Fallback image -->
+                                <img 
+                                    src="../assets/images/cyberpunk-main.jpg" 
+                                    alt="Cyberpunk 2077 main image"
+                                    data-print-src="../assets/images/cyberpunk-main-print.jpg"
+                                    width="1280" 
+                                    height="720">
+                            </picture>
                         </div>
                         <div class="game-thumbnails">
                             <div class="thumbnail active">
-                                <img src="../assets/images/cyberpunk-thumb1.jpg" alt="Cyberpunk 2077 screenshot 1">
+                                <img 
+                                    data-src="../assets/images/cyberpunk-thumb1.jpg"
+                                    data-src-mobile="../assets/images/cyberpunk-thumb1-mobile.jpg"
+                                    data-src-tablet="../assets/images/cyberpunk-thumb1-tablet.jpg"
+                                    src="../assets/images/cyberpunk-thumb1-small.jpg" 
+                                    alt="Cyberpunk 2077 screenshot 1"
+                                    class="img-loading"
+                                    width="160" 
+                                    height="90">
                             </div>
                             <div class="thumbnail">
-                                <img src="../assets/images/cyberpunk-thumb2.jpg" alt="Cyberpunk 2077 screenshot 2">
+                                <img 
+                                    data-src="../assets/images/cyberpunk-thumb2.jpg"
+                                    data-src-mobile="../assets/images/cyberpunk-thumb2-mobile.jpg"
+                                    data-src-tablet="../assets/images/cyberpunk-thumb2-tablet.jpg"
+                                    src="../assets/images/cyberpunk-thumb2-small.jpg"
+                                    alt="Cyberpunk 2077 screenshot 2"
+                                    class="img-loading"
+                                    width="160" 
+                                    height="90">
                             </div>
                             <div class="thumbnail">
-                                <img src="../assets/images/cyberpunk-thumb3.jpg" alt="Cyberpunk 2077 screenshot 3">
+                                <img 
+                                    data-src="../assets/images/cyberpunk-thumb3.jpg"
+                                    data-src-mobile="../assets/images/cyberpunk-thumb3-mobile.jpg"
+                                    data-src-tablet="../assets/images/cyberpunk-thumb3-tablet.jpg"
+                                    src="../assets/images/cyberpunk-thumb3-small.jpg"
+                                    alt="Cyberpunk 2077 screenshot 3"
+                                    class="img-loading"
+                                    width="160" 
+                                    height="90">
                             </div>
                             <div class="thumbnail">
-                                <img src="../assets/images/cyberpunk-thumb4.jpg" alt="Cyberpunk 2077 screenshot 4">
+                                <img 
+                                    data-src="../assets/images/cyberpunk-thumb4.jpg"
+                                    data-src-mobile="../assets/images/cyberpunk-thumb4-mobile.jpg"
+                                    data-src-tablet="../assets/images/cyberpunk-thumb4-tablet.jpg"
+                                    src="../assets/images/cyberpunk-thumb4-small.jpg"
+                                    alt="Cyberpunk 2077 screenshot 4"
+                                    class="img-loading"
+                                    width="160" 
+                                    height="90">
                             </div>
                             <div class="thumbnail video">
-                                <img src="../assets/images/cyberpunk-video.jpg" alt="Cyberpunk 2077 trailer">
+                                <img 
+                                    data-src="../assets/images/cyberpunk-video.jpg"
+                                    data-src-mobile="../assets/images/cyberpunk-video-mobile.jpg"
+                                    data-src-tablet="../assets/images/cyberpunk-video-tablet.jpg"
+                                    src="../assets/images/cyberpunk-video-small.jpg"
+                                    alt="Cyberpunk 2077 trailer"
+                                    class="img-loading"
+                                    width="160" 
+                                    height="90">
                                 <div class="play-button">
                                     <span class="sr-only">Play video</span>
                                 </div>
@@ -94,194 +167,541 @@
                         </div>
                     </section>
 
-                    <!-- Game Description -->
-                    <section class="game-description">
-                        <h2>About This Game</h2>
-                        <div class="description-content">
-                            <p>Cyberpunk 2077 is an open-world, action-adventure RPG set in the megalopolis of Night City, where you play as a cyberpunk mercenary wrapped up in a do-or-die fight for survival. Improved and featuring all-new free additional content, customize your character and playstyle as you take on jobs, build a reputation, and unlock upgrades. The relationships you forge and the choices you make will shape the story and the world around you. Legends are made here. What will yours be?</p>
-                            
-                            <p>CREATE YOUR OWN CYBERPUNK</p>
-                            <p>Create a character in your own style, complete with a background to flesh them out, and climb the ladder of Night City. Choose your life path to approach different situations differently, acquire cyberware to enhance your abilities, and find new weapons to take out your enemies. The choices you make define who you are in a city that is desperate to turn you into a nobody.</p>
-
-                            <p>EXPLORE THE CITY OF THE FUTURE</p>
-                            <p>Night City is a neon-lit metropolis full of unforgettable characters, automated vehicles, and peculiar robots. A place where trust is hard to come by and violence lurks around every corner. Discover the city's unique districts, each with their own identity and populace. Immerse yourself in a huge variety of activities, quests, and mini-games that combine to create an adventure like no other.</p>
-
-                            <p>BUILD YOUR LEGEND</p>
-                            <p>Go on daring adventures and build relationships with unforgettable characters whose fates are shaped by the choices you make. Become a mercenary, cyberpunk samurai, netrunner, techie, or nomad, steal cyber implants, experience "braindances," slice through enemies with your mantis blades, drive recklessly, or hack enemies and technology alike—or combine these approaches to forge your own path.</p>
-                        </div>
-                    </section>
-
-                    <!-- System Requirements -->
-                    <section class="system-requirements">
-                        <h2>System Requirements</h2>
-                        <div class="requirements-tabs">
-                            <button class="req-tab active" data-tab="minimum">Minimum</button>
-                            <button class="req-tab" data-tab="recommended">Recommended</button>
-                        </div>
-                        <div class="requirements-content">
-                            <div class="req-panel active" id="minimum">
-                                <table class="req-table">
-                                    <tr>
-                                        <td>OS</td>
-                                        <td>Windows 10 (64-bit)</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Processor</td>
-                                        <td>Intel Core i5-3570K or AMD FX-8310</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Memory</td>
-                                        <td>8 GB RAM</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Graphics</td>
-                                        <td>NVIDIA GeForce GTX 970 or AMD Radeon RX 470</td>
-                                    </tr>
-                                    <tr>
-                                        <td>DirectX</td>
-                                        <td>Version 12</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Storage</td>
-                                        <td>70 GB available space (SSD recommended)</td>
-                                    </tr>
-                                </table>
-                            </div>
-                            <div class="req-panel" id="recommended">
-                                <table class="req-table">
-                                    <tr>
-                                        <td>OS</td>
-                                        <td>Windows 10 (64-bit)</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Processor</td>
-                                        <td>Intel Core i7-4790 or AMD Ryzen 3 3200G</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Memory</td>
-                                        <td>12 GB RAM</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Graphics</td>
-                                        <td>NVIDIA GeForce GTX 1060 6GB or AMD Radeon RX 590</td>
-                                    </tr>
-                                    <tr>
-                                        <td>DirectX</td>
-                                        <td>Version 12</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Storage</td>
-                                        <td>70 GB available space (SSD required)</td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- Reviews Section -->
-                    <section class="game-reviews">
-                        <h2>User Reviews</h2>
-                        <div class="review-summary">
-                            <div class="review-score">
-                                <div class="score">82%</div>
-                                <div class="rating">Very Positive</div>
-                                <div class="review-count">Based on 428,705 reviews</div>
-                            </div>
-                            <div class="review-bars">
-                                <div class="review-bar">
-                                    <div class="bar-label">Recent Reviews</div>
-                                    <div class="bar-container">
-                                        <div class="bar-fill positive" style="width: 89%"></div>
-                                    </div>
-                                    <div class="bar-value">89%</div>
-                                </div>
-                                <div class="review-bar">
-                                    <div class="bar-label">All Reviews</div>
-                                    <div class="bar-container">
-                                        <div class="bar-fill positive" style="width: 82%"></div>
-                                    </div>
-                                    <div class="bar-value">82%</div>
-                                </div>
-                            </div>
+                    <!-- Tabbed Game Details Interface -->
+                    <section class="game-details-tabs">
+                        <div class="tabs-navigation">
+                            <button class="tab-button active" data-tab="about">About</button>
+                            <button class="tab-button" data-tab="system-requirements">System Requirements</button>
+                            <button class="tab-button" data-tab="reviews">Reviews</button>
+                            <button class="tab-button" data-tab="related">Related Content</button>
                         </div>
                         
-                        <div class="review-filters">
-                            <button class="review-filter active">All</button>
-                            <button class="review-filter">Positive</button>
-                            <button class="review-filter">Negative</button>
-                        </div>
+                        <div class="tabs-content">
+                            <!-- About Tab -->
+                            <div class="tab-panel active" id="about-tab">
+                                <div class="game-description">
+                                    <h2>About This Game</h2>
+                                    <div class="description-content">
+                                        <p>Cyberpunk 2077 is an open-world, action-adventure RPG set in the megalopolis of Night City, where you play as a cyberpunk mercenary wrapped up in a do-or-die fight for survival. Improved and featuring all-new free additional content, customize your character and playstyle as you take on jobs, build a reputation, and unlock upgrades. The relationships you forge and the choices you make will shape the story and the world around you. Legends are made here. What will yours be?</p>
+                                        
+                                        <p>CREATE YOUR OWN CYBERPUNK</p>
+                                        <p>Create a character in your own style, complete with a background to flesh them out, and climb the ladder of Night City. Choose your life path to approach different situations differently, acquire cyberware to enhance your abilities, and find new weapons to take out your enemies. The choices you make define who you are in a city that is desperate to turn you into a nobody.</p>
 
-                        <div class="review-list">
-                            <!-- Review 1 -->
-                            <div class="review-item">
-                                <div class="review-header">
-                                    <div class="reviewer">
-                                        <img src="../assets/images/avatar1.jpg" alt="Avatar" class="avatar">
-                                        <div class="reviewer-info">
-                                            <div class="reviewer-name">CyberFan2077</div>
-                                            <div class="review-ownership">
-                                                <span class="owned">Product Purchased</span>
-                                            </div>
-                                        </div>
+                                        <p>EXPLORE THE CITY OF THE FUTURE</p>
+                                        <p>Night City is a neon-lit metropolis full of unforgettable characters, automated vehicles, and peculiar robots. A place where trust is hard to come by and violence lurks around every corner. Discover the city's unique districts, each with their own identity and populace. Immerse yourself in a huge variety of activities, quests, and mini-games that combine to create an adventure like no other.</p>
+
+                                        <p>BUILD YOUR LEGEND</p>
+                                        <p>Go on daring adventures and build relationships with unforgettable characters whose fates are shaped by the choices you make. Become a mercenary, cyberpunk samurai, netrunner, techie, or nomad, steal cyber implants, experience "braindances," slice through enemies with your mantis blades, drive recklessly, or hack enemies and technology alike—or combine these approaches to forge your own path.</p>
                                     </div>
-                                    <div class="review-rating positive">
-                                        <span class="sr-only">Positive review</span>
-                                        Recommended
-                                    </div>
-                                </div>
-                                <div class="review-content">
-                                    <div class="review-hours">218.3 hrs on record</div>
-                                    <div class="review-text">
-                                        <p>After the initial bugs were fixed, this is absolutely one of the best RPGs I've ever played. The story is deeply engaging, the characters are well developed, and Night City feels truly alive. The different endings based on your choices make the replay value high. Definitely worth the money.</p>
-                                    </div>
-                                    <div class="review-date">Posted: March 25, 2025</div>
-                                </div>
-                                <div class="review-footer">
-                                    <div class="review-helpful">
-                                        <span>Was this review helpful?</span>
-                                        <button class="helpful-btn">Yes</button>
-                                        <button class="helpful-btn">No</button>
-                                        <button class="helpful-btn">Funny</button>
+                                    
+                                    <!-- Key Features Section -->
+                                    <div class="key-features">
+                                        <h3>Key Features</h3>
+                                        <ul class="features-list">
+                                            <li>
+                                                <div class="feature-icon"><img src="../assets/icons/feature-world.svg" alt=""></div>
+                                                <div class="feature-text">
+                                                    <h4>Open World</h4>
+                                                    <p>Explore the vast, detailed city of Night City with its distinct districts and dynamic day/night cycle.</p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="feature-icon"><img src="../assets/icons/feature-story.svg" alt=""></div>
+                                                <div class="feature-text">
+                                                    <h4>Branching Storyline</h4>
+                                                    <p>Make choices that significantly impact the story with multiple possible endings.</p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="feature-icon"><img src="../assets/icons/feature-character.svg" alt=""></div>
+                                                <div class="feature-text">
+                                                    <h4>Character Customization</h4>
+                                                    <p>Create and customize your character with extensive options for appearance, skills, and abilities.</p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="feature-icon"><img src="../assets/icons/feature-combat.svg" alt=""></div>
+                                                <div class="feature-text">
+                                                    <h4>Dynamic Combat</h4>
+                                                    <p>Engage in fast-paced combat with a variety of weapons and cyberware abilities.</p>
+                                                </div>
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
-
-                            <!-- Review 2 -->
-                            <div class="review-item">
-                                <div class="review-header">
-                                    <div class="reviewer">
-                                        <img src="../assets/images/avatar2.jpg" alt="Avatar" class="avatar">
-                                        <div class="reviewer-info">
-                                            <div class="reviewer-name">NightCityRider</div>
-                                            <div class="review-ownership">
-                                                <span class="owned">Product Purchased</span>
+                            
+                            <!-- System Requirements Tab -->
+                            <div class="tab-panel" id="system-requirements-tab">
+                                <h2>System Requirements</h2>
+                                <div class="requirements-tabs">
+                                    <button class="req-tab active" data-tab="minimum">Minimum</button>
+                                    <button class="req-tab" data-tab="recommended">Recommended</button>
+                                </div>
+                                <div class="requirements-content">
+                                    <div class="req-panel active" id="minimum">
+                                        <table class="req-table">
+                                            <tr>
+                                                <td>OS</td>
+                                                <td>Windows 10 (64-bit)</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Processor</td>
+                                                <td>Intel Core i5-3570K or AMD FX-8310</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Memory</td>
+                                                <td>8 GB RAM</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Graphics</td>
+                                                <td>NVIDIA GeForce GTX 970 or AMD Radeon RX 470</td>
+                                            </tr>
+                                            <tr>
+                                                <td>DirectX</td>
+                                                <td>Version 12</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Storage</td>
+                                                <td>70 GB available space (SSD recommended)</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div class="req-panel" id="recommended">
+                                        <table class="req-table">
+                                            <tr>
+                                                <td>OS</td>
+                                                <td>Windows 10 (64-bit)</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Processor</td>
+                                                <td>Intel Core i7-4790 or AMD Ryzen 3 3200G</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Memory</td>
+                                                <td>12 GB RAM</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Graphics</td>
+                                                <td>NVIDIA GeForce GTX 1060 6GB or AMD Radeon RX 590</td>
+                                            </tr>
+                                            <tr>
+                                                <td>DirectX</td>
+                                                <td>Version 12</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Storage</td>
+                                                <td>70 GB available space (SSD required)</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                
+                                <!-- System Requirements Comparison Tool -->
+                                <div class="system-comparison">
+                                    <h3>Compare with Your PC</h3>
+                                    <p>Check if your PC meets the requirements for Cyberpunk 2077</p>
+                                    
+                                    <div class="comparison-tool">
+                                        <div class="comparison-form">
+                                            <div class="form-group">
+                                                <label for="cpu">Your CPU</label>
+                                                <input type="text" id="cpu" placeholder="e.g. Intel Core i7-9700K">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="gpu">Your GPU</label>
+                                                <input type="text" id="gpu" placeholder="e.g. NVIDIA RTX 2070">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="ram">Your RAM</label>
+                                                <input type="text" id="ram" placeholder="e.g. 16 GB">
+                                            </div>
+                                            <button class="btn btn-secondary" id="compare-specs">Compare</button>
+                                        </div>
+                                        
+                                        <div class="comparison-results" style="display: none;">
+                                            <h4>Results</h4>
+                                            <div class="result-item">
+                                                <div class="result-label">CPU</div>
+                                                <div class="result-status"></div>
+                                            </div>
+                                            <div class="result-item">
+                                                <div class="result-label">GPU</div>
+                                                <div class="result-status"></div>
+                                            </div>
+                                            <div class="result-item">
+                                                <div class="result-label">RAM</div>
+                                                <div class="result-status"></div>
+                                            </div>
+                                            <div class="overall-result">
+                                                <div class="result-label">Overall</div>
+                                                <div class="result-status"></div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="review-rating positive">
-                                        <span class="sr-only">Positive review</span>
-                                        Recommended
-                                    </div>
                                 </div>
-                                <div class="review-content">
-                                    <div class="review-hours">152.7 hrs on record</div>
-                                    <div class="review-text">
-                                        <p>The graphics and art style are absolutely stunning. Night City is one of the most detailed and atmospheric game environments I've ever experienced. The side quests are often more interesting than the main quest, and the character development for Johnny Silverhand is fantastic. Great game overall!</p>
+                            </div>
+                            
+                            <!-- Reviews Tab -->
+                            <div class="tab-panel" id="reviews-tab">
+                                <div class="game-reviews">
+                                    <h2>User Reviews</h2>
+                                    <div class="review-summary">
+                                        <div class="review-score">
+                                            <div class="score">82%</                                            <div class="rating">Very Positive</div>
+                                            <div class="review-count">Based on 428,705 reviews</div>
+                                        </div>
+                                        <div class="review-bars">
+                                            <div class="review-bar">
+                                                <div class="bar-label">Recent Reviews</div>
+                                                <div class="bar-container">
+                                                    <div class="bar-fill positive" style="width: 89%"></div>
+                                                </div>
+                                                <div class="bar-value">89%</div>
+                                            </div>
+                                            <div class="review-bar">
+                                                <div class="bar-label">All Reviews</div>
+                                                <div class="bar-container">
+                                                    <div class="bar-fill positive" style="width: 82%"></div>
+                                                </div>
+                                                <div class="bar-value">82%</div>
+                                            </div>
+                                        </div>
+                                        <!-- Average 5-Star Rating Display -->
+                                        <div class="star-rating-summary">
+                                            <div class="star-rating-average">
+                                                <span class="star-value">4.2</span>
+                                                <div class="star-rating-display" aria-label="4.2 out of 5 stars rating">
+                                                    <div class="stars-container">
+                                                        <div class="stars-filled" style="width: 84%"></div>
+                                                        <div class="stars-empty">★★★★★</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="star-distribution">
+                                                <div class="star-row">
+                                                    <span class="star-label">5 ★</span>
+                                                    <div class="star-bar-container">
+                                                        <div class="star-bar-fill" style="width: 65%"></div>
+                                                    </div>
+                                                    <span class="star-count">278,658</span>
+                                                </div>
+                                                <div class="star-row">
+                                                    <span class="star-label">4 ★</span>
+                                                    <div class="star-bar-container">
+                                                        <div class="star-bar-fill" style="width: 20%"></div>
+                                                    </div>
+                                                    <span class="star-count">85,741</span>
+                                                </div>
+                                                <div class="star-row">
+                                                    <span class="star-label">3 ★</span>
+                                                    <div class="star-bar-container">
+                                                        <div class="star-bar-fill" style="width: 8%"></div>
+                                                    </div>
+                                                    <span class="star-count">34,296</span>
+                                                </div>
+                                                <div class="star-row">
+                                                    <span class="star-label">2 ★</span>
+                                                    <div class="star-bar-container">
+                                                        <div class="star-bar-fill" style="width: 4%"></div>
+                                                    </div>
+                                                    <span class="star-count">17,148</span>
+                                                </div>
+                                                <div class="star-row">
+                                                    <span class="star-label">1 ★</span>
+                                                    <div class="star-bar-container">
+                                                        <div class="star-bar-fill" style="width: 3%"></div>
+                                                    </div>
+                                                    <span class="star-count">12,861</span>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="review-date">Posted: April 2, 2025</div>
-                                </div>
-                                <div class="review-footer">
-                                    <div class="review-helpful">
-                                        <span>Was this review helpful?</span>
-                                        <button class="helpful-btn">Yes</button>
-                                        <button class="helpful-btn">No</button>
-                                        <button class="helpful-btn">Funny</button>
+                                    
+                                    <div class="review-filters">
+                                        <button class="review-filter active">All</button>
+                                        <button class="review-filter">Positive</button>
+                                        <button class="review-filter">Negative</button>
+                                        <!-- Added advanced filtering options -->
+                                        <div class="review-filter-dropdown">
+                                            <button class="review-filter-btn">More Filters <span class="dropdown-arrow">▼</span></button>
+                                            <div class="filter-dropdown-content">
+                                                <div class="filter-group">
+                                                    <h4>Rating</h4>
+                                                    <label><input type="checkbox" name="rating" value="5"> 5 Stars</label>
+                                                    <label><input type="checkbox" name="rating" value="4"> 4 Stars</label>
+                                                    <label><input type="checkbox" name="rating" value="3"> 3 Stars</label>
+                                                    <label><input type="checkbox" name="rating" value="2"> 2 Stars</label>
+                                                    <label><input type="checkbox" name="rating" value="1"> 1 Star</label>
+                                                </div>
+                                                <div class="filter-group">
+                                                    <h4>Purchase Type</h4>
+                                                    <label><input type="checkbox" name="purchase" value="verified"> Verified Purchases Only</label>
+                                                </div>
+                                                <div class="filter-group">
+                                                    <h4>Language</h4>
+                                                    <select name="language">
+                                                        <option value="all">All Languages</option>
+                                                        <option value="en">English</option>
+                                                        <option value="es">Spanish</option>
+                                                        <option value="fr">French</option>
+                                                        <option value="de">German</option>
+                                                        <option value="ru">Russian</option>
+                                                        <option value="zh">Chinese</option>
+                                                        <option value="jp">Japanese</option>
+                                                    </select>
+                                                </div>
+                                                <div class="filter-group">
+                                                    <h4>Sort By</h4>
+                                                    <select name="sort">
+                                                        <option value="recent">Most Recent</option>
+                                                        <option value="helpful">Most Helpful</option>
+                                                        <option value="funny">Funniest</option>
+                                                        <option value="playtime">Playtime</option>
+                                                    </select>
+                                                </div>
+                                                <button class="btn btn-sm btn-primary apply-filters">Apply Filters</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="review-list">
+                                        <!-- Review 1 -->
+                                        <div class="review-item">
+                                            <div class="review-header">
+                                                <div class="reviewer">
+                                                    <picture>
+                                                        <source srcset="../assets/images/avatar1.webp" type="image/webp">
+                                                        <img src="../assets/images/avatar1.jpg" alt="Avatar" class="avatar">
+                                                    </picture>
+                                                    <div class="reviewer-info">
+                                                        <div class="reviewer-name">CyberFan2077</div>
+                                                        <div class="review-ownership">
+                                                            <span class="owned">Product Purchased</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="review-rating positive">
+                                                    <span class="sr-only">Positive review</span>
+                                                    Recommended
+                                                </div>
+                                                <!-- Star rating component -->
+                                                <div class="star-rating">
+                                                    <div class="stars-container">
+                                                        <div class="stars-filled" style="width: 100%"></div>
+                                                        <div class="stars-empty">★★★★★</div>
+                                                    </div>
+                                                    <span class="sr-only">5 out of 5 stars</span>
+                                                </div>
+                                            </div>
+                                            <div class="review-content">
+                                                <div class="review-hours">218.3 hrs on record</div>
+                                                <div class="review-text">
+                                                    <p>After the initial bugs were fixed, this is absolutely one of the best RPGs I've ever played. The story is deeply engaging, the characters are well developed, and Night City feels truly alive. The different endings based on your choices make the replay value high. Definitely worth the money.</p>
+                                                </div>
+                                                <div class="review-date">Posted: March 25, 2025</div>
+                                            </div>
+                                            <div class="review-footer">
+                                                <div class="review-helpful">
+                                                    <span>Was this review helpful?</span>
+                                                    <button class="helpful-btn">Yes</button>
+                                                    <button class="helpful-btn">No</button>
+                                                    <button class="helpful-btn">Funny</button>
+                                                    <div class="helpful-count">
+                                                        <span>487 people found this review helpful</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- More reviews here -->
+                                        
+                                        <div class="review-more">
+                                            <button class="load-more-btn">Load More Reviews</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="review-more">
-                                <button class="load-more-btn">Load More Reviews</button>
+                            
+                            <!-- Related Content Tab -->
+                            <div class="tab-panel" id="related-tab">
+                                <h2>Related Content</h2>
+                                
+                                <!-- DLC Section -->
+                                <div class="related-dlc">
+                                    <h3>DLC & Expansions</h3>
+                                    <div class="dlc-grid">
+                                        <div class="dlc-card">
+                                            <div class="dlc-image aspect-ratio-container aspect-16-9">
+                                                <picture>
+                                                    <source srcset="../assets/images/cyberpunk-dlc1.webp" type="image/webp">
+                                                    <img src="../assets/images/cyberpunk-dlc1.jpg" alt="Phantom Liberty expansion" loading="lazy">
+                                                </picture>
+                                            </div>
+                                            <div class="dlc-content">
+                                                <h4>Phantom Liberty</h4>
+                                                <p>Dive into a spy-thriller expansion for Cyberpunk 2077 set in Dogtown, one of Night City's most dangerous districts.</p>
+                                                <div class="dlc-price">$29.99</div>
+                                                <button class="btn btn-secondary">Add to Cart</button>
+                                            </div>
+                                        </div>
+                                        <div class="dlc-card">
+                                            <div class="dlc-image aspect-ratio-container aspect-16-9">
+                                                <picture>
+                                                    <source srcset="../assets/images/cyberpunk-dlc2.webp" type="image/webp">
+                                                    <img src="../assets/images/cyberpunk-dlc2.jpg" alt="Ultimate Edition" loading="lazy">
+                                                </picture>
+                                            </div>
+                                            <div class="dlc-content">
+                                                <h4>Ultimate Edition</h4>
+                                                <p>Get the complete Cyberpunk 2077 experience, including the base game and Phantom Liberty expansion.</p>
+                                                <div class="dlc-price">$79.99</div>
+                                                <button class="btn btn-secondary">Add to Cart</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Related Merchandise -->
+                                <div class="related-merch">
+                                    <h3>Merchandise</h3>
+                                    <div class="merch-grid">
+                                        <div class="merch-card">
+                                            <div class="merch-image aspect-ratio-container aspect-1-1">
+                                                <picture>
+                                                    <source srcset="../assets/images/cyberpunk-merch1.webp" type="image/webp">
+                                                    <img src="../assets/images/cyberpunk-merch1.jpg" alt="Cyberpunk 2077 T-Shirt" loading="lazy">
+                                                </picture>
+                                            </div>
+                                            <div class="merch-content">
+                                                <h4>Samurai T-Shirt</h4>
+                                                <div class="merch-price">$24.99</div>
+                                                <a href="#" class="btn btn-sm btn-secondary">View Item</a>
+                                            </div>
+                                        </div>
+                                        <div class="merch-card">
+                                            <div class="merch-image aspect-ratio-container aspect-1-1">
+                                                <picture>
+                                                    <source srcset="../assets/images/cyberpunk-merch2.webp" type="image/webp">
+                                                    <img src="../assets/images/cyberpunk-merch2.jpg" alt="Cyberpunk 2077 Figurine" loading="lazy">
+                                                </picture>
+                                            </div>
+                                            <div class="merch-content">
+                                                <h4>Johnny Silverhand Figure</h4>
+                                                <div class="merch-price">$49.99</div>
+                                                <a href="#" class="btn btn-sm btn-secondary">View Item</a>
+                                            </div>
+                                        </div>
+                                        <div class="merch-card">
+                                            <div class="merch-image aspect-ratio-container aspect-1-1">
+                                                <picture>
+                                                    <source srcset="../assets/images/cyberpunk-merch3.webp" type="image/webp">
+                                                    <img src="../assets/images/cyberpunk-merch3.jpg" alt="Cyberpunk 2077 Soundtrack" loading="lazy">
+                                                </picture>
+                                            </div>
+                                            <div class="merch-content">
+                                                <h4>Official Soundtrack</h4>
+                                                <div class="merch-price">$19.99</div>
+                                                <a href="#" class="btn btn-sm btn-secondary">View Item</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Similar Games Section -->
+                                <div class="similar-games">
+                                    <h3>Similar Games</h3>
+                                    <div class="game-grid">
+                                        <div class="game-card">
+                                            <div class="game-card-image aspect-ratio-container aspect-16-9">
+                                                <picture>
+                                                    <source srcset="../assets/images/similar-game1.webp" type="image/webp">
+                                                    <img src="../assets/images/similar-game1.jpg" alt="The Witcher 3: Wild Hunt" loading="lazy">
+                                                </picture>
+                                            </div>
+                                            <div class="game-card-content">
+                                                <h4>The Witcher 3: Wild Hunt</h4>
+                                                <div class="game-tags">
+                                                    <span class="tag">RPG</span>
+                                                    <span class="tag">Open World</span>
+                                                </div>
+                                                <div class="game-price">$39.99</div>
+                                            </div>
+                                        </div>
+                                        <div class="game-card">
+                                            <div class="game-card-image aspect-ratio-container aspect-16-9">
+                                                <picture>
+                                                    <source srcset="../assets/images/similar-game2.webp" type="image/webp">
+                                                    <img src="../assets/images/similar-game2.jpg" alt="Deus Ex: Mankind Divided" loading="lazy">
+                                                </picture>
+                                            </div>
+                                            <div class="game-card-content">
+                                                <h4>Deus Ex: Mankind Divided</h4>
+                                                <div class="game-tags">
+                                                    <span class="tag">Action</span>
+                                                    <span class="tag">RPG</span>
+                                                </div>
+                                                <div class="game-price">$29.99</div>
+                                            </div>
+                                        </div>
+                                        <div class="game-card">
+                                            <div class="game-card-image aspect-ratio-container aspect-16-9">
+                                                <picture>
+                                                    <source srcset="../assets/images/similar-game3.webp" type="image/webp">
+                                                    <img src="../assets/images/similar-game3.jpg" alt="Fallout 4" loading="lazy">
+                                                </picture>
+                                            </div>
+                                            <div class="game-card-content">
+                                                <h4>Fallout 4</h4>
+                                                <div class="game-tags">
+                                                    <span class="tag">RPG</span>
+                                                    <span class="tag">Open World</span>
+                                                </div>
+                                                <div class="game-price">$19.99</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Community Created Content -->
+                                <div class="community-content">
+                                    <h3>Community Content</h3>
+                                    <div class="community-grid">
+                                        <div class="community-card">
+                                            <div class="community-header">
+                                                <span class="content-type">Guide</span>
+                                                <h4>Night City Exploration Guide</h4>
+                                            </div>
+                                            <div class="community-meta">
+                                                <span class="author">By CyberFan2077</span>
+                                                <span class="helpful-count">12.4K found helpful</span>
+                                            </div>
+                                            <a href="#" class="btn btn-sm btn-outline">View Guide</a>
+                                        </div>
+                                        <div class="community-card">
+                                            <div class="community-header">
+                                                <span class="content-type">Mod</span>
+                                                <h4>Enhanced Visuals Overhaul</h4>
+                                            </div>
+                                            <div class="community-meta">
+                                                <span class="author">By NightCityModder</span>
+                                                <span class="helpful-count">8.7K downloads</span>
+                                            </div>
+                                            <a href="#" class="btn btn-sm btn-outline">View Mod</a>
+                                        </div>
+                                        <div class="community-card">
+                                            <div class="community-header">
+                                                <span class="content-type">Artwork</span>
+                                                <h4>Night City Panorama</h4>
+                                            </div>
+                                            <div class="community-meta">
+                                                <span class="author">By CyberArtist</span>
+                                                <span class="helpful-count">3.2K likes</span>
+                                            </div>
+                                            <a href="#" class="btn btn-sm btn-outline">View Artwork</a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </section>
@@ -290,8 +710,11 @@
                 <!-- Right Column: Purchase & Info -->
                 <div class="game-details-sidebar">
                     <div class="purchase-card">
-                        <div class="purchase-image">
-                            <img src="../assets/images/cyberpunk-cover.jpg" alt="Cyberpunk 2077 Cover Art">
+                        <div class="purchase-image aspect-ratio-container aspect-game-cover">
+                            <picture>
+                                <source srcset="../assets/images/cyberpunk-cover.webp" type="image/webp">
+                                <img src="../assets/images/cyberpunk-cover.jpg" alt="Cyberpunk 2077 Cover Art">
+                            </picture>
                         </div>
                         <div class="purchase-info">
                             <div class="game-platforms">
@@ -334,22 +757,24 @@
                         </div>
                     </div>
 
-                    <div class="dlc-card">
-                        <h3>DLC & Editions</h3>
-                        <div class="dlc-item">
-                            <div class="dlc-info">
-                                <h4>Phantom Liberty Expansion</h4>
-                                <div class="dlc-price">$29.99</div>
-                            </div>
-                            <button class="btn btn-sm btn-secondary">Add</button>
+                    <!-- Price History Graph Section -->
+                    <div class="price-history-card">
+                        <h3>Price History</h3>
+                        <div class="price-graph-container">
+                            <canvas id="priceHistoryChart" width="280" height="150"></canvas>
                         </div>
-                        <div class="dlc-item">
-                            <div class="dlc-info">
-                                <h4>Ultimate Edition Bundle</h4>
-                                <div class="dlc-price">$79.99</div>
+                        <div class="price-history-info">
+                            <div class="price-stat">
+                                <div class="stat-label">Lowest Price:</div>
+                                <div class="stat-value">$29.99 (-50%)</div>
+                                <div class="stat-date">Dec 22, 2024</div>
                             </div>
-                            <button class="btn btn-sm btn-secondary">Add</button>
+                            <div class="price-stat">
+                                <div class="stat-label">Current Discount:</div>
+                                <div class="stat-value">None</div>
+                            </div>
                         </div>
+                        <button class="btn btn-sm btn-outline price-alert-btn">Set Price Alert</button>
                     </div>
 
                     <div class="social-card">
@@ -362,80 +787,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Related Games Section -->
-            <section class="related-games">
-                <h2>Similar Games You Might Like</h2>
-                <div class="game-grid">
-                    <!-- Game Card 1 -->
-                    <div class="game-card">
-                        <div class="game-card-image">
-                            <img src="../assets/images/placeholder-game1.jpg" alt="Game title">
-                        </div>
-                        <div class="game-card-content">
-                            <h3 class="game-title">The Witcher 3: Wild Hunt</h3>
-                            <div class="game-tags">
-                                <span class="tag">RPG</span>
-                                <span class="tag">Open World</span>
-                            </div>
-                            <div class="game-price">
-                                <span class="price">$39.99</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Game Card 2 -->
-                    <div class="game-card">
-                        <div class="game-card-image">
-                            <img src="../assets/images/placeholder-game2.jpg" alt="Game title">
-                        </div>
-                        <div class="game-card-content">
-                            <h3 class="game-title">Deus Ex: Mankind Divided</h3>
-                            <div class="game-tags">
-                                <span class="tag">Action</span>
-                                <span class="tag">RPG</span>
-                            </div>
-                            <div class="game-price">
-                                <span class="price">$29.99</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Game Card 3 -->
-                    <div class="game-card">
-                        <div class="game-card-image">
-                            <img src="../assets/images/placeholder-game3.jpg" alt="Game title">
-                        </div>
-                        <div class="game-card-content">
-                            <h3 class="game-title">Mass Effect Legendary Edition</h3>
-                            <div class="game-tags">
-                                <span class="tag">RPG</span>
-                                <span class="tag">Sci-Fi</span>
-                            </div>
-                            <div class="game-price">
-                                <span class="price">$59.99</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Game Card 4 -->
-                    <div class="game-card">
-                        <div class="game-card-image">
-                            <img src="../assets/images/placeholder-game4.jpg" alt="Game title">
-                        </div>
-                        <div class="game-card-content">
-                            <h3 class="game-title">Fallout 4</h3>
-                            <div class="game-tags">
-                                <span class="tag">RPG</span>
-                                <span class="tag">Open World</span>
-                            </div>
-                            <div class="game-price">
-                                <span class="price">$19.99</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
         </div>
     </main>
 
@@ -489,5 +840,8 @@
     </footer>
 
     <script src="../js/main.js"></script>
+    <script src="../js/responsive-images.js"></script>
+    <script src="../js/tabs.js"></script>
+    <script src="../js/price-history.js"></script>
 </body>
 </html>

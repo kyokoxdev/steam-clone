@@ -1,0 +1,454 @@
+/**
+ * Game Details Tabs Styles
+ * 
+ * Styles for the tabbed interface on game details pages
+ */
+
+/* Tab Navigation */
+.game-details-tabs {
+  margin-top: 2rem;
+}
+
+.tabs-navigation {
+  display: flex;
+  border-bottom: 1px solid #375a7f;
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #66c0f4 #1b2838;
+}
+
+.tab-button {
+  padding: 0.75rem 1.25rem;
+  background: none;
+  border: none;
+  color: #c7d5e0;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  position: relative;
+  white-space: nowrap;
+}
+
+.tab-button:hover {
+  color: #fff;
+  background-color: rgba(102, 192, 244, 0.1);
+}
+
+.tab-button.active {
+  color: #fff;
+  border-bottom-color: #66c0f4;
+}
+
+.tab-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(102, 192, 244, 0.5);
+}
+
+/* Tab Panels */
+.tab-panel {
+  display: none;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Tab-specific styles */
+#about-tab .description-content {
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+#about-tab .key-features {
+  background-color: rgba(27, 40, 56, 0.6);
+  border-radius: 4px;
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+}
+
+.features-list li {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.feature-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(102, 192, 244, 0.1);
+  border-radius: 50%;
+}
+
+.feature-icon img {
+  width: 24px;
+  height: 24px;
+}
+
+.feature-text h4 {
+  margin: 0 0 0.25rem;
+  color: #fff;
+}
+
+.feature-text p {
+  margin: 0;
+  color: #c7d5e0;
+}
+
+/* System Requirements Tab */
+.requirements-tabs {
+  display: flex;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #375a7f;
+}
+
+.req-tab {
+  padding: 0.5rem 1rem;
+  background: none;
+  border: none;
+  color: #c7d5e0;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+
+.req-tab:hover {
+  color: #fff;
+}
+
+.req-tab.active {
+  color: #fff;
+  border-bottom-color: #66c0f4;
+}
+
+.req-panel {
+  display: none;
+}
+
+.req-panel.active {
+  display: block;
+}
+
+.req-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+}
+
+.req-table tr:nth-child(odd) {
+  background-color: rgba(27, 40, 56, 0.4);
+}
+
+.req-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid rgba(55, 90, 127, 0.3);
+}
+
+.req-table td:first-child {
+  width: 30%;
+  font-weight: 500;
+  color: #fff;
+}
+
+/* System Comparison Tool */
+.system-comparison {
+  background-color: rgba(27, 40, 56, 0.6);
+  border-radius: 4px;
+  padding: 1.5rem;
+  margin-top: 2rem;
+}
+
+.comparison-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+  .comparison-form {
+    grid-template-columns: 1fr 1fr 1fr auto;
+    align-items: end;
+  }
+}
+
+.form-group {
+  margin-bottom: 0.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.5rem;
+  background-color: #2a475e;
+  border: 1px solid #375a7f;
+  border-radius: 3px;
+  color: #fff;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #66c0f4;
+  box-shadow: 0 0 0 2px rgba(102, 192, 244, 0.3);
+}
+
+.comparison-results {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background-color: rgba(42, 71, 94, 0.5);
+  border-radius: 3px;
+}
+
+.result-item, .overall-result {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(55, 90, 127, 0.3);
+}
+
+.overall-result {
+  margin-top: 0.5rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(55, 90, 127, 0.6);
+  border-bottom: none;
+  font-weight: 500;
+}
+
+.result-label {
+  color: #c7d5e0;
+}
+
+.result-status {
+  font-weight: 500;
+}
+
+.result-status.excellent {
+  color: #66de6c;
+}
+
+.result-status.good {
+  color: #66c0f4;
+}
+
+.result-status.ok {
+  color: #b6a764;
+}
+
+.result-status.poor {
+  color: #e86060;
+}
+
+.result-status.unknown {
+  color: #c7d5e0;
+}
+
+/* Reviews Tab */
+#reviews-tab .review-summary {
+  margin-bottom: 2rem;
+}
+
+/* Related Content Tab */
+.related-dlc, .related-merch, .similar-games, .community-content {
+  margin-bottom: 2.5rem;
+}
+
+.dlc-grid, .merch-grid, .community-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+@media (min-width: 576px) {
+  .dlc-grid, .merch-grid, .community-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .dlc-grid, .merch-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .community-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.dlc-card, .merch-card {
+  background-color: rgba(27, 40, 56, 0.6);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.dlc-content, .merch-content {
+  padding: 1rem;
+}
+
+.dlc-content h4, .merch-content h4 {
+  margin: 0 0 0.5rem;
+  color: #fff;
+}
+
+.dlc-price, .merch-price {
+  font-weight: 500;
+  color: #66de6c;
+  margin: 0.75rem 0;
+}
+
+.community-card {
+  background-color: rgba(27, 40, 56, 0.6);
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+.community-header {
+  margin-bottom: 0.75rem;
+}
+
+.content-type {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  background-color: #375a7f;
+  color: #fff;
+  font-size: 0.75rem;
+  border-radius: 3px;
+  margin-bottom: 0.5rem;
+}
+
+.community-header h4 {
+  margin: 0;
+  color: #fff;
+}
+
+.community-meta {
+  display: flex;
+  justify-content: space-between;
+  color: #8f98a0;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+/* Price Alert Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.modal.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  background-color: #1b2838;
+  border-radius: 4px;
+  border: 1px solid #375a7f;
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 1.5rem;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.close-modal {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  color: #8f98a0;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.close-modal:hover {
+  color: #fff;
+}
+
+.price-input-container {
+  position: relative;
+}
+
+.currency-symbol {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #8f98a0;
+}
+
+#alert-price {
+  padding-left: 1.5rem;
+}
+
+.alert-options {
+  margin: 1rem 0;
+}
+
+.alert-success {
+  text-align: center;
+  padding: 1rem;
+}
+
+.alert-icon {
+  width: 50px;
+  height: 50px;
+  background-color: #66de6c;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin: 0 auto 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  .tabs-navigation {
+    padding-bottom: 0.25rem;
+  }
+  
+  .tab-button {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .dlc-content p, .community-card p {
+    display: none;
+  }
+}

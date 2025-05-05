@@ -95,6 +95,9 @@
   --container-padding: var(--spacing-md);
 }
 
+/* Import internationalization styles */
+@import url('./i18n-styles.css');
+
 /* ==========================================================================
    Reset & Base Styles
    ========================================================================== */

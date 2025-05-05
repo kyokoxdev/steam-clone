@@ -1,0 +1,149 @@
+/* Language Switcher Styles */
+.language-switcher {
+  position: relative;
+  margin-right: 15px;
+  z-index: 100;
+}
+
+.language-selector-btn {
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  color: #c7d5e0;
+  padding: 6px 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.language-selector-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.current-language-flag {
+  display: inline-block;
+  width: 20px;
+  height: 15px;
+  margin-right: 8px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.language-dropdown-icon {
+  font-size: 8px;
+  margin-left: 6px;
+  opacity: 0.7;
+}
+
+.language-dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 150px;
+  background-color: #1b2838;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  margin-top: 5px;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.language-dropdown-content.show {
+  display: block;
+  animation: fadeIn 0.2s ease;
+}
+
+.language-dropdown-content a {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  color: #c7d5e0;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.language-dropdown-content a:hover {
+  background-color: #2a475e;
+  color: #ffffff;
+}
+
+.language-dropdown-content a.active {
+  background-color: #2a475e;
+  color: #ffffff;
+  pointer-events: none;
+}
+
+.language-flag {
+  display: inline-block;
+  width: 20px;
+  height: 15px;
+  margin-right: 10px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Country flag backgrounds */
+.flag-gb {
+  background-image: url('../assets/images/flags/gb.svg');
+}
+
+.flag-es {
+  background-image: url('../assets/images/flags/es.svg');
+}
+
+.flag-fr {
+  background-image: url('../assets/images/flags/fr.svg');
+}
+
+.flag-de {
+  background-image: url('../assets/images/flags/de.svg');
+}
+
+.flag-jp {
+  background-image: url('../assets/images/flags/jp.svg');
+}
+
+.flag-ru {
+  background-image: url('../assets/images/flags/ru.svg');
+}
+
+/* RTL Support */
+.rtl-layout {
+  direction: rtl;
+  text-align: right;
+}
+
+.rtl-layout .language-selector-btn,
+.rtl-layout .language-dropdown-content a {
+  flex-direction: row-reverse;
+}
+
+.rtl-layout .current-language-flag,
+.rtl-layout .language-flag {
+  margin-right: 0;
+  margin-left: 8px;
+}
+
+.rtl-layout .language-dropdown-icon {
+  margin-left: 0;
+  margin-right: 6px;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

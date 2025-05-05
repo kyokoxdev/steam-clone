@@ -1,0 +1,77 @@
+{
+  "navigation": {
+    "store": "المتجر",
+    "library": "المكتبة",
+    "community": "المجتمع",
+    "profile": "الملف الشخصي",
+    "about": "حول",
+    "support": "الدعم"
+  },
+  "header": {
+    "search": "بحث...",
+    "install": "تثبيت Game Hub",
+    "login": "تسجيل الدخول",
+    "signup": "إنشاء حساب"
+  },
+  "homepage": {
+    "featured": "مميز وموصى به",
+    "specialOffers": "عروض خاصة",
+    "newReleases": "إصدارات جديدة",
+    "topSellers": "الأكثر مبيعًا",
+    "upcoming": "الألعاب القادمة",
+    "browse": "تصفح الكل",
+    "viewMore": "عرض المزيد"
+  },
+  "game": {
+    "addToCart": "أضف إلى السلة",
+    "addToWishlist": "أضف إلى قائمة الرغبات",
+    "buyNow": "اشتر الآن",
+    "freeToPlay": "مجاني للعب",
+    "inLibrary": "في المكتبة",
+    "releaseDate": "تاريخ الإصدار",
+    "publisher": "الناشر",
+    "developer": "المطور",
+    "tags": "العلامات الشائعة",
+    "languages": "اللغات",
+    "reviews": "المراجعات",
+    "systemRequirements": "متطلبات النظام",
+    "minimumRequirements": "الحد الأدنى",
+    "recommendedRequirements": "موصى به"
+  },
+  "cart": {
+    "yourCart": "سلة التسوق الخاصة بك",
+    "checkout": "الدفع",
+    "total": "المجموع",
+    "subtotal": "المجموع الفرعي",
+    "tax": "الضريبة",
+    "continue": "متابعة التسوق",
+    "remove": "إزالة",
+    "empty": "سلة التسوق فارغة",
+    "startShopping": "ابدأ التسوق"
+  },
+  "footer": {
+    "about": "حول Game Hub",
+    "copyright": "© {year} Game Hub Corporation. جميع الحقوق محفوظة.",
+    "privacy": "سياسة الخصوصية",
+    "terms": "شروط الخدمة",
+    "legal": "قانوني",
+    "cookies": "سياسة ملفات تعريف الارتباط",
+    "contact": "اتصل بنا"
+  },
+  "account": {
+    "settings": "إعدادات الحساب",
+    "purchases": "المشتريات",
+    "wallet": "المحفظة",
+    "profile": "تعديل الملف الشخصي",
+    "friends": "الأصدقاء",
+    "inventory": "المخزون",
+    "signOut": "تسجيل الخروج"
+  },
+  "errors": {
+    "pageNotFound": "الصفحة غير موجودة",
+    "goBack": "العودة",
+    "goHome": "الذهاب إلى الصفحة الرئيسية",
+    "serverError": "خطأ في الخادم",
+    "tryAgain": "يرجى المحاولة مرة أخرى لاحقًا"
+  }
+}

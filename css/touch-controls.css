@@ -1,0 +1,217 @@
+/**
+ * Touch-friendly controls for mobile devices
+ * Enhances UI elements to be more usable on touch screens
+ */
+
+/* Increase hit areas for touch targets */
+.touch-friendly button,
+.touch-friendly a,
+.touch-friendly .game-card,
+.touch-friendly input[type="checkbox"],
+.touch-friendly input[type="radio"],
+.touch-friendly select {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Apply touch-friendly class to body when on touch devices */
+@media (pointer: coarse) {
+  body {
+    /* Add the touch-friendly class to body on touch devices */
+    --touch-target-size: 44px;
+    --touch-spacing: 16px;
+  }
+  
+  /* Larger tap targets for navigation */
+  .main-nav a {
+    padding: 12px 16px;
+    margin: 4px;
+  }
+  
+  /* Improved touch targets for dropdowns */
+  .dropdown-toggle {
+    padding: 12px;
+  }
+  
+  /* Adjust spacing between interactive elements */
+  .header-actions > * {
+    margin-left: var(--touch-spacing);
+  }
+  
+  /* Larger controls for carousels */
+  .carousel-control {
+    width: 44px;
+    height: 44px;
+    opacity: 0.8; /* More visible than default */
+  }
+  
+  /* Enhanced touch indicators for buttons and interactive elements */
+  button:active,
+  a:active,
+  .game-card:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+  }
+  
+  /* Slider controls enhancement */
+  input[type="range"] {
+    height: 24px; /* Thicker for easier touch */
+  }
+  
+  input[type="range"]::-webkit-slider-thumb {
+    width: 24px;
+    height: 24px;
+  }
+  
+  /* Improved scrolling for touch */
+  .scrollable-area {
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    padding-bottom: 20px; /* Extra space for comfortable scrolling */
+  }
+  
+  /* Game cards touch optimizations */
+  .game-card {
+    margin-bottom: 16px; /* More spacing between cards */
+  }
+  
+  /* Enhanced filter controls */
+  .filter-option {
+    margin-bottom: 12px;
+  }
+  
+  .filter-option label {
+    padding: 8px 0;
+    display: block;
+  }
+  
+  /* Form fields touch optimizations */
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  textarea,
+  select {
+    font-size: 16px; /* Prevents iOS zoom on focus */
+    padding: 12px;
+    margin-bottom: 16px;
+  }
+  
+  /* Bottom navigation for mobile */
+  .mobile-bottom-nav {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--color-bg-primary);
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+  
+  .mobile-bottom-nav a {
+    flex: 1;
+    text-align: center;
+    padding: 12px 8px;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .mobile-bottom-nav a.active {
+    color: var(--color-accent);
+  }
+  
+  .mobile-bottom-nav .icon {
+    margin-bottom: 4px;
+    font-size: 20px;
+  }
+  
+  /* Touch-friendly swipe gestures for carousels */
+  .swipe-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+  
+  .swipe-wrapper {
+    display: flex;
+    transition: transform 0.3s ease-out;
+  }
+  
+  .swipe-slide {
+    flex: 0 0 100%;
+    width: 100%;
+  }
+  
+  /* Hide scrollbars but keep functionality */
+  .hide-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+  
+  /* Top-level swipe navigation (between main sections) */
+  .swipe-nav-container {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    padding: 8px 0;
+  }
+  
+  .swipe-nav-item {
+    display: inline-block;
+    padding: 8px 16px;
+    margin-right: 8px;
+    border-radius: 20px;
+    background-color: var(--color-bg-secondary);
+    color: var(--color-text-secondary);
+  }
+  
+  .swipe-nav-item.active {
+    background-color: var(--color-accent);
+    color: var(--color-text-on-accent);
+  }
+  
+  /* Pull-to-refresh functionality styling */
+  .ptr-container {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .ptr-indicator {
+    position: absolute;
+    top: -50px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease-out;
+  }
+}
+
+/* Hide mobile navigation on larger screens */
+@media (min-width: 769px) {
+  .mobile-bottom-nav {
+    display: none;
+  }
+  
+  .swipe-nav-container {
+    display: none;
+  }
+  
+  /* Revert some mobile optimizations on desktop */
+  .game-card {
+    margin-bottom: initial;
+  }
+}

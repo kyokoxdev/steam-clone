@@ -1,0 +1,77 @@
+{
+  "navigation": {
+    "store": "חנות",
+    "library": "ספרייה",
+    "community": "קהילה",
+    "profile": "פרופיל",
+    "about": "אודות",
+    "support": "תמיכה"
+  },
+  "header": {
+    "search": "חיפוש...",
+    "install": "התקן Game Hub",
+    "login": "התחברות",
+    "signup": "הרשמה"
+  },
+  "homepage": {
+    "featured": "מומלצים ומובחרים",
+    "specialOffers": "מבצעים מיוחדים",
+    "newReleases": "הוצאות חדשות",
+    "topSellers": "רבי מכר",
+    "upcoming": "משחקים קרובים",
+    "browse": "עיין בהכל",
+    "viewMore": "צפה בעוד"
+  },
+  "game": {
+    "addToCart": "הוסף לסל",
+    "addToWishlist": "הוסף לרשימת המשאלות",
+    "buyNow": "קנה עכשיו",
+    "freeToPlay": "חינם למשחק",
+    "inLibrary": "בספרייה",
+    "releaseDate": "תאריך הוצאה",
+    "publisher": "מפיץ",
+    "developer": "מפתח",
+    "tags": "תגיות פופולריות",
+    "languages": "שפות",
+    "reviews": "ביקורות",
+    "systemRequirements": "דרישות מערכת",
+    "minimumRequirements": "מינימום",
+    "recommendedRequirements": "מומלץ"
+  },
+  "cart": {
+    "yourCart": "הסל שלך",
+    "checkout": "לקופה",
+    "total": "סך הכל",
+    "subtotal": "סיכום ביניים",
+    "tax": "מס",
+    "continue": "המשך בקניות",
+    "remove": "הסר",
+    "empty": "הסל שלך ריק",
+    "startShopping": "התחל בקניות"
+  },
+  "footer": {
+    "about": "אודות Game Hub",
+    "copyright": "© {year} Game Hub Corporation. כל הזכויות שמורות.",
+    "privacy": "מדיניות פרטיות",
+    "terms": "תנאי שימוש",
+    "legal": "משפטי",
+    "cookies": "מדיניות עוגיות",
+    "contact": "צור קשר"
+  },
+  "account": {
+    "settings": "הגדרות חשבון",
+    "purchases": "רכישות",
+    "wallet": "ארנק",
+    "profile": "ערוך פרופיל",
+    "friends": "חברים",
+    "inventory": "מלאי",
+    "signOut": "התנתק"
+  },
+  "errors": {
+    "pageNotFound": "דף לא נמצא",
+    "goBack": "חזור",
+    "goHome": "לך לדף הבית",
+    "serverError": "שגיאת שרת",
+    "tryAgain": "אנא נסה שוב מאוחר יותר"
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "navigation": {
+    "store": "Store",
+    "library": "Library",
+    "community": "Community",
+    "profile": "Profile",
+    "about": "About",
+    "support": "Support"
+  },
+  "header": {
+    "search": "Search...",
+    "install": "Install Game Hub",
+    "login": "Login",
+    "signup": "Sign Up"
+  },
+  "homepage": {
+    "featured": "Featured & Recommended",
+    "specialOffers": "Special Offers",
+    "newReleases": "New Releases",
+    "topSellers": "Top Sellers",
+    "upcoming": "Upcoming Games",
+    "browse": "Browse All",
+    "viewMore": "View More"
+  },
+  "game": {
+    "addToCart": "Add to Cart",
+    "addToWishlist": "Add to Wishlist",
+    "buyNow": "Buy Now",
+    "freeToPlay": "Free to Play",
+    "inLibrary": "In Library",
+    "releaseDate": "Release Date",
+    "publisher": "Publisher",
+    "developer": "Developer",
+    "tags": "Popular Tags",
+    "languages": "Languages",
+    "reviews": "Reviews",
+    "systemRequirements": "System Requirements",
+    "minimumRequirements": "Minimum",
+    "recommendedRequirements": "Recommended"
+  },
+  "cart": {
+    "yourCart": "Your Cart",
+    "checkout": "Checkout",
+    "total": "Total",
+    "subtotal": "Subtotal",
+    "tax": "Tax",
+    "continue": "Continue Shopping",
+    "remove": "Remove",
+    "empty": "Your cart is empty",
+    "startShopping": "Start Shopping"
+  },
+  "footer": {
+    "about": "About Game Hub",
+    "copyright": "© {year} Game Hub Corporation. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "legal": "Legal",
+    "cookies": "Cookie Policy",
+    "contact": "Contact Us"
+  },
+  "account": {
+    "settings": "Account Settings",
+    "purchases": "Purchases",
+    "wallet": "Wallet",
+    "profile": "Edit Profile",
+    "friends": "Friends",
+    "inventory": "Inventory",
+    "signOut": "Sign Out"
+  },
+  "errors": {
+    "pageNotFound": "Page Not Found",
+    "goBack": "Go Back",
+    "goHome": "Go to Homepage",
+    "serverError": "Server Error",
+    "tryAgain": "Please try again later"
+  }
+}

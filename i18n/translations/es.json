@@ -1,0 +1,77 @@
+{
+  "navigation": {
+    "store": "Tienda",
+    "library": "Biblioteca",
+    "community": "Comunidad",
+    "profile": "Perfil",
+    "about": "Acerca de",
+    "support": "Soporte"
+  },
+  "header": {
+    "search": "Buscar...",
+    "install": "Instalar Game Hub",
+    "login": "Iniciar Sesión",
+    "signup": "Registrarse"
+  },
+  "homepage": {
+    "featured": "Destacados y Recomendados",
+    "specialOffers": "Ofertas Especiales",
+    "newReleases": "Nuevos Lanzamientos",
+    "topSellers": "Más Vendidos",
+    "upcoming": "Próximos Juegos",
+    "browse": "Explorar Todo",
+    "viewMore": "Ver Más"
+  },
+  "game": {
+    "addToCart": "Añadir al Carrito",
+    "addToWishlist": "Añadir a la Lista de Deseos",
+    "buyNow": "Comprar Ahora",
+    "freeToPlay": "Gratis para Jugar",
+    "inLibrary": "En Biblioteca",
+    "releaseDate": "Fecha de Lanzamiento",
+    "publisher": "Editor",
+    "developer": "Desarrollador",
+    "tags": "Etiquetas Populares",
+    "languages": "Idiomas",
+    "reviews": "Reseñas",
+    "systemRequirements": "Requisitos del Sistema",
+    "minimumRequirements": "Mínimos",
+    "recommendedRequirements": "Recomendados"
+  },
+  "cart": {
+    "yourCart": "Tu Carrito",
+    "checkout": "Pagar",
+    "total": "Total",
+    "subtotal": "Subtotal",
+    "tax": "Impuesto",
+    "continue": "Continuar Comprando",
+    "remove": "Eliminar",
+    "empty": "Tu carrito está vacío",
+    "startShopping": "Empezar a Comprar"
+  },
+  "footer": {
+    "about": "Acerca de Game Hub",
+    "copyright": "© {year} Game Hub Corporation. Todos los derechos reservados.",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos de Servicio",
+    "legal": "Legal",
+    "cookies": "Política de Cookies",
+    "contact": "Contáctanos"
+  },
+  "account": {
+    "settings": "Configuración de Cuenta",
+    "purchases": "Compras",
+    "wallet": "Monedero",
+    "profile": "Editar Perfil",
+    "friends": "Amigos",
+    "inventory": "Inventario",
+    "signOut": "Cerrar Sesión"
+  },
+  "errors": {
+    "pageNotFound": "Página No Encontrada",
+    "goBack": "Regresar",
+    "goHome": "Ir a la Página Principal",
+    "serverError": "Error del Servidor",
+    "tryAgain": "Por favor intenta más tarde"
+  }
+}

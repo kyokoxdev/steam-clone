@@ -3,13 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GameHub - Your Ultimate Gaming Platform</title>
+    <meta name="description" content="Steam Clone - A digital game store featuring the latest and greatest PC games">
+    <title>GameHub - Game Store</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/animations.css">
-    <link rel="stylesheet" href="css/game-cards.css">
+    <link rel="stylesheet" href="css/responsive-images.css">
+    <link rel="stylesheet" href="css/tabs.css">
+    <link rel="stylesheet" href="css/print-styles.css">
+    <link rel="icon" href="assets/images/favicon.ico">
+    <!-- Load main JavaScript as a module -->
+    <script type="module" src="js/app.js" defer></script>
 </head>
 <body>
-    <!-- Header Section -->
     <header class="main-header">
         <div class="container">
             <div class="logo">
@@ -17,15 +23,6 @@
                     <h1>Game<span>Hub</span></h1>
                 </a>
             </div>
-            <!-- Mobile Navigation Toggle -->
-            <button class="mobile-nav-toggle" aria-expanded="false" aria-controls="mobile-nav">
-                <span class="hamburger-icon">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </span>
-                <span class="sr-only">Menu</span>
-            </button>
             <nav class="main-nav">
                 <ul>
                     <li><a href="index.html" class="active">Store</a></li>
@@ -48,166 +45,104 @@
             </div>
         </div>
     </header>
-    
-    <!-- Mobile Navigation Overlay -->
-    <div class="mobile-nav-overlay" id="mobile-nav">
-        <nav class="mobile-nav">
-            <ul class="mobile-nav-menu">
-                <li><a href="index.html" class="active">Store</a></li>
-                <li><a href="pages/library.html">Library</a></li>
-                <li><a href="pages/community.html">Community</a></li>
-                <li class="mobile-nav-divider"></li>
-                <li><a href="pages/login.html">Login</a></li>
-                <li><a href="pages/account-settings.html">Account</a></li>
-                <li><a href="pages/cart.html">Cart</a></li>
-                <li><a href="pages/wishlist.html">Wishlist</a></li>
-            </ul>
-        </nav>
-    </div>
 
-    <!-- Main Content -->
     <main>
-        <!-- Hero Section -->
-        <section class="hero">
+        <section class="hero-section">
             <div class="container">
-                <div class="hero-slider">
-                    <div class="hero-slide active">
-                        <div class="slide-content">
-                            <h2>Cyberpunk 2077</h2>
-                            <p>An open-world, action-adventure story set in Night City</p>
-                            <div class="cta-buttons">
-                                <a href="pages/game-details.html" class="btn btn-primary">See Details</a>
-                                <a href="#" class="btn btn-secondary">Add to Cart</a>
-                            </div>
-                        </div>
-                        <div class="slide-image">
-                            <img src="assets/images/placeholder-hero.jpg" alt="Cyberpunk 2077 game banner">
-                        </div>
-                    </div>
+                <div class="hero-content">
+                    <h1>Discover, Play, Connect</h1>
+                    <p>Explore thousands of games from indie to AAA titles</p>
+                    <a href="pages/browse.html" class="btn btn-primary">Browse All Games</a>
                 </div>
-                <div class="hero-controls">
-                    <button class="hero-control active"></button>
-                    <button class="hero-control"></button>
-                    <button class="hero-control"></button>
+                <div class="hero-image">
+                    <picture>
+                        <source srcset="assets/images/hero-banner.webp" type="image/webp">
+                        <img src="assets/images/hero-banner.jpg" alt="Featured game banner" loading="lazy">
+                    </picture>
                 </div>
             </div>
         </section>
 
-        <!-- Featured & Recommended -->
         <section class="featured-games">
             <div class="container">
-                <h2 class="section-title">Featured & Recommended</h2>
+                <div class="section-header">
+                    <h2>Featured Games</h2>
+                    <a href="pages/browse.html" class="view-all">View More</a>
+                </div>
                 <div class="game-grid">
-                    <!-- Game Card 1 -->
                     <div class="game-card">
-                        <div class="game-card-image">
-                            <img src="assets/images/placeholder-game1.jpg" alt="Game title">
+                        <div class="game-card-image aspect-ratio-container aspect-16-9">
+                            <picture>
+                                <source srcset="assets/images/games/cyberpunk2077.webp" type="image/webp">
+                                <img src="assets/images/games/cyberpunk2077.jpg" alt="Cyberpunk 2077" loading="lazy">
+                            </picture>
                         </div>
                         <div class="game-card-content">
-                            <h3 class="game-title">Elden Ring</h3>
+                            <h3>Cyberpunk 2077</h3>
                             <div class="game-tags">
                                 <span class="tag">RPG</span>
                                 <span class="tag">Open World</span>
                             </div>
                             <div class="game-price">
-                                <span class="price">$59.99</span>
+                                <span class="discount">-50%</span>
+                                <span class="original-price">$59.99</span>
+                                <span class="current-price">$29.99</span>
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- Game Card 2 -->
                     <div class="game-card">
-                        <div class="game-card-image">
-                            <img src="assets/images/placeholder-game2.jpg" alt="Game title">
+                        <div class="game-card-image aspect-ratio-container aspect-16-9">
+                            <picture>
+                                <source srcset="assets/images/games/eldenring.webp" type="image/webp">
+                                <img src="assets/images/games/eldenring.jpg" alt="Elden Ring" loading="lazy">
+                            </picture>
                         </div>
                         <div class="game-card-content">
-                            <h3 class="game-title">God of War</h3>
+                            <h3>Elden Ring</h3>
                             <div class="game-tags">
                                 <span class="tag">Action</span>
+                                <span class="tag">RPG</span>
+                            </div>
+                            <div class="game-price">
+                                <span class="current-price">$59.99</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="game-card">
+                        <div class="game-card-image aspect-ratio-container aspect-16-9">
+                            <picture>
+                                <source srcset="assets/images/games/rdr2.webp" type="image/webp">
+                                <img src="assets/images/games/rdr2.jpg" alt="Red Dead Redemption 2" loading="lazy">
+                            </picture>
+                        </div>
+                        <div class="game-card-content">
+                            <h3>Red Dead Redemption 2</h3>
+                            <div class="game-tags">
+                                <span class="tag">Open World</span>
                                 <span class="tag">Adventure</span>
                             </div>
                             <div class="game-price">
-                                <span class="price">$49.99</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Game Card 3 -->
-                    <div class="game-card">
-                        <div class="game-card-image">
-                            <img src="assets/images/placeholder-game3.jpg" alt="Game title">
-                        </div>
-                        <div class="game-card-content">
-                            <h3 class="game-title">Horizon Forbidden West</h3>
-                            <div class="game-tags">
-                                <span class="tag">Action</span>
-                                <span class="tag">RPG</span>
-                            </div>
-                            <div class="game-price">
-                                <span class="price">$54.99</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Game Card 4 -->
-                    <div class="game-card">
-                        <div class="game-card-image">
-                            <img src="assets/images/placeholder-game4.jpg" alt="Game title">
-                        </div>
-                        <div class="game-card-content">
-                            <h3 class="game-title">Stardew Valley</h3>
-                            <div class="game-tags">
-                                <span class="tag">Simulation</span>
-                                <span class="tag">RPG</span>
-                            </div>
-                            <div class="game-price">
-                                <span class="price">$14.99</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Special Offers -->
-        <section class="special-offers">
-            <div class="container">
-                <h2 class="section-title">Special Offers</h2>
-                <div class="game-grid">
-                    <!-- Special Offer Game Card 1 -->
-                    <div class="game-card sale">
-                        <div class="game-card-image">
-                            <img src="assets/images/placeholder-game5.jpg" alt="Game title">
-                            <div class="discount-badge">-50%</div>
-                        </div>
-                        <div class="game-card-content">
-                            <h3 class="game-title">Red Dead Redemption 2</h3>
-                            <div class="game-tags">
-                                <span class="tag">Action</span>
-                                <span class="tag">Open World</span>
-                            </div>
-                            <div class="game-price">
+                                <span class="discount">-35%</span>
                                 <span class="original-price">$59.99</span>
-                                <span class="sale-price">$29.99</span>
+                                <span class="current-price">$38.99</span>
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- Special Offer Game Card 2 -->
-                    <div class="game-card sale">
-                        <div class="game-card-image">
-                            <img src="assets/images/placeholder-game6.jpg" alt="Game title">
-                            <div class="discount-badge">-75%</div>
+                    <div class="game-card">
+                        <div class="game-card-image aspect-ratio-container aspect-16-9">
+                            <picture>
+                                <source srcset="assets/images/games/starfield.webp" type="image/webp">
+                                <img src="assets/images/games/starfield.jpg" alt="Starfield" loading="lazy">
+                            </picture>
                         </div>
                         <div class="game-card-content">
-                            <h3 class="game-title">The Witcher 3</h3>
+                            <h3>Starfield</h3>
                             <div class="game-tags">
                                 <span class="tag">RPG</span>
-                                <span class="tag">Open World</span>
+                                <span class="tag">Space</span>
                             </div>
                             <div class="game-price">
-                                <span class="original-price">$39.99</span>
-                                <span class="sale-price">$9.99</span>
+                                <span class="current-price">$69.99</span>
                             </div>
                         </div>
                     </div>
@@ -215,85 +150,80 @@
             </div>
         </section>
 
-        <!-- New Releases -->
-        <section class="new-releases">
-            <div class="container">
-                <h2 class="section-title">New Releases</h2>
-                <div class="game-grid">
-                    <!-- New Release Game Card 1 -->
-                    <div class="game-card new">
-                        <div class="game-card-image">
-                            <img src="assets/images/placeholder-game7.jpg" alt="Game title">
-                            <div class="new-badge">New</div>
-                        </div>
-                        <div class="game-card-content">
-                            <h3 class="game-title">Baldur's Gate 3</h3>
-                            <div class="game-tags">
-                                <span class="tag">RPG</span>
-                                <span class="tag">Fantasy</span>
-                            </div>
-                            <div class="game-price">
-                                <span class="price">$59.99</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- New Release Game Card 2 -->
-                    <div class="game-card new">
-                        <div class="game-card-image">
-                            <img src="assets/images/placeholder-game8.jpg" alt="Game title">
-                            <div class="new-badge">New</div>
-                        </div>
-                        <div class="game-card-content">
-                            <h3 class="game-title">Final Fantasy XVI</h3>
-                            <div class="game-tags">
-                                <span class="tag">RPG</span>
-                                <span class="tag">Action</span>
-                            </div>
-                            <div class="game-price">
-                                <span class="price">$69.99</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Categories -->
         <section class="categories">
             <div class="container">
-                <h2 class="section-title">Browse by Category</h2>
+                <div class="section-header">
+                    <h2>Browse Categories</h2>
+                </div>
                 <div class="category-grid">
-                    <a href="#" class="category-card">
-                        <img src="assets/images/cat-action.jpg" alt="Action games">
-                        <h3>Action</h3>
+                    <a href="pages/category.html?cat=action" class="category-card">
+                        <div class="category-icon">
+                            <img src="assets/icons/action.svg" alt="Action" width="48" height="48">
+                        </div>
+                        <span>Action</span>
                     </a>
-                    <a href="#" class="category-card">
-                        <img src="assets/images/cat-adventure.jpg" alt="Adventure games">
-                        <h3>Adventure</h3>
+                    <a href="pages/category.html?cat=adventure" class="category-card">
+                        <div class="category-icon">
+                            <img src="assets/icons/adventure.svg" alt="Adventure" width="48" height="48">
+                        </div>
+                        <span>Adventure</span>
                     </a>
-                    <a href="#" class="category-card">
-                        <img src="assets/images/cat-rpg.jpg" alt="RPG games">
-                        <h3>RPG</h3>
+                    <a href="pages/category.html?cat=rpg" class="category-card">
+                        <div class="category-icon">
+                            <img src="assets/icons/rpg.svg" alt="RPG" width="48" height="48">
+                        </div>
+                        <span>RPG</span>
                     </a>
-                    <a href="#" class="category-card">
-                        <img src="assets/images/cat-strategy.jpg" alt="Strategy games">
-                        <h3>Strategy</h3>
+                    <a href="pages/category.html?cat=strategy" class="category-card">
+                        <div class="category-icon">
+                            <img src="assets/icons/strategy.svg" alt="Strategy" width="48" height="48">
+                        </div>
+                        <span>Strategy</span>
                     </a>
-                    <a href="#" class="category-card">
-                        <img src="assets/images/cat-indie.jpg" alt="Indie games">
-                        <h3>Indie</h3>
-                    </a>
-                    <a href="#" class="category-card">
-                        <img src="assets/images/cat-simulation.jpg" alt="Simulation games">
-                        <h3>Simulation</h3>
-                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="special-offers">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Special Offers</h2>
+                    <a href="pages/sales.html" class="view-all">View More</a>
+                </div>
+                <div class="offers-slider">
+                    <div class="offer-card">
+                        <div class="offer-image">
+                            <picture>
+                                <source srcset="assets/images/offers/spring-sale.webp" type="image/webp">
+                                <img src="assets/images/offers/spring-sale.jpg" alt="Spring Sale" loading="lazy">
+                            </picture>
+                        </div>
+                        <div class="offer-info">
+                            <h3>Spring Sale 2025</h3>
+                            <p>Up to 75% off on selected titles</p>
+                            <span class="offer-ends">Ends in 2 days</span>
+                            <a href="pages/sales.html?id=spring" class="btn btn-secondary">Shop Now</a>
+                        </div>
+                    </div>
+                    <div class="offer-card">
+                        <div class="offer-image">
+                            <picture>
+                                <source srcset="assets/images/offers/publisher-sale.webp" type="image/webp">
+                                <img src="assets/images/offers/publisher-sale.jpg" alt="Publisher Sale" loading="lazy">
+                            </picture>
+                        </div>
+                        <div class="offer-info">
+                            <h3>Ubisoft Publisher Sale</h3>
+                            <p>Up to 80% off on all Ubisoft titles</p>
+                            <span class="offer-ends">Ends in 5 days</span>
+                            <a href="pages/sales.html?id=ubisoft" class="btn btn-secondary">Shop Now</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="main-footer">
         <div class="container">
             <div class="footer-columns">
@@ -342,27 +272,7 @@
         </div>
     </footer>
 
-    <script src="js/utils.js"></script>
-    <script src="js/api-service.js"></script>
-    <script src="js/game-data.js"></script>
-    <script src="js/user-data.js"></script>
-    <script src="js/reviews.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/home-page.js"></script>
-    <script src="js/ui-components.js"></script>
-    <script>
-        // Initialize homepage functionality when DOM is ready
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialize main functionality
-            if (GameHub.init) {
-                GameHub.init();
-            }
-            
-            // Initialize homepage specific functionality
-            if (GameHub.homePage && GameHub.homePage.init) {
-                GameHub.homePage.init();
-            }
-        });
-    </script>
+    <script src="js/responsive-images.js"></script>
 </body>
 </html>
